@@ -15,32 +15,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   const developer = dart_sdk.developer;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
+  const binding = flutter_sdk.src__widgets__binding;
+  const framework = flutter_sdk.src__widgets__framework;
+  const change_notifier = flutter_sdk.src__foundation__change_notifier;
   const app = flutter_sdk.src__material__app;
   const theme_data = flutter_sdk.src__material__theme_data;
   const colors = flutter_sdk.src__material__colors;
-  const framework = flutter_sdk.src__widgets__framework;
-  const scaffold = flutter_sdk.src__material__scaffold;
-  const app_bar = flutter_sdk.src__material__app_bar;
-  const text = flutter_sdk.src__widgets__text;
   const basic = flutter_sdk.src__widgets__basic;
-  const bottom_navigation_bar = flutter_sdk.src__material__bottom_navigation_bar;
-  const bottom_navigation_bar_item = flutter_sdk.src__widgets__bottom_navigation_bar_item;
-  const icon = flutter_sdk.src__widgets__icon;
-  const icon_data = flutter_sdk.src__widgets__icon_data;
-  const binding = flutter_sdk.src__widgets__binding;
-  const change_notifier = flutter_sdk.src__foundation__change_notifier;
-  const safe_area = flutter_sdk.src__widgets__safe_area;
-  const edge_insets = flutter_sdk.src__painting__edge_insets;
-  const flex = flutter_sdk.src__rendering__flex;
-  const container = flutter_sdk.src__widgets__container;
-  const box_decoration = flutter_sdk.src__painting__box_decoration;
-  const border_radius = flutter_sdk.src__painting__border_radius;
-  const text_style = flutter_sdk.src__painting__text_style;
-  const alignment = flutter_sdk.src__painting__alignment;
-  const snack_bar = flutter_sdk.src__material__snack_bar;
-  const single_child_scroll_view = flutter_sdk.src__widgets__single_child_scroll_view;
-  const elevated_button = flutter_sdk.src__material__elevated_button;
-  const dismissible = flutter_sdk.src__widgets__dismissible;
   const key = flutter_sdk.src__foundation__key;
   const assertions = flutter_sdk.src__foundation__assertions;
   const diagnostics = flutter_sdk.src__foundation__diagnostics;
@@ -48,14 +29,30 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   const layout_builder = flutter_sdk.src__widgets__layout_builder;
   const equality = flutter_sdk.src__equality;
   const value_listenable_builder = flutter_sdk.src__widgets__value_listenable_builder;
+  const scaffold = flutter_sdk.src__material__scaffold;
+  const app_bar = flutter_sdk.src__material__app_bar;
+  const text = flutter_sdk.src__widgets__text;
+  const bottom_navigation_bar = flutter_sdk.src__material__bottom_navigation_bar;
+  const bottom_navigation_bar_item = flutter_sdk.src__widgets__bottom_navigation_bar_item;
+  const icon = flutter_sdk.src__widgets__icon;
+  const icon_data = flutter_sdk.src__widgets__icon_data;
+  const safe_area = flutter_sdk.src__widgets__safe_area;
+  const edge_insets = flutter_sdk.src__painting__edge_insets;
+  const flex = flutter_sdk.src__rendering__flex;
+  const container = flutter_sdk.src__widgets__container;
+  const box_decoration = flutter_sdk.src__painting__box_decoration;
+  const border_radius = flutter_sdk.src__painting__border_radius;
+  const text_style = flutter_sdk.src__painting__text_style;
+  const snack_bar = flutter_sdk.src__material__snack_bar;
+  const single_child_scroll_view = flutter_sdk.src__widgets__single_child_scroll_view;
+  const elevated_button = flutter_sdk.src__material__elevated_button;
+  const dismissible = flutter_sdk.src__widgets__dismissible;
   var $46zapp_entry = Object.create(dart.library);
   var main = Object.create(dart.library);
   var web_plugin_registrant = Object.create(dart.library);
   var provider = Object.create(dart.library);
   var coffee_machine_state = Object.create(dart.library);
-  var home_page = Object.create(dart.library);
-  var control_page = Object.create(dart.library);
-  var settings_page = Object.create(dart.library);
+  var coffee_machine_app = Object.create(dart.library);
   var async_provider = Object.create(dart.library);
   var change_notifier_provider = Object.create(dart.library);
   var consumer = Object.create(dart.library);
@@ -65,7 +62,11 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   var reassemble_handler = Object.create(dart.library);
   var selector$ = Object.create(dart.library);
   var value_listenable_provider = Object.create(dart.library);
+  var main_screen = Object.create(dart.library);
   var nested = Object.create(dart.library);
+  var home_page = Object.create(dart.library);
+  var control_page = Object.create(dart.library);
+  var settings_page = Object.create(dart.library);
   var $toString = dartx.toString;
   var $runtimeType = dartx.runtimeType;
   var $length = dartx.length;
@@ -91,11 +92,6 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     ZoneAndZoneDelegateAndZone__Tovoid: () => (T$.ZoneAndZoneDelegateAndZone__Tovoid = dart.constFn(dart.fnType(dart.void, [async.Zone, async.ZoneDelegate, async.Zone, core.String])))(),
     ChangeNotifierProviderOfCoffeeMachineState: () => (T$.ChangeNotifierProviderOfCoffeeMachineState = dart.constFn(change_notifier_provider.ChangeNotifierProvider$(coffee_machine_state.CoffeeMachineState)))(),
     BuildContextToCoffeeMachineState: () => (T$.BuildContextToCoffeeMachineState = dart.constFn(dart.fnType(coffee_machine_state.CoffeeMachineState, [framework.BuildContext])))(),
-    ConsumerOfCoffeeMachineState: () => (T$.ConsumerOfCoffeeMachineState = dart.constFn(consumer.Consumer$(coffee_machine_state.CoffeeMachineState)))(),
-    JSArrayOfWidget: () => (T$.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
-    WidgetN: () => (T$.WidgetN = dart.constFn(dart.nullable(framework.Widget)))(),
-    BuildContextAndCoffeeMachineStateAndWidgetNToSafeArea: () => (T$.BuildContextAndCoffeeMachineStateAndWidgetNToSafeArea = dart.constFn(dart.fnType(safe_area.SafeArea, [framework.BuildContext, coffee_machine_state.CoffeeMachineState, T$.WidgetN()])))(),
-    FutureOfNull: () => (T$.FutureOfNull = dart.constFn(async.Future$(core.Null)))(),
     BuildContextToWidget: () => (T$.BuildContextToWidget = dart.constFn(dart.fnType(framework.Widget, [framework.BuildContext])))(),
     ObjectN: () => (T$.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
     ObjectNToNull: () => (T$.ObjectNToNull = dart.constFn(dart.fnType(core.Null, [T$.ObjectN()])))(),
@@ -104,6 +100,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     ListenableN: () => (T$.ListenableN = dart.constFn(dart.nullable(change_notifier.Listenable)))(),
     InheritedContextOfListenableN: () => (T$.InheritedContextOfListenableN = dart.constFn(provider$.InheritedContext$(T$.ListenableN())))(),
     InheritedContextOfListenableNAndListenableNToFn: () => (T$.InheritedContextOfListenableNAndListenableNToFn = dart.constFn(dart.fnType(T$.VoidTovoid(), [T$.InheritedContextOfListenableN(), T$.ListenableN()])))(),
+    WidgetN: () => (T$.WidgetN = dart.constFn(dart.nullable(framework.Widget)))(),
     WidgetNToWidget: () => (T$.WidgetNToWidget = dart.constFn(dart.fnType(framework.Widget, [T$.WidgetN()])))(),
     JSArrayOfSingleChildWidget: () => (T$.JSArrayOfSingleChildWidget = dart.constFn(_interceptors.JSArray$(nested.SingleChildWidget)))(),
     BuildContextAndWidgetNToWidget: () => (T$.BuildContextAndWidgetNToWidget = dart.constFn(dart.fnType(framework.Widget, [framework.BuildContext, T$.WidgetN()])))(),
@@ -115,6 +112,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     _NestedHookElementN: () => (T$._NestedHookElementN = dart.constFn(dart.nullable(nested._NestedHookElement)))(),
     ElementTobool: () => (T$.ElementTobool = dart.constFn(dart.fnType(core.bool, [framework.Element])))(),
     LinkedHashMapOfString$ProviderNode: () => (T$.LinkedHashMapOfString$ProviderNode = dart.constFn(collection.LinkedHashMap$(core.String, provider$.ProviderNode)))(),
+    FutureOfNull: () => (T$.FutureOfNull = dart.constFn(async.Future$(core.Null)))(),
     JSArrayOfDiagnosticsNode: () => (T$.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))(),
     DefaultEqualityOfNever: () => (T$.DefaultEqualityOfNever = dart.constFn(equality.DefaultEquality$(dart.Never)))(),
     FnToR: () => (T$.FnToR = dart.constFn(dart.gFnType((T, R) => {
@@ -130,7 +128,10 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     ListOfint: () => (T$.ListOfint = dart.constFn(core.List$(core.int)))(),
     LinkedHashSetOf_NestedHookElement: () => (T$.LinkedHashSetOf_NestedHookElement = dart.constFn(collection.LinkedHashSet$(nested._NestedHookElement)))(),
     SingleChildStateOfSingleChildStatefulWidget: () => (T$.SingleChildStateOfSingleChildStatefulWidget = dart.constFn(nested.SingleChildState$(nested.SingleChildStatefulWidget)))(),
-    SingleChildStateMixinOfStatefulWidget: () => (T$.SingleChildStateMixinOfStatefulWidget = dart.constFn(nested.SingleChildStateMixin$(framework.StatefulWidget)))()
+    SingleChildStateMixinOfStatefulWidget: () => (T$.SingleChildStateMixinOfStatefulWidget = dart.constFn(nested.SingleChildStateMixin$(framework.StatefulWidget)))(),
+    ConsumerOfCoffeeMachineState: () => (T$.ConsumerOfCoffeeMachineState = dart.constFn(consumer.Consumer$(coffee_machine_state.CoffeeMachineState)))(),
+    JSArrayOfWidget: () => (T$.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    BuildContextAndCoffeeMachineStateAndWidgetNToSafeArea: () => (T$.BuildContextAndCoffeeMachineStateAndWidgetNToSafeArea = dart.constFn(dart.fnType(safe_area.SafeArea, [framework.BuildContext, coffee_machine_state.CoffeeMachineState, T$.WidgetN()])))()
   };
   const CT = Object.create({
     _: () => (C, CT)
@@ -141,12 +142,47 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: main.MainScreen.prototype,
+        __proto__: coffee_machine_app.CoffeeMachineApp.prototype,
         [Widget_key]: null
       });
     },
     get C2() {
       return C[2] = dart.const({
+        __proto__: main_screen.MainScreen.prototype,
+        [Widget_key]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.fn(change_notifier_provider.ChangeNotifierProvider._dispose, T$.BuildContextAndChangeNotifierNTovoid());
+    },
+    get C4() {
+      return C[4] = dart.fn(listenable_provider.ListenableProvider._startListening, T$.InheritedContextOfListenableNAndListenableNToFn());
+    },
+    get C5() {
+      return C[5] = dart.constList([], core.String);
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: core.Object.prototype
+      });
+    },
+    get C7() {
+      return C[7] = dart.constMap(T$.ObjectN(), T$.ObjectN(), []);
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: T$.DefaultEqualityOfNever().prototype
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: equality.DeepCollectionEquality.prototype,
+        [DeepCollectionEquality__unordered]: false,
+        [DeepCollectionEquality__base]: C[9] || CT.C9
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
         __proto__: text.Text.prototype,
         [Widget_key]: null,
         [Text_selectionColor]: null,
@@ -166,8 +202,8 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [Text_data]: "Моя Кофе-машина"
       });
     },
-    get C6() {
-      return C[6] = dart.const({
+    get C14() {
+      return C[14] = dart.const({
         __proto__: icon_data.IconData.prototype,
         [IconData_matchTextDirection]: false,
         [IconData_fontPackage]: null,
@@ -175,8 +211,8 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [IconData_codePoint]: 58136
       });
     },
-    get C5() {
-      return C[5] = dart.const({
+    get C13() {
+      return C[13] = dart.const({
         __proto__: icon.Icon.prototype,
         [Widget_key]: null,
         [Icon_textDirection]: null,
@@ -188,21 +224,21 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [Icon_weight]: null,
         [Icon_fill]: null,
         [Icon_size]: null,
-        [Icon_icon]: C[6] || CT.C6
+        [Icon_icon]: C[14] || CT.C14
       });
     },
-    get C4() {
-      return C[4] = dart.const({
+    get C12() {
+      return C[12] = dart.const({
         __proto__: bottom_navigation_bar_item.BottomNavigationBarItem.prototype,
         [BottomNavigationBarItem_tooltip]: null,
         [BottomNavigationBarItem_backgroundColor]: null,
         [BottomNavigationBarItem_label]: "Главная",
-        [BottomNavigationBarItem_activeIcon]: C[5] || CT.C5,
-        [BottomNavigationBarItem_icon]: C[5] || CT.C5
+        [BottomNavigationBarItem_activeIcon]: C[13] || CT.C13,
+        [BottomNavigationBarItem_icon]: C[13] || CT.C13
       });
     },
-    get C9() {
-      return C[9] = dart.const({
+    get C17() {
+      return C[17] = dart.const({
         __proto__: icon_data.IconData.prototype,
         [IconData_matchTextDirection]: false,
         [IconData_fontPackage]: null,
@@ -210,8 +246,8 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [IconData_codePoint]: 57720
       });
     },
-    get C8() {
-      return C[8] = dart.const({
+    get C16() {
+      return C[16] = dart.const({
         __proto__: icon.Icon.prototype,
         [Widget_key]: null,
         [Icon_textDirection]: null,
@@ -223,21 +259,21 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [Icon_weight]: null,
         [Icon_fill]: null,
         [Icon_size]: null,
-        [Icon_icon]: C[9] || CT.C9
+        [Icon_icon]: C[17] || CT.C17
       });
     },
-    get C7() {
-      return C[7] = dart.const({
+    get C15() {
+      return C[15] = dart.const({
         __proto__: bottom_navigation_bar_item.BottomNavigationBarItem.prototype,
         [BottomNavigationBarItem_tooltip]: null,
         [BottomNavigationBarItem_backgroundColor]: null,
         [BottomNavigationBarItem_label]: "Управление",
-        [BottomNavigationBarItem_activeIcon]: C[8] || CT.C8,
-        [BottomNavigationBarItem_icon]: C[8] || CT.C8
+        [BottomNavigationBarItem_activeIcon]: C[16] || CT.C16,
+        [BottomNavigationBarItem_icon]: C[16] || CT.C16
       });
     },
-    get C12() {
-      return C[12] = dart.const({
+    get C20() {
+      return C[20] = dart.const({
         __proto__: icon_data.IconData.prototype,
         [IconData_matchTextDirection]: false,
         [IconData_fontPackage]: null,
@@ -245,8 +281,8 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [IconData_codePoint]: 58751
       });
     },
-    get C11() {
-      return C[11] = dart.const({
+    get C19() {
+      return C[19] = dart.const({
         __proto__: icon.Icon.prototype,
         [Widget_key]: null,
         [Icon_textDirection]: null,
@@ -258,51 +294,45 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [Icon_weight]: null,
         [Icon_fill]: null,
         [Icon_size]: null,
-        [Icon_icon]: C[12] || CT.C12
-      });
-    },
-    get C10() {
-      return C[10] = dart.const({
-        __proto__: bottom_navigation_bar_item.BottomNavigationBarItem.prototype,
-        [BottomNavigationBarItem_tooltip]: null,
-        [BottomNavigationBarItem_backgroundColor]: null,
-        [BottomNavigationBarItem_label]: "Настройки",
-        [BottomNavigationBarItem_activeIcon]: C[11] || CT.C11,
-        [BottomNavigationBarItem_icon]: C[11] || CT.C11
-      });
-    },
-    get C3() {
-      return C[3] = dart.constList([C[4] || CT.C4, C[7] || CT.C7, C[10] || CT.C10], bottom_navigation_bar_item.BottomNavigationBarItem);
-    },
-    get C14() {
-      return C[14] = dart.const({
-        __proto__: home_page.HomePage.prototype,
-        [Widget_key]: null
-      });
-    },
-    get C15() {
-      return C[15] = dart.const({
-        __proto__: control_page.ControlPage.prototype,
-        [Widget_key]: null
-      });
-    },
-    get C16() {
-      return C[16] = dart.const({
-        __proto__: settings_page.SettingsPage.prototype,
-        [Widget_key]: null
-      });
-    },
-    get C13() {
-      return C[13] = dart.constList([C[14] || CT.C14, C[15] || CT.C15, C[16] || CT.C16], framework.Widget);
-    },
-    get C17() {
-      return C[17] = dart.const({
-        __proto__: main.CoffeeMachineApp.prototype,
-        [Widget_key]: null
+        [Icon_icon]: C[20] || CT.C20
       });
     },
     get C18() {
       return C[18] = dart.const({
+        __proto__: bottom_navigation_bar_item.BottomNavigationBarItem.prototype,
+        [BottomNavigationBarItem_tooltip]: null,
+        [BottomNavigationBarItem_backgroundColor]: null,
+        [BottomNavigationBarItem_label]: "Настройки",
+        [BottomNavigationBarItem_activeIcon]: C[19] || CT.C19,
+        [BottomNavigationBarItem_icon]: C[19] || CT.C19
+      });
+    },
+    get C11() {
+      return C[11] = dart.constList([C[12] || CT.C12, C[15] || CT.C15, C[18] || CT.C18], bottom_navigation_bar_item.BottomNavigationBarItem);
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: home_page.HomePage.prototype,
+        [Widget_key]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: control_page.ControlPage.prototype,
+        [Widget_key]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: settings_page.SettingsPage.prototype,
+        [Widget_key]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.constList([C[22] || CT.C22, C[23] || CT.C23, C[24] || CT.C24], framework.Widget);
+    },
+    get C25() {
+      return C[25] = dart.const({
         __proto__: edge_insets.EdgeInsets.prototype,
         [EdgeInsets_bottom]: 16,
         [EdgeInsets_right]: 16,
@@ -310,97 +340,11 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [EdgeInsets_left]: 16
       });
     },
-    get C21() {
-      return C[21] = dart.const({
-        __proto__: ui.FontWeight.prototype,
-        [FontWeight_value]: 700,
-        [FontWeight_index]: 6
-      });
-    },
-    get C20() {
-      return C[20] = dart.const({
-        __proto__: text_style.TextStyle.prototype,
-        [TextStyle_overflow]: null,
-        [TextStyle_fontVariations]: null,
-        [TextStyle_fontFeatures]: null,
-        [TextStyle_shadows]: null,
-        [TextStyle_debugLabel]: null,
-        [TextStyle_decorationThickness]: null,
-        [TextStyle_decorationStyle]: null,
-        [TextStyle_decorationColor]: null,
-        [TextStyle_decoration]: null,
-        [TextStyle_background]: null,
-        [TextStyle_foreground]: null,
-        [TextStyle_locale]: null,
-        [TextStyle_leadingDistribution]: null,
-        [TextStyle_height]: null,
-        [TextStyle_textBaseline]: null,
-        [TextStyle_wordSpacing]: null,
-        [TextStyle_letterSpacing]: null,
-        [TextStyle_fontStyle]: null,
-        [TextStyle_fontWeight]: C[21] || CT.C21,
-        [TextStyle_fontSize]: 20,
-        [TextStyle__package]: null,
-        [TextStyle__fontFamilyFallback]: null,
-        [TextStyle_fontFamily]: null,
-        [TextStyle_backgroundColor]: null,
-        [TextStyle_color]: null,
-        [TextStyle_inherit]: true
-      });
-    },
-    get C19() {
-      return C[19] = dart.const({
-        __proto__: text.Text.prototype,
-        [Widget_key]: null,
-        [Text_selectionColor]: null,
-        [Text_textHeightBehavior]: null,
-        [Text_textWidthBasis]: null,
-        [Text_semanticsLabel]: null,
-        [Text_maxLines]: null,
-        [Text_textScaleFactor]: null,
-        [Text_overflow]: null,
-        [Text_softWrap]: null,
-        [Text_locale]: null,
-        [Text_textDirection]: null,
-        [Text_textAlign]: null,
-        [Text_strutStyle]: null,
-        [Text_style]: C[20] || CT.C20,
-        [Text_textSpan]: null,
-        [Text_data]: "Статус Ресурсов"
-      });
-    },
-    get C22() {
-      return C[22] = dart.const({
-        __proto__: basic.SizedBox.prototype,
-        [Widget_key]: null,
-        [SingleChildRenderObjectWidget_child]: null,
-        [SizedBox_height]: 20,
-        [SizedBox_width]: null
-      });
-    },
-    get C23() {
-      return C[23] = dart.const({
-        __proto__: basic.SizedBox.prototype,
-        [Widget_key]: null,
-        [SingleChildRenderObjectWidget_child]: null,
-        [SizedBox_height]: 10,
-        [SizedBox_width]: null
-      });
-    },
-    get C24() {
-      return C[24] = dart.const({
-        __proto__: basic.SizedBox.prototype,
-        [Widget_key]: null,
-        [SingleChildRenderObjectWidget_child]: null,
-        [SizedBox_height]: 16,
-        [SizedBox_width]: null
-      });
-    },
     get C28() {
       return C[28] = dart.const({
         __proto__: ui.FontWeight.prototype,
-        [FontWeight_value]: 500,
-        [FontWeight_index]: 4
+        [FontWeight_value]: 700,
+        [FontWeight_index]: 6
       });
     },
     get C27() {
@@ -425,7 +369,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [TextStyle_letterSpacing]: null,
         [TextStyle_fontStyle]: null,
         [TextStyle_fontWeight]: C[28] || CT.C28,
-        [TextStyle_fontSize]: 16,
+        [TextStyle_fontSize]: 20,
         [TextStyle__package]: null,
         [TextStyle__fontFamilyFallback]: null,
         [TextStyle_fontFamily]: null,
@@ -452,99 +396,67 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [Text_strutStyle]: null,
         [Text_style]: C[27] || CT.C27,
         [Text_textSpan]: null,
-        [Text_data]: "Быстрые действия"
+        [Text_data]: "Статус Ресурсов"
       });
     },
     get C29() {
       return C[29] = dart.const({
-        __proto__: alignment.Alignment.prototype,
-        [Alignment_y]: 0,
-        [Alignment_x]: 0
-      });
-    },
-    get C25() {
-      return C[25] = dart.const({
-        __proto__: basic.Center.prototype,
+        __proto__: basic.SizedBox.prototype,
         [Widget_key]: null,
-        [SingleChildRenderObjectWidget_child]: C[26] || CT.C26,
-        [Align_heightFactor]: null,
-        [Align_widthFactor]: null,
-        [Align_alignment]: C[29] || CT.C29
+        [SingleChildRenderObjectWidget_child]: null,
+        [SizedBox_height]: 20,
+        [SizedBox_width]: null
       });
     },
     get C30() {
       return C[30] = dart.const({
-        __proto__: core.Duration.prototype,
-        [Duration__duration]: 2000000
+        __proto__: basic.SizedBox.prototype,
+        [Widget_key]: null,
+        [SingleChildRenderObjectWidget_child]: null,
+        [SizedBox_height]: 10,
+        [SizedBox_width]: null
       });
     },
     get C31() {
       return C[31] = dart.const({
-        __proto__: text.Text.prototype,
-        [Widget_key]: null,
-        [Text_selectionColor]: null,
-        [Text_textHeightBehavior]: null,
-        [Text_textWidthBasis]: null,
-        [Text_semanticsLabel]: null,
-        [Text_maxLines]: null,
-        [Text_textScaleFactor]: null,
-        [Text_overflow]: null,
-        [Text_softWrap]: null,
-        [Text_locale]: null,
-        [Text_textDirection]: null,
-        [Text_textAlign]: null,
-        [Text_strutStyle]: null,
-        [Text_style]: C[20] || CT.C20,
-        [Text_textSpan]: null,
-        [Text_data]: "Ресурсы"
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 2000000
       });
     },
     get C32() {
       return C[32] = dart.const({
-        __proto__: core.Duration.prototype,
-        [Duration__duration]: 5000000
+        __proto__: text.Text.prototype,
+        [Widget_key]: null,
+        [Text_selectionColor]: null,
+        [Text_textHeightBehavior]: null,
+        [Text_textWidthBasis]: null,
+        [Text_semanticsLabel]: null,
+        [Text_maxLines]: null,
+        [Text_textScaleFactor]: null,
+        [Text_overflow]: null,
+        [Text_softWrap]: null,
+        [Text_locale]: null,
+        [Text_textDirection]: null,
+        [Text_textAlign]: null,
+        [Text_strutStyle]: null,
+        [Text_style]: C[27] || CT.C27,
+        [Text_textSpan]: null,
+        [Text_data]: "Ресурсы"
       });
     },
     get C33() {
       return C[33] = dart.const({
-        __proto__: text.Text.prototype,
+        __proto__: basic.SizedBox.prototype,
         [Widget_key]: null,
-        [Text_selectionColor]: null,
-        [Text_textHeightBehavior]: null,
-        [Text_textWidthBasis]: null,
-        [Text_semanticsLabel]: null,
-        [Text_maxLines]: null,
-        [Text_textScaleFactor]: null,
-        [Text_overflow]: null,
-        [Text_softWrap]: null,
-        [Text_locale]: null,
-        [Text_textDirection]: null,
-        [Text_textAlign]: null,
-        [Text_strutStyle]: null,
-        [Text_style]: null,
-        [Text_textSpan]: null,
-        [Text_data]: "Приготовить Эспрессо"
+        [SingleChildRenderObjectWidget_child]: null,
+        [SizedBox_height]: 16,
+        [SizedBox_width]: null
       });
     },
     get C34() {
       return C[34] = dart.const({
-        __proto__: text.Text.prototype,
-        [Widget_key]: null,
-        [Text_selectionColor]: null,
-        [Text_textHeightBehavior]: null,
-        [Text_textWidthBasis]: null,
-        [Text_semanticsLabel]: null,
-        [Text_maxLines]: null,
-        [Text_textScaleFactor]: null,
-        [Text_overflow]: null,
-        [Text_softWrap]: null,
-        [Text_locale]: null,
-        [Text_textDirection]: null,
-        [Text_textAlign]: null,
-        [Text_strutStyle]: null,
-        [Text_style]: null,
-        [Text_textSpan]: null,
-        [Text_data]: "Приготовить Капучино"
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 5000000
       });
     },
     get C35() {
@@ -565,7 +477,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [Text_strutStyle]: null,
         [Text_style]: null,
         [Text_textSpan]: null,
-        [Text_data]: "Приготовить Латте"
+        [Text_data]: "Приготовить Эспрессо"
       });
     },
     get C36() {
@@ -584,33 +496,75 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [Text_textDirection]: null,
         [Text_textAlign]: null,
         [Text_strutStyle]: null,
-        [Text_style]: C[20] || CT.C20,
+        [Text_style]: null,
         [Text_textSpan]: null,
-        [Text_data]: "Состояние"
+        [Text_data]: "Приготовить Капучино"
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: text.Text.prototype,
+        [Widget_key]: null,
+        [Text_selectionColor]: null,
+        [Text_textHeightBehavior]: null,
+        [Text_textWidthBasis]: null,
+        [Text_semanticsLabel]: null,
+        [Text_maxLines]: null,
+        [Text_textScaleFactor]: null,
+        [Text_overflow]: null,
+        [Text_softWrap]: null,
+        [Text_locale]: null,
+        [Text_textDirection]: null,
+        [Text_textAlign]: null,
+        [Text_strutStyle]: null,
+        [Text_style]: null,
+        [Text_textSpan]: null,
+        [Text_data]: "Приготовить Латте"
       });
     },
     get C38() {
       return C[38] = dart.const({
+        __proto__: text.Text.prototype,
+        [Widget_key]: null,
+        [Text_selectionColor]: null,
+        [Text_textHeightBehavior]: null,
+        [Text_textWidthBasis]: null,
+        [Text_semanticsLabel]: null,
+        [Text_maxLines]: null,
+        [Text_textScaleFactor]: null,
+        [Text_overflow]: null,
+        [Text_softWrap]: null,
+        [Text_locale]: null,
+        [Text_textDirection]: null,
+        [Text_textAlign]: null,
+        [Text_strutStyle]: null,
+        [Text_style]: C[27] || CT.C27,
+        [Text_textSpan]: null,
+        [Text_data]: "Состояние"
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
         __proto__: ui.Clip.prototype,
         [_Enum__name]: "hardEdge",
         [_Enum_index]: 1
       });
     },
-    get C39() {
-      return C[39] = dart.const({
+    get C41() {
+      return C[41] = dart.const({
         __proto__: dismissible.DismissDirection.prototype,
         [_Enum__name]: "down",
         [_Enum_index]: 5
       });
     },
-    get C40() {
-      return C[40] = dart.const({
+    get C42() {
+      return C[42] = dart.const({
         __proto__: core.Duration.prototype,
         [Duration__duration]: 4000000
       });
     },
-    get C41() {
-      return C[41] = dart.const({
+    get C43() {
+      return C[43] = dart.const({
         __proto__: text.Text.prototype,
         [Widget_key]: null,
         [Text_selectionColor]: null,
@@ -630,15 +584,15 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [Text_data]: "Контейнер очищен!"
       });
     },
-    get C37() {
-      return C[37] = dart.const({
+    get C39() {
+      return C[39] = dart.const({
         __proto__: snack_bar.SnackBar.prototype,
         [Widget_key]: null,
-        [SnackBar_clipBehavior]: C[38] || CT.C38,
-        [SnackBar_dismissDirection]: C[39] || CT.C39,
+        [SnackBar_clipBehavior]: C[40] || CT.C40,
+        [SnackBar_dismissDirection]: C[41] || CT.C41,
         [SnackBar_onVisible]: null,
         [SnackBar_animation]: null,
-        [SnackBar_duration]: C[40] || CT.C40,
+        [SnackBar_duration]: C[42] || CT.C42,
         [SnackBar_closeIconColor]: null,
         [SnackBar_showCloseIcon]: null,
         [SnackBar_action]: null,
@@ -649,28 +603,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [SnackBar_margin]: null,
         [SnackBar_elevation]: null,
         [SnackBar_backgroundColor]: null,
-        [SnackBar_content]: C[41] || CT.C41
-      });
-    },
-    get C42() {
-      return C[42] = dart.const({
-        __proto__: text.Text.prototype,
-        [Widget_key]: null,
-        [Text_selectionColor]: null,
-        [Text_textHeightBehavior]: null,
-        [Text_textWidthBasis]: null,
-        [Text_semanticsLabel]: null,
-        [Text_maxLines]: null,
-        [Text_textScaleFactor]: null,
-        [Text_overflow]: null,
-        [Text_softWrap]: null,
-        [Text_locale]: null,
-        [Text_textDirection]: null,
-        [Text_textAlign]: null,
-        [Text_strutStyle]: null,
-        [Text_style]: null,
-        [Text_textSpan]: null,
-        [Text_data]: "Очистить контейнер"
+        [SnackBar_content]: C[43] || CT.C43
       });
     },
     get C44() {
@@ -691,18 +624,39 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [Text_strutStyle]: null,
         [Text_style]: null,
         [Text_textSpan]: null,
+        [Text_data]: "Очистить контейнер"
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: text.Text.prototype,
+        [Widget_key]: null,
+        [Text_selectionColor]: null,
+        [Text_textHeightBehavior]: null,
+        [Text_textWidthBasis]: null,
+        [Text_semanticsLabel]: null,
+        [Text_maxLines]: null,
+        [Text_textScaleFactor]: null,
+        [Text_overflow]: null,
+        [Text_softWrap]: null,
+        [Text_locale]: null,
+        [Text_textDirection]: null,
+        [Text_textAlign]: null,
+        [Text_strutStyle]: null,
+        [Text_style]: null,
+        [Text_textSpan]: null,
         [Text_data]: "Ресурсы пополнены!"
       });
     },
-    get C43() {
-      return C[43] = dart.const({
+    get C45() {
+      return C[45] = dart.const({
         __proto__: snack_bar.SnackBar.prototype,
         [Widget_key]: null,
-        [SnackBar_clipBehavior]: C[38] || CT.C38,
-        [SnackBar_dismissDirection]: C[39] || CT.C39,
+        [SnackBar_clipBehavior]: C[40] || CT.C40,
+        [SnackBar_dismissDirection]: C[41] || CT.C41,
         [SnackBar_onVisible]: null,
         [SnackBar_animation]: null,
-        [SnackBar_duration]: C[40] || CT.C40,
+        [SnackBar_duration]: C[42] || CT.C42,
         [SnackBar_closeIconColor]: null,
         [SnackBar_showCloseIcon]: null,
         [SnackBar_action]: null,
@@ -713,11 +667,11 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [SnackBar_margin]: null,
         [SnackBar_elevation]: null,
         [SnackBar_backgroundColor]: null,
-        [SnackBar_content]: C[44] || CT.C44
+        [SnackBar_content]: C[46] || CT.C46
       });
     },
-    get C45() {
-      return C[45] = dart.const({
+    get C47() {
+      return C[47] = dart.const({
         __proto__: text.Text.prototype,
         [Widget_key]: null,
         [Text_selectionColor]: null,
@@ -736,44 +690,12 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [Text_textSpan]: null,
         [Text_data]: "Пополнить ресурсы"
       });
-    },
-    get C46() {
-      return C[46] = dart.fn(change_notifier_provider.ChangeNotifierProvider._dispose, T$.BuildContextAndChangeNotifierNTovoid());
-    },
-    get C47() {
-      return C[47] = dart.fn(listenable_provider.ListenableProvider._startListening, T$.InheritedContextOfListenableNAndListenableNToFn());
-    },
-    get C48() {
-      return C[48] = dart.constList([], core.String);
-    },
-    get C49() {
-      return C[49] = dart.const({
-        __proto__: core.Object.prototype
-      });
-    },
-    get C50() {
-      return C[50] = dart.constMap(T$.ObjectN(), T$.ObjectN(), []);
-    },
-    get C52() {
-      return C[52] = dart.const({
-        __proto__: T$.DefaultEqualityOfNever().prototype
-      });
-    },
-    get C51() {
-      return C[51] = dart.const({
-        __proto__: equality.DeepCollectionEquality.prototype,
-        [DeepCollectionEquality__unordered]: false,
-        [DeepCollectionEquality__base]: C[52] || CT.C52
-      });
     }
   }, false);
-  var C = Array(53).fill(void 0);
+  var C = Array(48).fill(void 0);
   var I = [
-    "file:///zapp/project/lib/main.dart",
     "file:///zapp/project/lib/coffee_machine_state.dart",
-    "file:///zapp/project/lib/pages/home_page.dart",
-    "file:///zapp/project/lib/pages/control_page.dart",
-    "file:///zapp/project/lib/pages/settings_page.dart",
+    "file:///zapp/project/lib/coffee_machine_app.dart",
     "file:///zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/inherited_provider.dart",
     "package:nested/nested.dart",
     "package:provider/src/provider.dart",
@@ -788,7 +710,11 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     "package:provider/src/proxy_provider.dart",
     "package:provider/src/reassemble_handler.dart",
     "package:provider/src/selector.dart",
-    "package:provider/src/value_listenable_provider.dart"
+    "package:provider/src/value_listenable_provider.dart",
+    "file:///zapp/project/lib/main_screen.dart",
+    "file:///zapp/project/lib/pages/home_page.dart",
+    "file:///zapp/project/lib/pages/control_page.dart",
+    "file:///zapp/project/lib/pages/settings_page.dart"
   ];
   $46zapp_entry.runAppGuarded = function runAppGuarded() {
     async.runZonedGuarded(core.Null, dart.fn(() => {
@@ -822,122 +748,8 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     });
   };
   var Widget_key = dart.privateName(framework, "Widget.key");
-  main.CoffeeMachineApp = class CoffeeMachineApp extends framework.StatelessWidget {
-    static ['_#new#tearOff'](opts) {
-      let key = opts && 'key' in opts ? opts.key : null;
-      return new main.CoffeeMachineApp.new({key: key});
-    }
-    build(context) {
-      return new app.MaterialApp.new({title: "Кофе-машина", theme: theme_data.ThemeData.new({primarySwatch: colors.Colors.brown, visualDensity: theme_data.VisualDensity.adaptivePlatformDensity}), home: C[1] || CT.C1});
-    }
-  };
-  (main.CoffeeMachineApp.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    main.CoffeeMachineApp.__proto__.new.call(this, {key: key});
-    ;
-  }).prototype = main.CoffeeMachineApp.prototype;
-  dart.addTypeTests(main.CoffeeMachineApp);
-  dart.addTypeCaches(main.CoffeeMachineApp);
-  dart.setMethodSignature(main.CoffeeMachineApp, () => ({
-    __proto__: dart.getMethods(main.CoffeeMachineApp.__proto__),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
-  }));
-  dart.setLibraryUri(main.CoffeeMachineApp, I[0]);
-  main.MainScreen = class MainScreen extends framework.StatefulWidget {
-    static ['_#new#tearOff'](opts) {
-      let key = opts && 'key' in opts ? opts.key : null;
-      return new main.MainScreen.new({key: key});
-    }
-    createState() {
-      return new main._MainScreenState.new();
-    }
-  };
-  (main.MainScreen.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    main.MainScreen.__proto__.new.call(this, {key: key});
-    ;
-  }).prototype = main.MainScreen.prototype;
-  dart.addTypeTests(main.MainScreen);
-  dart.addTypeCaches(main.MainScreen);
-  dart.setMethodSignature(main.MainScreen, () => ({
-    __proto__: dart.getMethods(main.MainScreen.__proto__),
-    createState: dart.fnType(framework.State$(main.MainScreen), [])
-  }));
-  dart.setLibraryUri(main.MainScreen, I[0]);
-  var _selectedIndex = dart.privateName(main, "_selectedIndex");
-  var _onItemTapped = dart.privateName(main, "_onItemTapped");
-  var Text_selectionColor = dart.privateName(text, "Text.selectionColor");
-  var Text_textHeightBehavior = dart.privateName(text, "Text.textHeightBehavior");
-  var Text_textWidthBasis = dart.privateName(text, "Text.textWidthBasis");
-  var Text_semanticsLabel = dart.privateName(text, "Text.semanticsLabel");
-  var Text_maxLines = dart.privateName(text, "Text.maxLines");
-  var Text_textScaleFactor = dart.privateName(text, "Text.textScaleFactor");
-  var Text_overflow = dart.privateName(text, "Text.overflow");
-  var Text_softWrap = dart.privateName(text, "Text.softWrap");
-  var Text_locale = dart.privateName(text, "Text.locale");
-  var Text_textDirection = dart.privateName(text, "Text.textDirection");
-  var Text_textAlign = dart.privateName(text, "Text.textAlign");
-  var Text_strutStyle = dart.privateName(text, "Text.strutStyle");
-  var Text_style = dart.privateName(text, "Text.style");
-  var Text_textSpan = dart.privateName(text, "Text.textSpan");
-  var Text_data = dart.privateName(text, "Text.data");
-  var BottomNavigationBarItem_tooltip = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.tooltip");
-  var BottomNavigationBarItem_backgroundColor = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.backgroundColor");
-  var BottomNavigationBarItem_label = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.label");
-  var Icon_textDirection = dart.privateName(icon, "Icon.textDirection");
-  var Icon_semanticLabel = dart.privateName(icon, "Icon.semanticLabel");
-  var Icon_shadows = dart.privateName(icon, "Icon.shadows");
-  var Icon_color = dart.privateName(icon, "Icon.color");
-  var Icon_opticalSize = dart.privateName(icon, "Icon.opticalSize");
-  var Icon_grade = dart.privateName(icon, "Icon.grade");
-  var Icon_weight = dart.privateName(icon, "Icon.weight");
-  var Icon_fill = dart.privateName(icon, "Icon.fill");
-  var Icon_size = dart.privateName(icon, "Icon.size");
-  var IconData_matchTextDirection = dart.privateName(icon_data, "IconData.matchTextDirection");
-  var IconData_fontPackage = dart.privateName(icon_data, "IconData.fontPackage");
-  var IconData_fontFamily = dart.privateName(icon_data, "IconData.fontFamily");
-  var IconData_codePoint = dart.privateName(icon_data, "IconData.codePoint");
-  var Icon_icon = dart.privateName(icon, "Icon.icon");
-  var BottomNavigationBarItem_activeIcon = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.activeIcon");
-  var BottomNavigationBarItem_icon = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.icon");
-  main._MainScreenState = class _MainScreenState extends framework.State$(main.MainScreen) {
-    [_onItemTapped](index) {
-      this.setState(dart.fn(() => {
-        this[_selectedIndex] = index;
-      }, T$.VoidTovoid()));
-    }
-    build(context) {
-      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: C[2] || CT.C2}), body: new basic.IndexedStack.new({index: this[_selectedIndex], children: main._MainScreenState._pages}), bottomNavigationBar: new bottom_navigation_bar.BottomNavigationBar.new({items: C[3] || CT.C3, currentIndex: this[_selectedIndex], selectedItemColor: colors.Colors.brown._get(800), onTap: dart.bind(this, _onItemTapped)})});
-    }
-    static ['_#new#tearOff']() {
-      return new main._MainScreenState.new();
-    }
-  };
-  (main._MainScreenState.new = function() {
-    this[_selectedIndex] = 0;
-    main._MainScreenState.__proto__.new.call(this);
-    ;
-  }).prototype = main._MainScreenState.prototype;
-  dart.addTypeTests(main._MainScreenState);
-  dart.addTypeCaches(main._MainScreenState);
-  dart.setMethodSignature(main._MainScreenState, () => ({
-    __proto__: dart.getMethods(main._MainScreenState.__proto__),
-    [_onItemTapped]: dart.fnType(dart.void, [core.int]),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
-  }));
-  dart.setLibraryUri(main._MainScreenState, I[0]);
-  dart.setFieldSignature(main._MainScreenState, () => ({
-    __proto__: dart.getFields(main._MainScreenState.__proto__),
-    [_selectedIndex]: dart.fieldType(core.int)
-  }));
-  dart.setStaticFieldSignature(main._MainScreenState, () => ['_pages']);
-  dart.defineLazy(main._MainScreenState, {
-    /*main._MainScreenState._pages*/get _pages() {
-      return C[13] || CT.C13;
-    }
-  }, false);
   main.main = function main$0() {
-    binding.runApp(new (T$.ChangeNotifierProviderOfCoffeeMachineState()).new({create: dart.fn(context => new coffee_machine_state.CoffeeMachineState.new(), T$.BuildContextToCoffeeMachineState()), child: C[17] || CT.C17}));
+    binding.runApp(new (T$.ChangeNotifierProviderOfCoffeeMachineState()).new({create: dart.fn(context => new coffee_machine_state.CoffeeMachineState.new(), T$.BuildContextToCoffeeMachineState()), child: C[1] || CT.C1}));
   };
   web_plugin_registrant.registerPlugins = function registerPlugins() {
   };
@@ -1024,7 +836,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     milkLevel: core.int,
     wasteContainerFull: core.bool
   }));
-  dart.setLibraryUri(coffee_machine_state.CoffeeMachineState, I[1]);
+  dart.setLibraryUri(coffee_machine_state.CoffeeMachineState, I[0]);
   dart.setFieldSignature(coffee_machine_state.CoffeeMachineState, () => ({
     __proto__: dart.getFields(coffee_machine_state.CoffeeMachineState.__proto__),
     [_waterLevel]: dart.fieldType(core.int),
@@ -1033,184 +845,27 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     [_wasteContainerFull]: dart.fieldType(core.bool),
     wasteContainer: dart.fieldType(core.int)
   }));
-  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
-  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
-  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
-  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
-  var TextStyle_overflow = dart.privateName(text_style, "TextStyle.overflow");
-  var TextStyle_fontVariations = dart.privateName(text_style, "TextStyle.fontVariations");
-  var TextStyle_fontFeatures = dart.privateName(text_style, "TextStyle.fontFeatures");
-  var TextStyle_shadows = dart.privateName(text_style, "TextStyle.shadows");
-  var TextStyle_debugLabel = dart.privateName(text_style, "TextStyle.debugLabel");
-  var TextStyle_decorationThickness = dart.privateName(text_style, "TextStyle.decorationThickness");
-  var TextStyle_decorationStyle = dart.privateName(text_style, "TextStyle.decorationStyle");
-  var TextStyle_decorationColor = dart.privateName(text_style, "TextStyle.decorationColor");
-  var TextStyle_decoration = dart.privateName(text_style, "TextStyle.decoration");
-  var TextStyle_background = dart.privateName(text_style, "TextStyle.background");
-  var TextStyle_foreground = dart.privateName(text_style, "TextStyle.foreground");
-  var TextStyle_locale = dart.privateName(text_style, "TextStyle.locale");
-  var TextStyle_leadingDistribution = dart.privateName(text_style, "TextStyle.leadingDistribution");
-  var TextStyle_height = dart.privateName(text_style, "TextStyle.height");
-  var TextStyle_textBaseline = dart.privateName(text_style, "TextStyle.textBaseline");
-  var TextStyle_wordSpacing = dart.privateName(text_style, "TextStyle.wordSpacing");
-  var TextStyle_letterSpacing = dart.privateName(text_style, "TextStyle.letterSpacing");
-  var TextStyle_fontStyle = dart.privateName(text_style, "TextStyle.fontStyle");
-  var FontWeight_value = dart.privateName(ui, "FontWeight.value");
-  var FontWeight_index = dart.privateName(ui, "FontWeight.index");
-  var TextStyle_fontWeight = dart.privateName(text_style, "TextStyle.fontWeight");
-  var TextStyle_fontSize = dart.privateName(text_style, "TextStyle.fontSize");
-  var TextStyle__package = dart.privateName(text_style, "TextStyle._package");
-  var TextStyle__fontFamilyFallback = dart.privateName(text_style, "TextStyle._fontFamilyFallback");
-  var TextStyle_fontFamily = dart.privateName(text_style, "TextStyle.fontFamily");
-  var TextStyle_backgroundColor = dart.privateName(text_style, "TextStyle.backgroundColor");
-  var TextStyle_color = dart.privateName(text_style, "TextStyle.color");
-  var TextStyle_inherit = dart.privateName(text_style, "TextStyle.inherit");
-  var SingleChildRenderObjectWidget_child = dart.privateName(framework, "SingleChildRenderObjectWidget.child");
-  var SizedBox_height = dart.privateName(basic, "SizedBox.height");
-  var SizedBox_width = dart.privateName(basic, "SizedBox.width");
-  var Align_heightFactor = dart.privateName(basic, "Align.heightFactor");
-  var Align_widthFactor = dart.privateName(basic, "Align.widthFactor");
-  var Alignment_y = dart.privateName(alignment, "Alignment.y");
-  var Alignment_x = dart.privateName(alignment, "Alignment.x");
-  var Align_alignment = dart.privateName(basic, "Align.alignment");
-  home_page.HomePage = class HomePage extends framework.StatelessWidget {
+  coffee_machine_app.CoffeeMachineApp = class CoffeeMachineApp extends framework.StatelessWidget {
     static ['_#new#tearOff'](opts) {
       let key = opts && 'key' in opts ? opts.key : null;
-      return new home_page.HomePage.new({key: key});
+      return new coffee_machine_app.CoffeeMachineApp.new({key: key});
     }
     build(context) {
-      return new (T$.ConsumerOfCoffeeMachineState()).new({builder: dart.fn((context, coffeeState, child) => new safe_area.SafeArea.new({child: new basic.Padding.new({padding: C[18] || CT.C18, child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.stretch, children: T$.JSArrayOfWidget().of([new basic.Expanded.new({flex: 2, child: new container.Container.new({padding: C[18] || CT.C18, decoration: new box_decoration.BoxDecoration.new({color: colors.Colors.blueGrey._get(50), borderRadius: new border_radius.BorderRadius.circular(12)}), child: new basic.Column.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: T$.JSArrayOfWidget().of([C[19] || CT.C19, C[22] || CT.C22, new text.Text.new("Уровень воды: " + dart.str(coffeeState.waterLevel) + "%"), C[23] || CT.C23, new text.Text.new("Кофейные зерна: " + dart.str(coffeeState.coffeeBeans) + "%"), C[23] || CT.C23, new text.Text.new("Молоко: " + dart.str(coffeeState.milkLevel) + "%"), C[23] || CT.C23, new text.Text.new("Контейнер для отходов: " + (coffeeState.wasteContainerFull ? "Полный" : "Неполный"))])})})}), C[24] || CT.C24, new basic.Expanded.new({flex: 1, child: new container.Container.new({padding: C[18] || CT.C18, decoration: new box_decoration.BoxDecoration.new({color: colors.Colors.grey._get(200), borderRadius: new border_radius.BorderRadius.circular(12)}), child: C[25] || CT.C25})})])})})}), T$.BuildContextAndCoffeeMachineStateAndWidgetNToSafeArea())});
+      return new app.MaterialApp.new({title: "Кофе-машина", theme: theme_data.ThemeData.new({primarySwatch: colors.Colors.brown, visualDensity: theme_data.VisualDensity.adaptivePlatformDensity}), home: C[2] || CT.C2});
     }
   };
-  (home_page.HomePage.new = function(opts) {
+  (coffee_machine_app.CoffeeMachineApp.new = function(opts) {
     let key = opts && 'key' in opts ? opts.key : null;
-    home_page.HomePage.__proto__.new.call(this, {key: key});
+    coffee_machine_app.CoffeeMachineApp.__proto__.new.call(this, {key: key});
     ;
-  }).prototype = home_page.HomePage.prototype;
-  dart.addTypeTests(home_page.HomePage);
-  dart.addTypeCaches(home_page.HomePage);
-  dart.setMethodSignature(home_page.HomePage, () => ({
-    __proto__: dart.getMethods(home_page.HomePage.__proto__),
+  }).prototype = coffee_machine_app.CoffeeMachineApp.prototype;
+  dart.addTypeTests(coffee_machine_app.CoffeeMachineApp);
+  dart.addTypeCaches(coffee_machine_app.CoffeeMachineApp);
+  dart.setMethodSignature(coffee_machine_app.CoffeeMachineApp, () => ({
+    __proto__: dart.getMethods(coffee_machine_app.CoffeeMachineApp.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(home_page.HomePage, I[2]);
-  var Duration__duration = dart.privateName(core, "Duration._duration");
-  var _showFeedback = dart.privateName(control_page, "_showFeedback");
-  control_page.ControlPage = class ControlPage extends framework.StatelessWidget {
-    static ['_#new#tearOff'](opts) {
-      let key = opts && 'key' in opts ? opts.key : null;
-      return new control_page.ControlPage.new({key: key});
-    }
-    [_showFeedback](context, message) {
-      scaffold.ScaffoldMessenger.of(context).hideCurrentSnackBar();
-      scaffold.ScaffoldMessenger.of(context).showSnackBar(new snack_bar.SnackBar.new({content: new text.Text.new(message), duration: C[30] || CT.C30}));
-    }
-    build(context) {
-      let coffeeState = provider$.Provider.of(coffee_machine_state.CoffeeMachineState, context);
-      return new safe_area.SafeArea.new({child: new basic.Padding.new({padding: C[18] || CT.C18, child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.stretch, children: T$.JSArrayOfWidget().of([new basic.Expanded.new({child: new container.Container.new({padding: C[18] || CT.C18, decoration: new box_decoration.BoxDecoration.new({color: colors.Colors.blueGrey._get(50), borderRadius: new border_radius.BorderRadius.circular(12)}), child: new basic.Column.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: T$.JSArrayOfWidget().of([C[31] || CT.C31, C[22] || CT.C22, new text.Text.new("Вода: " + dart.str(coffeeState.waterLevel) + "%"), C[23] || CT.C23, new text.Text.new("Зерна: " + dart.str(coffeeState.coffeeBeans) + "%"), C[23] || CT.C23, new text.Text.new("Молоко: " + dart.str(coffeeState.milkLevel) + "%"), C[23] || CT.C23, new text.Text.new("Отходы: " + (coffeeState.wasteContainerFull ? "Полный" : "Неполный"))])})})}), C[24] || CT.C24, new basic.Expanded.new({child: new single_child_scroll_view.SingleChildScrollView.new({child: new basic.Column.new({children: T$.JSArrayOfWidget().of([new elevated_button.ElevatedButton.new({onPressed: dart.fn(() => {
-                          try {
-                            coffeeState.makeCoffee("Эспрессо");
-                            this[_showFeedback](context, "Эспрессо готовится...");
-                            T$.FutureOfNull().delayed(C[32] || CT.C32, dart.fn(() => {
-                              this[_showFeedback](context, "Эспрессо готов!");
-                            }, T$.VoidToNull()));
-                          } catch (e$) {
-                            let e = dart.getThrown(e$);
-                            if (core.Object.is(e)) {
-                              this[_showFeedback](context, "Ошибка: " + e[$toString]());
-                            } else
-                              throw e$;
-                          }
-                        }, T$.VoidTovoid()), child: C[33] || CT.C33}), C[23] || CT.C23, new elevated_button.ElevatedButton.new({onPressed: dart.fn(() => {
-                          try {
-                            coffeeState.makeCoffee("Капучино");
-                            this[_showFeedback](context, "Капучино готовится...");
-                            T$.FutureOfNull().delayed(C[32] || CT.C32, dart.fn(() => {
-                              this[_showFeedback](context, "Капучино готов!");
-                            }, T$.VoidToNull()));
-                          } catch (e$) {
-                            let e = dart.getThrown(e$);
-                            if (core.Object.is(e)) {
-                              this[_showFeedback](context, "Ошибка: " + e[$toString]());
-                            } else
-                              throw e$;
-                          }
-                        }, T$.VoidTovoid()), child: C[34] || CT.C34}), C[23] || CT.C23, new elevated_button.ElevatedButton.new({onPressed: dart.fn(() => {
-                          try {
-                            coffeeState.makeCoffee("Латте");
-                            this[_showFeedback](context, "Латте готовится...");
-                            T$.FutureOfNull().delayed(C[32] || CT.C32, dart.fn(() => {
-                              this[_showFeedback](context, "Латте готов!");
-                            }, T$.VoidToNull()));
-                          } catch (e$) {
-                            let e = dart.getThrown(e$);
-                            if (core.Object.is(e)) {
-                              this[_showFeedback](context, "Ошибка: " + e[$toString]());
-                            } else
-                              throw e$;
-                          }
-                        }, T$.VoidTovoid()), child: C[35] || CT.C35})])})})})])})})});
-    }
-  };
-  (control_page.ControlPage.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    control_page.ControlPage.__proto__.new.call(this, {key: key});
-    ;
-  }).prototype = control_page.ControlPage.prototype;
-  dart.addTypeTests(control_page.ControlPage);
-  dart.addTypeCaches(control_page.ControlPage);
-  dart.setMethodSignature(control_page.ControlPage, () => ({
-    __proto__: dart.getMethods(control_page.ControlPage.__proto__),
-    [_showFeedback]: dart.fnType(dart.void, [framework.BuildContext, core.String]),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
-  }));
-  dart.setLibraryUri(control_page.ControlPage, I[3]);
-  var _Enum__name = dart.privateName(core, "_Enum._name");
-  var _Enum_index = dart.privateName(core, "_Enum.index");
-  var SnackBar_clipBehavior = dart.privateName(snack_bar, "SnackBar.clipBehavior");
-  var SnackBar_dismissDirection = dart.privateName(snack_bar, "SnackBar.dismissDirection");
-  var SnackBar_onVisible = dart.privateName(snack_bar, "SnackBar.onVisible");
-  var SnackBar_animation = dart.privateName(snack_bar, "SnackBar.animation");
-  var SnackBar_duration = dart.privateName(snack_bar, "SnackBar.duration");
-  var SnackBar_closeIconColor = dart.privateName(snack_bar, "SnackBar.closeIconColor");
-  var SnackBar_showCloseIcon = dart.privateName(snack_bar, "SnackBar.showCloseIcon");
-  var SnackBar_action = dart.privateName(snack_bar, "SnackBar.action");
-  var SnackBar_behavior = dart.privateName(snack_bar, "SnackBar.behavior");
-  var SnackBar_shape = dart.privateName(snack_bar, "SnackBar.shape");
-  var SnackBar_width = dart.privateName(snack_bar, "SnackBar.width");
-  var SnackBar_padding = dart.privateName(snack_bar, "SnackBar.padding");
-  var SnackBar_margin = dart.privateName(snack_bar, "SnackBar.margin");
-  var SnackBar_elevation = dart.privateName(snack_bar, "SnackBar.elevation");
-  var SnackBar_backgroundColor = dart.privateName(snack_bar, "SnackBar.backgroundColor");
-  var SnackBar_content = dart.privateName(snack_bar, "SnackBar.content");
-  settings_page.SettingsPage = class SettingsPage extends framework.StatelessWidget {
-    static ['_#new#tearOff'](opts) {
-      let key = opts && 'key' in opts ? opts.key : null;
-      return new settings_page.SettingsPage.new({key: key});
-    }
-    build(context) {
-      let coffeeState = provider$.Provider.of(coffee_machine_state.CoffeeMachineState, context);
-      return new safe_area.SafeArea.new({child: new basic.Padding.new({padding: C[18] || CT.C18, child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.stretch, children: T$.JSArrayOfWidget().of([new basic.Expanded.new({child: new container.Container.new({padding: C[18] || CT.C18, decoration: new box_decoration.BoxDecoration.new({color: colors.Colors.blueGrey._get(50), borderRadius: new border_radius.BorderRadius.circular(12)}), child: new basic.Column.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: T$.JSArrayOfWidget().of([C[36] || CT.C36, C[23] || CT.C23, new text.Text.new("Контейнер: " + (coffeeState.wasteContainerFull ? "Полный" : "Неполный"))])})})}), C[24] || CT.C24, new elevated_button.ElevatedButton.new({onPressed: dart.fn(() => {
-                  coffeeState.cleanWasteContainer();
-                  scaffold.ScaffoldMessenger.of(context).showSnackBar(C[37] || CT.C37);
-                }, T$.VoidTovoid()), child: C[42] || CT.C42}), C[23] || CT.C23, new elevated_button.ElevatedButton.new({onPressed: dart.fn(() => {
-                  coffeeState.resetResources();
-                  scaffold.ScaffoldMessenger.of(context).showSnackBar(C[43] || CT.C43);
-                }, T$.VoidTovoid()), child: C[45] || CT.C45})])})})});
-    }
-  };
-  (settings_page.SettingsPage.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    settings_page.SettingsPage.__proto__.new.call(this, {key: key});
-    ;
-  }).prototype = settings_page.SettingsPage.prototype;
-  dart.addTypeTests(settings_page.SettingsPage);
-  dart.addTypeCaches(settings_page.SettingsPage);
-  dart.setMethodSignature(settings_page.SettingsPage, () => ({
-    __proto__: dart.getMethods(settings_page.SettingsPage.__proto__),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
-  }));
-  dart.setLibraryUri(settings_page.SettingsPage, I[4]);
+  dart.setLibraryUri(coffee_machine_app.CoffeeMachineApp, I[1]);
   var builder$ = dart.privateName(provider$, "InheritedProvider.builder");
   var _lazy = dart.privateName(provider$, "_lazy");
   var _delegate = dart.privateName(provider$, "_delegate");
@@ -1246,7 +901,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     build: dart.fnType(framework.Widget, [framework.BuildContext]),
     createElement: dart.fnType(nested.SingleChildStatelessElement, [])
   }));
-  dart.setLibraryUri(nested.SingleChildStatelessWidget, I[6]);
+  dart.setLibraryUri(nested.SingleChildStatelessWidget, I[3]);
   dart.setFieldSignature(nested.SingleChildStatelessWidget, () => ({
     __proto__: dart.getFields(nested.SingleChildStatelessWidget.__proto__),
     [_child$]: dart.finalFieldType(dart.nullable(framework.Widget))
@@ -1308,7 +963,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       }
       [_buildWithChild](child, opts) {
         let key = opts && 'key' in opts ? opts.key : null;
-        if (!(this.builder != null || child != null)) dart.assertFailed(dart.str(this[$runtimeType]) + " used outside of MultiProvider must specify a child", I[5], 161, 7, "builder != null || child != null");
+        if (!(this.builder != null || child != null)) dart.assertFailed(dart.str(this[$runtimeType]) + " used outside of MultiProvider must specify a child", I[2], 161, 7, "builder != null || child != null");
         return new (__t$_InheritedProviderScopeOfTN()).new({owner: this, key: key, debugType: dart.str(this[$runtimeType]), child: this.builder != null ? new basic.Builder.new({builder: dart.fn(context => dart.nullCheck(this.builder)(context, child), T$.BuildContextToWidget())}) : dart.nullCheck(child)});
       }
     }
@@ -1364,7 +1019,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       buildWithChild: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)]),
       [_buildWithChild]: dart.fnType(framework.Widget, [dart.nullable(framework.Widget)], {key: dart.nullable(key.Key)}, {})
     }));
-    dart.setLibraryUri(InheritedProvider, I[7]);
+    dart.setLibraryUri(InheritedProvider, I[4]);
     dart.setFieldSignature(InheritedProvider, () => ({
       __proto__: dart.getFields(InheritedProvider.__proto__),
       [_delegate]: dart.finalFieldType(provider$._Delegate$(T)),
@@ -1428,7 +1083,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(DeferredInheritedProvider);
     DeferredInheritedProvider.prototype[_is_DeferredInheritedProvider_default] = true;
     dart.addTypeCaches(DeferredInheritedProvider);
-    dart.setLibraryUri(DeferredInheritedProvider, I[7]);
+    dart.setLibraryUri(DeferredInheritedProvider, I[4]);
     return DeferredInheritedProvider;
   });
   provider$.DeferredInheritedProvider = provider$.DeferredInheritedProvider$();
@@ -1486,7 +1141,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(StreamProvider);
     StreamProvider.prototype[_is_StreamProvider_default] = true;
     dart.addTypeCaches(StreamProvider);
-    dart.setLibraryUri(StreamProvider, I[8]);
+    dart.setLibraryUri(StreamProvider, I[5]);
     return StreamProvider;
   });
   async_provider.StreamProvider = async_provider.StreamProvider$();
@@ -1542,7 +1197,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(FutureProvider);
     FutureProvider.prototype[_is_FutureProvider_default] = true;
     dart.addTypeCaches(FutureProvider);
-    dart.setLibraryUri(FutureProvider, I[8]);
+    dart.setLibraryUri(FutureProvider, I[5]);
     return FutureProvider;
   });
   async_provider.FutureProvider = async_provider.FutureProvider$();
@@ -1572,13 +1227,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     let initialData = opts && 'initialData' in opts ? opts.initialData : null;
     let catchError = opts && 'catchError' in opts ? opts.catchError : null;
     return dart.fn((e, setState, controller, __) => {
-      let t3;
+      let t0;
       if (!e.hasValue) {
         setState(initialData);
       }
       let canceled = false;
-      t3 = controller;
-      t3 == null ? null : t3.then(core.Null, dart.fn(value => {
+      t0 = controller;
+      t0 == null ? null : t0.then(core.Null, dart.fn(value => {
         if (canceled) {
           return;
         }
@@ -1617,13 +1272,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         return new (listenable_provider.ListenableProvider$(T)).value({key: key, value: value, updateShouldNotify: updateShouldNotify, builder: builder, child: child});
       }
       static _startListening(e, value) {
-        let t3;
-        t3 = value;
-        t3 == null ? null : t3.addListener(dart.bind(e, 'markNeedsNotifyDependents'));
+        let t0;
+        t0 = value;
+        t0 == null ? null : t0.addListener(dart.bind(e, 'markNeedsNotifyDependents'));
         return dart.fn(() => {
-          let t3;
-          t3 = value;
-          return t3 == null ? null : t3.removeListener(dart.bind(e, 'markNeedsNotifyDependents'));
+          let t0;
+          t0 = value;
+          return t0 == null ? null : t0.removeListener(dart.bind(e, 'markNeedsNotifyDependents'));
         }, T$.VoidTovoid());
       }
     }
@@ -1634,7 +1289,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       let lazy = opts && 'lazy' in opts ? opts.lazy : null;
       let builder = opts && 'builder' in opts ? opts.builder : null;
       let child = opts && 'child' in opts ? opts.child : null;
-      ListenableProvider.__proto__.new.call(this, {key: key, startListening: C[47] || CT.C47, create: create, dispose: dispose, lazy: lazy, builder: builder, child: child});
+      ListenableProvider.__proto__.new.call(this, {key: key, startListening: C[4] || CT.C4, create: create, dispose: dispose, lazy: lazy, builder: builder, child: child});
       ;
     }).prototype = ListenableProvider.prototype;
     (ListenableProvider.value = function(opts) {
@@ -1643,14 +1298,14 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       let updateShouldNotify = opts && 'updateShouldNotify' in opts ? opts.updateShouldNotify : null;
       let builder = opts && 'builder' in opts ? opts.builder : null;
       let child = opts && 'child' in opts ? opts.child : null;
-      ListenableProvider.__proto__.value.call(this, {key: key, builder: builder, value: value, updateShouldNotify: updateShouldNotify, startListening: C[47] || CT.C47, child: child});
+      ListenableProvider.__proto__.value.call(this, {key: key, builder: builder, value: value, updateShouldNotify: updateShouldNotify, startListening: C[4] || CT.C4, child: child});
       ;
     }).prototype = ListenableProvider.prototype;
     dart.addTypeTests(ListenableProvider);
     ListenableProvider.prototype[_is_ListenableProvider_default] = true;
     dart.addTypeCaches(ListenableProvider);
     dart.setStaticMethodSignature(ListenableProvider, () => ['_startListening']);
-    dart.setLibraryUri(ListenableProvider, I[9]);
+    dart.setLibraryUri(ListenableProvider, I[6]);
     return ListenableProvider;
   });
   listenable_provider.ListenableProvider = listenable_provider.ListenableProvider$();
@@ -1674,9 +1329,9 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         return new (change_notifier_provider.ChangeNotifierProvider$(T)).value({key: key, value: value, builder: builder, child: child});
       }
       static _dispose(context, notifier) {
-        let t3;
-        t3 = notifier;
-        t3 == null ? null : t3.dispose();
+        let t0;
+        t0 = notifier;
+        t0 == null ? null : t0.dispose();
       }
     }
     (ChangeNotifierProvider.new = function(opts) {
@@ -1685,7 +1340,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       let lazy = opts && 'lazy' in opts ? opts.lazy : null;
       let builder = opts && 'builder' in opts ? opts.builder : null;
       let child = opts && 'child' in opts ? opts.child : null;
-      ChangeNotifierProvider.__proto__.new.call(this, {key: key, create: create, dispose: C[46] || CT.C46, lazy: lazy, builder: builder, child: child});
+      ChangeNotifierProvider.__proto__.new.call(this, {key: key, create: create, dispose: C[3] || CT.C3, lazy: lazy, builder: builder, child: child});
       ;
     }).prototype = ChangeNotifierProvider.prototype;
     (ChangeNotifierProvider.value = function(opts) {
@@ -1700,7 +1355,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     ChangeNotifierProvider.prototype[_is_ChangeNotifierProvider_default] = true;
     dart.addTypeCaches(ChangeNotifierProvider);
     dart.setStaticMethodSignature(ChangeNotifierProvider, () => ['_dispose']);
-    dart.setLibraryUri(ChangeNotifierProvider, I[10]);
+    dart.setLibraryUri(ChangeNotifierProvider, I[7]);
     return ChangeNotifierProvider;
   });
   change_notifier_provider.ChangeNotifierProvider = change_notifier_provider.ChangeNotifierProvider$();
@@ -1729,13 +1384,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       let lazy = opts && 'lazy' in opts ? opts.lazy : null;
       let builder = opts && 'builder' in opts ? opts.builder : null;
       let child = opts && 'child' in opts ? opts.child : null;
-      ListenableProxyProvider0.__proto__.new.call(this, {key: key, create: create, update: update, lazy: lazy, builder: builder, dispose: dispose, updateShouldNotify: updateShouldNotify, startListening: C[47] || CT.C47, child: child});
+      ListenableProxyProvider0.__proto__.new.call(this, {key: key, create: create, update: update, lazy: lazy, builder: builder, dispose: dispose, updateShouldNotify: updateShouldNotify, startListening: C[4] || CT.C4, child: child});
       ;
     }).prototype = ListenableProxyProvider0.prototype;
     dart.addTypeTests(ListenableProxyProvider0);
     ListenableProxyProvider0.prototype[_is_ListenableProxyProvider0_default] = true;
     dart.addTypeCaches(ListenableProxyProvider0);
-    dart.setLibraryUri(ListenableProxyProvider0, I[9]);
+    dart.setLibraryUri(ListenableProxyProvider0, I[6]);
     return ListenableProxyProvider0;
   });
   listenable_provider.ListenableProxyProvider0 = listenable_provider.ListenableProxyProvider0$();
@@ -1770,7 +1425,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(ListenableProxyProvider);
     ListenableProxyProvider.prototype[_is_ListenableProxyProvider_default] = true;
     dart.addTypeCaches(ListenableProxyProvider);
-    dart.setLibraryUri(ListenableProxyProvider, I[9]);
+    dart.setLibraryUri(ListenableProxyProvider, I[6]);
     return ListenableProxyProvider;
   });
   listenable_provider.ListenableProxyProvider = listenable_provider.ListenableProxyProvider$();
@@ -1795,13 +1450,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       let lazy = opts && 'lazy' in opts ? opts.lazy : null;
       let builder = opts && 'builder' in opts ? opts.builder : null;
       let child = opts && 'child' in opts ? opts.child : null;
-      ChangeNotifierProxyProvider.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[46] || CT.C46, lazy: lazy, builder: builder, child: child});
+      ChangeNotifierProxyProvider.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[3] || CT.C3, lazy: lazy, builder: builder, child: child});
       ;
     }).prototype = ChangeNotifierProxyProvider.prototype;
     dart.addTypeTests(ChangeNotifierProxyProvider);
     ChangeNotifierProxyProvider.prototype[_is_ChangeNotifierProxyProvider_default] = true;
     dart.addTypeCaches(ChangeNotifierProxyProvider);
-    dart.setLibraryUri(ChangeNotifierProxyProvider, I[10]);
+    dart.setLibraryUri(ChangeNotifierProxyProvider, I[7]);
     return ChangeNotifierProxyProvider;
   });
   change_notifier_provider.ChangeNotifierProxyProvider = change_notifier_provider.ChangeNotifierProxyProvider$();
@@ -1826,13 +1481,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       let lazy = opts && 'lazy' in opts ? opts.lazy : null;
       let builder = opts && 'builder' in opts ? opts.builder : null;
       let child = opts && 'child' in opts ? opts.child : null;
-      ChangeNotifierProxyProvider0.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[46] || CT.C46, lazy: lazy, builder: builder, child: child});
+      ChangeNotifierProxyProvider0.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[3] || CT.C3, lazy: lazy, builder: builder, child: child});
       ;
     }).prototype = ChangeNotifierProxyProvider0.prototype;
     dart.addTypeTests(ChangeNotifierProxyProvider0);
     ChangeNotifierProxyProvider0.prototype[_is_ChangeNotifierProxyProvider0_default] = true;
     dart.addTypeCaches(ChangeNotifierProxyProvider0);
-    dart.setLibraryUri(ChangeNotifierProxyProvider0, I[10]);
+    dart.setLibraryUri(ChangeNotifierProxyProvider0, I[7]);
     return ChangeNotifierProxyProvider0;
   });
   change_notifier_provider.ChangeNotifierProxyProvider0 = change_notifier_provider.ChangeNotifierProxyProvider0$();
@@ -1867,7 +1522,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(ListenableProxyProvider2);
     ListenableProxyProvider2.prototype[_is_ListenableProxyProvider2_default] = true;
     dart.addTypeCaches(ListenableProxyProvider2);
-    dart.setLibraryUri(ListenableProxyProvider2, I[9]);
+    dart.setLibraryUri(ListenableProxyProvider2, I[6]);
     return ListenableProxyProvider2;
   });
   listenable_provider.ListenableProxyProvider2 = listenable_provider.ListenableProxyProvider2$();
@@ -1892,13 +1547,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       let lazy = opts && 'lazy' in opts ? opts.lazy : null;
       let builder = opts && 'builder' in opts ? opts.builder : null;
       let child = opts && 'child' in opts ? opts.child : null;
-      ChangeNotifierProxyProvider2.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[46] || CT.C46, lazy: lazy, builder: builder, child: child});
+      ChangeNotifierProxyProvider2.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[3] || CT.C3, lazy: lazy, builder: builder, child: child});
       ;
     }).prototype = ChangeNotifierProxyProvider2.prototype;
     dart.addTypeTests(ChangeNotifierProxyProvider2);
     ChangeNotifierProxyProvider2.prototype[_is_ChangeNotifierProxyProvider2_default] = true;
     dart.addTypeCaches(ChangeNotifierProxyProvider2);
-    dart.setLibraryUri(ChangeNotifierProxyProvider2, I[10]);
+    dart.setLibraryUri(ChangeNotifierProxyProvider2, I[7]);
     return ChangeNotifierProxyProvider2;
   });
   change_notifier_provider.ChangeNotifierProxyProvider2 = change_notifier_provider.ChangeNotifierProxyProvider2$();
@@ -1933,7 +1588,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(ListenableProxyProvider3);
     ListenableProxyProvider3.prototype[_is_ListenableProxyProvider3_default] = true;
     dart.addTypeCaches(ListenableProxyProvider3);
-    dart.setLibraryUri(ListenableProxyProvider3, I[9]);
+    dart.setLibraryUri(ListenableProxyProvider3, I[6]);
     return ListenableProxyProvider3;
   });
   listenable_provider.ListenableProxyProvider3 = listenable_provider.ListenableProxyProvider3$();
@@ -1958,13 +1613,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       let lazy = opts && 'lazy' in opts ? opts.lazy : null;
       let builder = opts && 'builder' in opts ? opts.builder : null;
       let child = opts && 'child' in opts ? opts.child : null;
-      ChangeNotifierProxyProvider3.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[46] || CT.C46, lazy: lazy, builder: builder, child: child});
+      ChangeNotifierProxyProvider3.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[3] || CT.C3, lazy: lazy, builder: builder, child: child});
       ;
     }).prototype = ChangeNotifierProxyProvider3.prototype;
     dart.addTypeTests(ChangeNotifierProxyProvider3);
     ChangeNotifierProxyProvider3.prototype[_is_ChangeNotifierProxyProvider3_default] = true;
     dart.addTypeCaches(ChangeNotifierProxyProvider3);
-    dart.setLibraryUri(ChangeNotifierProxyProvider3, I[10]);
+    dart.setLibraryUri(ChangeNotifierProxyProvider3, I[7]);
     return ChangeNotifierProxyProvider3;
   });
   change_notifier_provider.ChangeNotifierProxyProvider3 = change_notifier_provider.ChangeNotifierProxyProvider3$();
@@ -1999,7 +1654,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(ListenableProxyProvider4);
     ListenableProxyProvider4.prototype[_is_ListenableProxyProvider4_default] = true;
     dart.addTypeCaches(ListenableProxyProvider4);
-    dart.setLibraryUri(ListenableProxyProvider4, I[9]);
+    dart.setLibraryUri(ListenableProxyProvider4, I[6]);
     return ListenableProxyProvider4;
   });
   listenable_provider.ListenableProxyProvider4 = listenable_provider.ListenableProxyProvider4$();
@@ -2024,13 +1679,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       let lazy = opts && 'lazy' in opts ? opts.lazy : null;
       let builder = opts && 'builder' in opts ? opts.builder : null;
       let child = opts && 'child' in opts ? opts.child : null;
-      ChangeNotifierProxyProvider4.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[46] || CT.C46, lazy: lazy, builder: builder, child: child});
+      ChangeNotifierProxyProvider4.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[3] || CT.C3, lazy: lazy, builder: builder, child: child});
       ;
     }).prototype = ChangeNotifierProxyProvider4.prototype;
     dart.addTypeTests(ChangeNotifierProxyProvider4);
     ChangeNotifierProxyProvider4.prototype[_is_ChangeNotifierProxyProvider4_default] = true;
     dart.addTypeCaches(ChangeNotifierProxyProvider4);
-    dart.setLibraryUri(ChangeNotifierProxyProvider4, I[10]);
+    dart.setLibraryUri(ChangeNotifierProxyProvider4, I[7]);
     return ChangeNotifierProxyProvider4;
   });
   change_notifier_provider.ChangeNotifierProxyProvider4 = change_notifier_provider.ChangeNotifierProxyProvider4$();
@@ -2065,7 +1720,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(ListenableProxyProvider5);
     ListenableProxyProvider5.prototype[_is_ListenableProxyProvider5_default] = true;
     dart.addTypeCaches(ListenableProxyProvider5);
-    dart.setLibraryUri(ListenableProxyProvider5, I[9]);
+    dart.setLibraryUri(ListenableProxyProvider5, I[6]);
     return ListenableProxyProvider5;
   });
   listenable_provider.ListenableProxyProvider5 = listenable_provider.ListenableProxyProvider5$();
@@ -2090,13 +1745,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       let lazy = opts && 'lazy' in opts ? opts.lazy : null;
       let builder = opts && 'builder' in opts ? opts.builder : null;
       let child = opts && 'child' in opts ? opts.child : null;
-      ChangeNotifierProxyProvider5.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[46] || CT.C46, lazy: lazy, builder: builder, child: child});
+      ChangeNotifierProxyProvider5.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[3] || CT.C3, lazy: lazy, builder: builder, child: child});
       ;
     }).prototype = ChangeNotifierProxyProvider5.prototype;
     dart.addTypeTests(ChangeNotifierProxyProvider5);
     ChangeNotifierProxyProvider5.prototype[_is_ChangeNotifierProxyProvider5_default] = true;
     dart.addTypeCaches(ChangeNotifierProxyProvider5);
-    dart.setLibraryUri(ChangeNotifierProxyProvider5, I[10]);
+    dart.setLibraryUri(ChangeNotifierProxyProvider5, I[7]);
     return ChangeNotifierProxyProvider5;
   });
   change_notifier_provider.ChangeNotifierProxyProvider5 = change_notifier_provider.ChangeNotifierProxyProvider5$();
@@ -2131,7 +1786,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(ListenableProxyProvider6);
     ListenableProxyProvider6.prototype[_is_ListenableProxyProvider6_default] = true;
     dart.addTypeCaches(ListenableProxyProvider6);
-    dart.setLibraryUri(ListenableProxyProvider6, I[9]);
+    dart.setLibraryUri(ListenableProxyProvider6, I[6]);
     return ListenableProxyProvider6;
   });
   listenable_provider.ListenableProxyProvider6 = listenable_provider.ListenableProxyProvider6$();
@@ -2156,13 +1811,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       let lazy = opts && 'lazy' in opts ? opts.lazy : null;
       let builder = opts && 'builder' in opts ? opts.builder : null;
       let child = opts && 'child' in opts ? opts.child : null;
-      ChangeNotifierProxyProvider6.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[46] || CT.C46, lazy: lazy, builder: builder, child: child});
+      ChangeNotifierProxyProvider6.__proto__.new.call(this, {key: key, create: create, update: update, dispose: C[3] || CT.C3, lazy: lazy, builder: builder, child: child});
       ;
     }).prototype = ChangeNotifierProxyProvider6.prototype;
     dart.addTypeTests(ChangeNotifierProxyProvider6);
     ChangeNotifierProxyProvider6.prototype[_is_ChangeNotifierProxyProvider6_default] = true;
     dart.addTypeCaches(ChangeNotifierProxyProvider6);
-    dart.setLibraryUri(ChangeNotifierProxyProvider6, I[10]);
+    dart.setLibraryUri(ChangeNotifierProxyProvider6, I[7]);
     return ChangeNotifierProxyProvider6;
   });
   change_notifier_provider.ChangeNotifierProxyProvider6 = change_notifier_provider.ChangeNotifierProxyProvider6$();
@@ -2184,11 +1839,11 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         return new (consumer.Consumer$(T)).new({key: key, builder: builder, child: child});
       }
       buildWithChild(context, child) {
-        let t5, t4, t3;
-        t3 = context;
-        t4 = provider$.Provider.of(T, context);
-        t5 = child;
-        return this.builder(t3, t4, t5);
+        let t2, t1, t0;
+        t0 = context;
+        t1 = provider$.Provider.of(T, context);
+        t2 = child;
+        return this.builder(t0, t1, t2);
       }
     }
     (Consumer.new = function(opts) {
@@ -2206,7 +1861,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getMethods(Consumer.__proto__),
       buildWithChild: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)])
     }));
-    dart.setLibraryUri(Consumer, I[11]);
+    dart.setLibraryUri(Consumer, I[8]);
     dart.setFieldSignature(Consumer, () => ({
       __proto__: dart.getFields(Consumer.__proto__),
       builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, T, dart.nullable(framework.Widget)]))
@@ -2232,12 +1887,12 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         return new (consumer.Consumer2$(A, B)).new({key: key, builder: builder, child: child});
       }
       buildWithChild(context, child) {
-        let t6, t5, t4, t3;
-        t3 = context;
-        t4 = provider$.Provider.of(A, context);
-        t5 = provider$.Provider.of(B, context);
-        t6 = child;
-        return this.builder(t3, t4, t5, t6);
+        let t3, t2, t1, t0;
+        t0 = context;
+        t1 = provider$.Provider.of(A, context);
+        t2 = provider$.Provider.of(B, context);
+        t3 = child;
+        return this.builder(t0, t1, t2, t3);
       }
     }
     (Consumer2.new = function(opts) {
@@ -2255,7 +1910,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getMethods(Consumer2.__proto__),
       buildWithChild: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)])
     }));
-    dart.setLibraryUri(Consumer2, I[11]);
+    dart.setLibraryUri(Consumer2, I[8]);
     dart.setFieldSignature(Consumer2, () => ({
       __proto__: dart.getFields(Consumer2.__proto__),
       builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, A, B, dart.nullable(framework.Widget)]))
@@ -2281,13 +1936,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         return new (consumer.Consumer3$(A, B, C)).new({key: key, builder: builder, child: child});
       }
       buildWithChild(context, child) {
-        let t7, t6, t5, t4, t3;
-        t3 = context;
-        t4 = provider$.Provider.of(A, context);
-        t5 = provider$.Provider.of(B, context);
-        t6 = provider$.Provider.of(C, context);
-        t7 = child;
-        return this.builder(t3, t4, t5, t6, t7);
+        let t4, t3, t2, t1, t0;
+        t0 = context;
+        t1 = provider$.Provider.of(A, context);
+        t2 = provider$.Provider.of(B, context);
+        t3 = provider$.Provider.of(C, context);
+        t4 = child;
+        return this.builder(t0, t1, t2, t3, t4);
       }
     }
     (Consumer3.new = function(opts) {
@@ -2305,7 +1960,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getMethods(Consumer3.__proto__),
       buildWithChild: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)])
     }));
-    dart.setLibraryUri(Consumer3, I[11]);
+    dart.setLibraryUri(Consumer3, I[8]);
     dart.setFieldSignature(Consumer3, () => ({
       __proto__: dart.getFields(Consumer3.__proto__),
       builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, A, B, C, dart.nullable(framework.Widget)]))
@@ -2331,14 +1986,14 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         return new (consumer.Consumer4$(A, B, C, D)).new({key: key, builder: builder, child: child});
       }
       buildWithChild(context, child) {
-        let t8, t7, t6, t5, t4, t3;
-        t3 = context;
-        t4 = provider$.Provider.of(A, context);
-        t5 = provider$.Provider.of(B, context);
-        t6 = provider$.Provider.of(C, context);
-        t7 = provider$.Provider.of(D, context);
-        t8 = child;
-        return this.builder(t3, t4, t5, t6, t7, t8);
+        let t5, t4, t3, t2, t1, t0;
+        t0 = context;
+        t1 = provider$.Provider.of(A, context);
+        t2 = provider$.Provider.of(B, context);
+        t3 = provider$.Provider.of(C, context);
+        t4 = provider$.Provider.of(D, context);
+        t5 = child;
+        return this.builder(t0, t1, t2, t3, t4, t5);
       }
     }
     (Consumer4.new = function(opts) {
@@ -2356,7 +2011,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getMethods(Consumer4.__proto__),
       buildWithChild: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)])
     }));
-    dart.setLibraryUri(Consumer4, I[11]);
+    dart.setLibraryUri(Consumer4, I[8]);
     dart.setFieldSignature(Consumer4, () => ({
       __proto__: dart.getFields(Consumer4.__proto__),
       builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, A, B, C, D, dart.nullable(framework.Widget)]))
@@ -2382,15 +2037,15 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         return new (consumer.Consumer5$(A, B, C, D, E)).new({key: key, builder: builder, child: child});
       }
       buildWithChild(context, child) {
-        let t9, t8, t7, t6, t5, t4, t3;
-        t3 = context;
-        t4 = provider$.Provider.of(A, context);
-        t5 = provider$.Provider.of(B, context);
-        t6 = provider$.Provider.of(C, context);
-        t7 = provider$.Provider.of(D, context);
-        t8 = provider$.Provider.of(E, context);
-        t9 = child;
-        return this.builder(t3, t4, t5, t6, t7, t8, t9);
+        let t6, t5, t4, t3, t2, t1, t0;
+        t0 = context;
+        t1 = provider$.Provider.of(A, context);
+        t2 = provider$.Provider.of(B, context);
+        t3 = provider$.Provider.of(C, context);
+        t4 = provider$.Provider.of(D, context);
+        t5 = provider$.Provider.of(E, context);
+        t6 = child;
+        return this.builder(t0, t1, t2, t3, t4, t5, t6);
       }
     }
     (Consumer5.new = function(opts) {
@@ -2408,7 +2063,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getMethods(Consumer5.__proto__),
       buildWithChild: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)])
     }));
-    dart.setLibraryUri(Consumer5, I[11]);
+    dart.setLibraryUri(Consumer5, I[8]);
     dart.setFieldSignature(Consumer5, () => ({
       __proto__: dart.getFields(Consumer5.__proto__),
       builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, A, B, C, D, E, dart.nullable(framework.Widget)]))
@@ -2434,16 +2089,16 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         return new (consumer.Consumer6$(A, B, C, D, E, F)).new({key: key, builder: builder, child: child});
       }
       buildWithChild(context, child) {
-        let t10, t9, t8, t7, t6, t5, t4, t3;
-        t3 = context;
-        t4 = provider$.Provider.of(A, context);
-        t5 = provider$.Provider.of(B, context);
-        t6 = provider$.Provider.of(C, context);
-        t7 = provider$.Provider.of(D, context);
-        t8 = provider$.Provider.of(E, context);
-        t9 = provider$.Provider.of(F, context);
-        t10 = child;
-        return this.builder(t3, t4, t5, t6, t7, t8, t9, t10);
+        let t7, t6, t5, t4, t3, t2, t1, t0;
+        t0 = context;
+        t1 = provider$.Provider.of(A, context);
+        t2 = provider$.Provider.of(B, context);
+        t3 = provider$.Provider.of(C, context);
+        t4 = provider$.Provider.of(D, context);
+        t5 = provider$.Provider.of(E, context);
+        t6 = provider$.Provider.of(F, context);
+        t7 = child;
+        return this.builder(t0, t1, t2, t3, t4, t5, t6, t7);
       }
     }
     (Consumer6.new = function(opts) {
@@ -2461,7 +2116,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getMethods(Consumer6.__proto__),
       buildWithChild: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)])
     }));
-    dart.setLibraryUri(Consumer6, I[11]);
+    dart.setLibraryUri(Consumer6, I[8]);
     dart.setFieldSignature(Consumer6, () => ({
       __proto__: dart.getFields(Consumer6.__proto__),
       builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, A, B, C, D, E, F, dart.nullable(framework.Widget)]))
@@ -2489,7 +2144,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     let key = opts && 'key' in opts ? opts.key : null;
     let children = opts && 'children' in opts ? opts.children : null;
     let child = opts && 'child' in opts ? opts.child : null;
-    if (!children[$isNotEmpty]) dart.assertFailed(null, I[12], 71, 16, "children.isNotEmpty");
+    if (!children[$isNotEmpty]) dart.assertFailed(null, I[9], 71, 16, "children.isNotEmpty");
     this[_children] = children;
     this[_child$] = child;
     nested.Nested.__proto__.new.call(this, {key: key});
@@ -2503,7 +2158,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     build: dart.fnType(framework.Widget, [framework.BuildContext]),
     createElement: dart.fnType(nested._NestedElement, [])
   }));
-  dart.setLibraryUri(nested.Nested, I[6]);
+  dart.setLibraryUri(nested.Nested, I[3]);
   dart.setFieldSignature(nested.Nested, () => ({
     __proto__: dart.getFields(nested.Nested.__proto__),
     [_children]: dart.finalFieldType(core.List$(nested.SingleChildWidget)),
@@ -2531,10 +2186,10 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         }
       }
       return (() => {
-        let t3 = T$.JSArrayOfSingleChildWidget().of([]);
-        if (previous != null) t3.push(new nested.SingleChildBuilder.new({builder: dart.fn((context, child) => dart.nullCheck(previous)(child), T$.BuildContextAndWidgetNToWidget())}));
-        if (i < providers[$length]) t3[$addAll](providers[$sublist](i));
-        return t3;
+        let t0 = T$.JSArrayOfSingleChildWidget().of([]);
+        if (previous != null) t0.push(new nested.SingleChildBuilder.new({builder: dart.fn((context, child) => dart.nullCheck(previous)(child), T$.BuildContextAndWidgetNToWidget())}));
+        if (i < providers[$length]) t0[$addAll](providers[$sublist](i));
+        return t0;
       })();
     }
   };
@@ -2549,7 +2204,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   dart.addTypeTests(provider$.MultiProvider);
   dart.addTypeCaches(provider$.MultiProvider);
   dart.setStaticMethodSignature(provider$.MultiProvider, () => ['_collapseProviders']);
-  dart.setLibraryUri(provider$.MultiProvider, I[7]);
+  dart.setLibraryUri(provider$.MultiProvider, I[4]);
   const _is_Provider_default = Symbol('_is_Provider_default');
   provider$.Provider$ = dart.generic(T => {
     var __t$TTovoid = () => (__t$TTovoid = dart.constFn(dart.fnType(dart.void, [T])))();
@@ -2572,14 +2227,14 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         return new (provider$.Provider$(T)).value({key: key, value: value, updateShouldNotify: updateShouldNotify, builder: builder, child: child});
       }
       static of(T, context, opts) {
-        let t4;
+        let t1;
         let listen = opts && 'listen' in opts ? opts.listen : true;
-        if (!(dart.nullCheck(context.owner).debugBuilding || listen === false || provider$.debugIsInInheritedProviderUpdate)) dart.assertFailed("Tried to listen to a value exposed with provider, from outside of the widget tree.\n\nThis is likely caused by an event handler (like a button's onPressed) that called\nProvider.of without passing `listen: false`.\n\nTo fix, write:\nProvider.of<" + dart.str(dart.wrapType(T)) + ">(context, listen: false);\n\nIt is unsupported because may pointlessly rebuild the widget associated to the\nevent handler, when the widget tree doesn't care about the value.\n\nThe context used was: " + dart.str(context) + "\n", I[13], 308, 7, "context.owner!.debugBuilding ||\n          listen == false ||\n          debugIsInInheritedProviderUpdate");
+        if (!(dart.nullCheck(context.owner).debugBuilding || listen === false || provider$.debugIsInInheritedProviderUpdate)) dart.assertFailed("Tried to listen to a value exposed with provider, from outside of the widget tree.\n\nThis is likely caused by an event handler (like a button's onPressed) that called\nProvider.of without passing `listen: false`.\n\nTo fix, write:\nProvider.of<" + dart.str(dart.wrapType(T)) + ">(context, listen: false);\n\nIt is unsupported because may pointlessly rebuild the widget associated to the\nevent handler, when the widget tree doesn't care about the value.\n\nThe context used was: " + dart.str(context) + "\n", I[10], 308, 7, "context.owner!.debugBuilding ||\n          listen == false ||\n          debugIsInInheritedProviderUpdate");
         let inheritedElement = provider$.Provider._inheritedElementOf(T, context);
         if (listen) {
           context.dependOnInheritedWidgetOfExactType(provider$._InheritedProviderScope$(dart.nullable(T)));
         }
-        let value = (t4 = inheritedElement, t4 == null ? null : t4.value);
+        let value = (t1 = inheritedElement, t1 == null ? null : t1.value);
         if (provider$._isSoundMode) {
           if (!T.is(value)) {
             dart.throw(new provider$.ProviderNullException.new(dart.wrapType(T), context.widget[$runtimeType]));
@@ -2589,9 +2244,9 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         return T.as(value);
       }
       static _inheritedElementOf(T, context) {
-        if (!(context !== null)) dart.assertFailed("Tried to call context.read/watch/select or similar on a `context` that is null.\n\nThis can happen if you used the context of a StatefulWidget and that\nStatefulWidget was disposed.\n", I[13], 353, 12, "context != null");
-        if (!(provider$._debugIsSelecting === false)) dart.assertFailed("Cannot call context.read/watch/select inside the callback of a context.select", I[13], 360, 7, "_debugIsSelecting == false");
-        if (!!dart.wrapType(T)._equals(dart.wrapType(dart.dynamic))) dart.assertFailed("Tried to call Provider.of<dynamic>. This is likely a mistake and is therefore\nunsupported.\n\nIf you want to expose a variable that can be anything, consider changing\n`dynamic` to `Object` instead.\n", I[13], 364, 7, "T != dynamic");
+        if (!(context !== null)) dart.assertFailed("Tried to call context.read/watch/select or similar on a `context` that is null.\n\nThis can happen if you used the context of a StatefulWidget and that\nStatefulWidget was disposed.\n", I[10], 353, 12, "context != null");
+        if (!(provider$._debugIsSelecting === false)) dart.assertFailed("Cannot call context.read/watch/select inside the callback of a context.select", I[10], 360, 7, "_debugIsSelecting == false");
+        if (!!dart.wrapType(T)._equals(dart.wrapType(dart.dynamic))) dart.assertFailed("Tried to call Provider.of<dynamic>. This is likely a mistake and is therefore\nunsupported.\n\nIf you want to expose a variable that can be anything, consider changing\n`dynamic` to `Object` instead.\n", I[10], 364, 7, "T != dynamic");
         let inheritedElement = dart.nullable(provider$._InheritedProviderScopeElement$(dart.nullable(T))).as(context.getElementForInheritedWidgetOfExactType(provider$._InheritedProviderScope$(dart.nullable(T))));
         if (inheritedElement == null && !T.is(null)) {
           dart.throw(new provider$.ProviderNotFoundException.new(dart.wrapType(T), context.widget[$runtimeType]));
@@ -2607,9 +2262,9 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       let builder = opts && 'builder' in opts ? opts.builder : null;
       let child = opts && 'child' in opts ? opts.child : null;
       Provider.__proto__.new.call(this, {key: key, lazy: lazy, builder: builder, create: create, dispose: dispose, debugCheckInvalidValueType: dart.fn(value => {
-          let t4;
-          t4 = provider$.Provider.debugCheckInvalidValueType;
-          return t4 == null ? null : t4(T, value);
+          let t1;
+          t1 = provider$.Provider.debugCheckInvalidValueType;
+          return t1 == null ? null : t1(T, value);
         }, __t$TTovoid()), child: child});
       ;
     }).prototype = Provider.prototype;
@@ -2620,11 +2275,11 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       let builder = opts && 'builder' in opts ? opts.builder : null;
       let child = opts && 'child' in opts ? opts.child : null;
       if (!dart.fn(() => {
-        let t4;
-        t4 = provider$.Provider.debugCheckInvalidValueType;
-        t4 == null ? null : t4(T, value);
+        let t1;
+        t1 = provider$.Provider.debugCheckInvalidValueType;
+        t1 == null ? null : t1(T, value);
         return true;
-      }, T$.VoidTobool())()) dart.assertFailed(null, I[13], 277, 16, "() {\n          Provider.debugCheckInvalidValueType?.call<T>(value);\n          return true;\n        }()");
+      }, T$.VoidTobool())()) dart.assertFailed(null, I[10], 277, 16, "() {\n          Provider.debugCheckInvalidValueType?.call<T>(value);\n          return true;\n        }()");
       Provider.__proto__.value.call(this, {key: key, builder: builder, value: value, updateShouldNotify: updateShouldNotify, child: child});
       ;
     }).prototype = Provider.prototype;
@@ -2632,7 +2287,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     Provider.prototype[_is_Provider_default] = true;
     dart.addTypeCaches(Provider);
     dart.setStaticMethodSignature(Provider, () => ['of', '_inheritedElementOf']);
-    dart.setLibraryUri(Provider, I[7]);
+    dart.setLibraryUri(Provider, I[4]);
     dart.setStaticFieldSignature(Provider, () => ['debugCheckInvalidValueType']);
     return Provider;
   });
@@ -2645,7 +2300,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
             dart.throw(assertions.FlutterError.new("Tried to use Provider with a subtype of Listenable/Stream (" + dart.str(dart.wrapType(T)) + ").\n\nThis is likely a mistake, as Provider will not automatically update dependents\nwhen " + dart.str(dart.wrapType(T)) + " is updated. Instead, consider changing Provider for more specific\nimplementation that handles the update mechanism, such as:\n\n- ListenableProvider\n- ChangeNotifierProvider\n- ValueListenableProvider\n- StreamProvider\n\nAlternatively, if you are making your own provider, consider using InheritedProvider.\n\nIf you think that this is not an error, you can disable this check by setting\nProvider.debugCheckInvalidValueType to `null` in your main file:\n\n```\nvoid main() {\n  Provider.debugCheckInvalidValueType = null;\n\n  runApp(MyApp());\n}\n```\n"));
           }
           return true;
-        }, T$.VoidTobool())()) dart.assertFailed(null, I[13], 419, 12, "() {\n      if (value is Listenable || value is Stream) {\n        throw FlutterError('''\nTried to use Provider with a subtype of Listenable/Stream ($T).\n\nThis is likely a mistake, as Provider will not automatically update dependents\nwhen $T is updated. Instead, consider changing Provider for more specific\nimplementation that handles the update mechanism, such as:\n\n- ListenableProvider\n- ChangeNotifierProvider\n- ValueListenableProvider\n- StreamProvider\n\nAlternatively, if you are making your own provider, consider using InheritedProvider.\n\nIf you think that this is not an error, you can disable this check by setting\nProvider.debugCheckInvalidValueType to `null` in your main file:\n\n```\nvoid main() {\n  Provider.debugCheckInvalidValueType = null;\n\n  runApp(MyApp());\n}\n```\n''');\n      }\n      return true;\n    }()");
+        }, T$.VoidTobool())()) dart.assertFailed(null, I[10], 419, 12, "() {\n      if (value is Listenable || value is Stream) {\n        throw FlutterError('''\nTried to use Provider with a subtype of Listenable/Stream ($T).\n\nThis is likely a mistake, as Provider will not automatically update dependents\nwhen $T is updated. Instead, consider changing Provider for more specific\nimplementation that handles the update mechanism, such as:\n\n- ListenableProvider\n- ChangeNotifierProvider\n- ValueListenableProvider\n- StreamProvider\n\nAlternatively, if you are making your own provider, consider using InheritedProvider.\n\nIf you think that this is not an error, you can disable this check by setting\nProvider.debugCheckInvalidValueType to `null` in your main file:\n\n```\nvoid main() {\n  Provider.debugCheckInvalidValueType = null;\n\n  runApp(MyApp());\n}\n```\n''');\n      }\n      return true;\n    }()");
       }, T$.TTovoid$1());
     },
     set debugCheckInvalidValueType(value) {}
@@ -2682,7 +2337,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   dart.addTypeTests(provider$.ProviderNullException);
   dart.addTypeCaches(provider$.ProviderNullException);
   provider$.ProviderNullException[dart.implements] = () => [core.Exception];
-  dart.setLibraryUri(provider$.ProviderNullException, I[7]);
+  dart.setLibraryUri(provider$.ProviderNullException, I[4]);
   dart.setFieldSignature(provider$.ProviderNullException, () => ({
     __proto__: dart.getFields(provider$.ProviderNullException.__proto__),
     valueType: dart.finalFieldType(core.Type),
@@ -2720,7 +2375,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   dart.addTypeTests(provider$.ProviderNotFoundException);
   dart.addTypeCaches(provider$.ProviderNotFoundException);
   provider$.ProviderNotFoundException[dart.implements] = () => [core.Exception];
-  dart.setLibraryUri(provider$.ProviderNotFoundException, I[7]);
+  dart.setLibraryUri(provider$.ProviderNotFoundException, I[4]);
   dart.setFieldSignature(provider$.ProviderNotFoundException, () => ({
     __proto__: dart.getFields(provider$.ProviderNotFoundException.__proto__),
     valueType: dart.finalFieldType(core.Type),
@@ -2743,7 +2398,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getMethods(_Delegate.__proto__),
       debugFillProperties: dart.fnType(dart.void, [diagnostics.DiagnosticPropertiesBuilder])
     }));
-    dart.setLibraryUri(_Delegate, I[7]);
+    dart.setLibraryUri(_Delegate, I[4]);
     return _Delegate;
   });
   provider$._Delegate = provider$._Delegate$();
@@ -2759,7 +2414,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(_DeferredDelegate);
     _DeferredDelegate.prototype[_is__DeferredDelegate_default] = true;
     dart.addTypeCaches(_DeferredDelegate);
-    dart.setLibraryUri(_DeferredDelegate, I[7]);
+    dart.setLibraryUri(_DeferredDelegate, I[4]);
     dart.setFieldSignature(_DeferredDelegate, () => ({
       __proto__: dart.getFields(_DeferredDelegate.__proto__),
       updateShouldNotify: dart.finalFieldType(dart.nullable(dart.fnType(core.bool, [R, R]))),
@@ -2824,7 +2479,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getGetters(_DelegateState.__proto__),
       delegate: D
     }));
-    dart.setLibraryUri(_DelegateState, I[7]);
+    dart.setLibraryUri(_DelegateState, I[4]);
     dart.setFieldSignature(_DelegateState, () => ({
       __proto__: dart.getFields(_DelegateState.__proto__),
       element: dart.fieldType(dart.nullable(provider$._InheritedProviderScopeElement$(dart.nullable(T))))
@@ -2843,19 +2498,19 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     var __t$RAndRToNbool = () => (__t$RAndRToNbool = dart.constFn(dart.nullable(__t$RAndRTobool())))();
     class _DeferredDelegateState extends provider$._DelegateState$(R, W) {
       get value() {
-        let t8, t7, t6, t5, t4;
+        let t5, t4, t3, t2, t1;
         dart.nullCheck(this.element)[_isNotifyDependentsEnabled] = false;
-        this[_removeListener] == null ? this[_removeListener] = (t4 = this.delegate, t5 = dart.nullCheck(this.element), t6 = dart.bind(this, 'setState'), t7 = this.controller, t8 = this[_value], __t$InheritedContextOfRNAndFnAndT__ToFn().as(t4.startListening)(t5, t6, t7, t8)) : null;
+        this[_removeListener] == null ? this[_removeListener] = (t1 = this.delegate, t2 = dart.nullCheck(this.element), t3 = dart.bind(this, 'setState'), t4 = this.controller, t5 = this[_value], __t$InheritedContextOfRNAndFnAndT__ToFn().as(t1.startListening)(t2, t3, t4, t5)) : null;
         dart.nullCheck(this.element)[_isNotifyDependentsEnabled] = true;
-        if (!dart.nullCheck(this.element).hasValue) dart.assertFailed("The callback \"startListening\" was called, but it left DeferredInhertitedProviderElement<" + dart.str(dart.wrapType(T)) + ", " + dart.str(dart.wrapType(R)) + ">\nin an uninitialized state.\n\nIt is necessary for \"startListening\" to call \"setState\" at least once the very\nfirst time \"value\" is requested.\n\nTo fix, consider:\n\nDeferredInheritedProvider(\n  ...,\n  startListening: (element, setState, controller, value) {\n    if (!element.hasValue) {\n      setState(myInitialValue); // TODO replace myInitialValue with your own\n    }\n    ...\n  }\n)\n    ", I[14], 109, 12, "element!.hasValue");
-        if (!(this[_removeListener] != null)) dart.assertFailed(null, I[14], 128, 12, "_removeListener != null");
+        if (!dart.nullCheck(this.element).hasValue) dart.assertFailed("The callback \"startListening\" was called, but it left DeferredInhertitedProviderElement<" + dart.str(dart.wrapType(T)) + ", " + dart.str(dart.wrapType(R)) + ">\nin an uninitialized state.\n\nIt is necessary for \"startListening\" to call \"setState\" at least once the very\nfirst time \"value\" is requested.\n\nTo fix, consider:\n\nDeferredInheritedProvider(\n  ...,\n  startListening: (element, setState, controller, value) {\n    if (!element.hasValue) {\n      setState(myInitialValue); // TODO replace myInitialValue with your own\n    }\n    ...\n  }\n)\n    ", I[11], 109, 12, "element!.hasValue");
+        if (!(this[_removeListener] != null)) dart.assertFailed(null, I[11], 128, 12, "_removeListener != null");
         return R.as(this[_value]);
       }
       dispose() {
-        let t4;
+        let t1;
         super.dispose();
-        t4 = this[_removeListener];
-        t4 == null ? null : t4();
+        t1 = this[_removeListener];
+        t1 == null ? null : t1();
       }
       get isLoaded() {
         return this[_removeListener] != null;
@@ -2895,7 +2550,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       isLoaded: core.bool,
       hasValue: core.bool
     }));
-    dart.setLibraryUri(_DeferredDelegateState, I[7]);
+    dart.setLibraryUri(_DeferredDelegateState, I[4]);
     dart.setFieldSignature(_DeferredDelegateState, () => ({
       __proto__: dart.getFields(_DeferredDelegateState.__proto__),
       [_removeListener]: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
@@ -2938,7 +2593,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getMethods(_CreateDeferredInheritedProvider.__proto__),
       createState: dart.fnType(provider$._CreateDeferredInheritedProviderElement$(T, R), [])
     }));
-    dart.setLibraryUri(_CreateDeferredInheritedProvider, I[7]);
+    dart.setLibraryUri(_CreateDeferredInheritedProvider, I[4]);
     dart.setFieldSignature(_CreateDeferredInheritedProvider, () => ({
       __proto__: dart.getFields(_CreateDeferredInheritedProvider.__proto__),
       create: dart.finalFieldType(dart.fnType(T, [framework.BuildContext])),
@@ -2958,58 +2613,58 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     var __t$DiagnosticsPropertyOfR = () => (__t$DiagnosticsPropertyOfR = dart.constFn(diagnostics.DiagnosticsProperty$(R)))();
     class _CreateDeferredInheritedProviderElement extends provider$._DeferredDelegateState$(T, R, provider$._CreateDeferredInheritedProvider$(T, R)) {
       get controller() {
-        let t5, t4;
+        let t2, t1;
         if (!this[_didBuild]) {
-          if (!this.debugSetInheritedLock(true)) dart.assertFailed(null, I[14], 186, 14, "debugSetInheritedLock(true)");
+          if (!this.debugSetInheritedLock(true)) dart.assertFailed(null, I[11], 186, 14, "debugSetInheritedLock(true)");
           let _debugPreviousIsInInheritedProviderCreate = null;
           let _debugPreviousIsInInheritedProviderUpdate = null;
           if (!dart.fn(() => {
             _debugPreviousIsInInheritedProviderCreate = provider$.debugIsInInheritedProviderCreate;
             _debugPreviousIsInInheritedProviderUpdate = provider$.debugIsInInheritedProviderUpdate;
             return true;
-          }, T$.VoidTobool())()) dart.assertFailed(null, I[14], 190, 14, "() {\n        _debugPreviousIsInInheritedProviderCreate =\n            debugIsInInheritedProviderCreate;\n        _debugPreviousIsInInheritedProviderUpdate =\n            debugIsInInheritedProviderUpdate;\n        return true;\n      }()");
+          }, T$.VoidTobool())()) dart.assertFailed(null, I[11], 190, 14, "() {\n        _debugPreviousIsInInheritedProviderCreate =\n            debugIsInInheritedProviderCreate;\n        _debugPreviousIsInInheritedProviderUpdate =\n            debugIsInInheritedProviderUpdate;\n        return true;\n      }()");
           try {
             if (!dart.fn(() => {
               provider$.debugIsInInheritedProviderCreate = true;
               provider$.debugIsInInheritedProviderUpdate = false;
               return true;
-            }, T$.VoidTobool())()) dart.assertFailed(null, I[14], 199, 16, "() {\n          debugIsInInheritedProviderCreate = true;\n          debugIsInInheritedProviderUpdate = false;\n          return true;\n        }()");
-            this[_controller] = (t4 = this.delegate, t5 = dart.nullCheck(this.element), t4.create(t5));
+            }, T$.VoidTobool())()) dart.assertFailed(null, I[11], 199, 16, "() {\n          debugIsInInheritedProviderCreate = true;\n          debugIsInInheritedProviderUpdate = false;\n          return true;\n        }()");
+            this[_controller] = (t1 = this.delegate, t2 = dart.nullCheck(this.element), t1.create(t2));
           } finally {
             if (!dart.fn(() => {
               provider$.debugIsInInheritedProviderCreate = dart.nullCheck(_debugPreviousIsInInheritedProviderCreate);
               provider$.debugIsInInheritedProviderUpdate = dart.nullCheck(_debugPreviousIsInInheritedProviderUpdate);
               return true;
-            }, T$.VoidTobool())()) dart.assertFailed(null, I[14], 206, 16, "() {\n          debugIsInInheritedProviderCreate =\n              _debugPreviousIsInInheritedProviderCreate!;\n          debugIsInInheritedProviderUpdate =\n              _debugPreviousIsInInheritedProviderUpdate!;\n          return true;\n        }()");
+            }, T$.VoidTobool())()) dart.assertFailed(null, I[11], 206, 16, "() {\n          debugIsInInheritedProviderCreate =\n              _debugPreviousIsInInheritedProviderCreate!;\n          debugIsInInheritedProviderUpdate =\n              _debugPreviousIsInInheritedProviderUpdate!;\n          return true;\n        }()");
           }
           this[_didBuild] = true;
         }
         return T.as(this[_controller]);
       }
       dispose() {
-        let t4;
+        let t1;
         super.dispose();
         if (this[_didBuild]) {
-          t4 = __t$BuildContextAndTToNvoid().as(this.delegate.dispose);
-          t4 == null ? null : t4(dart.nullCheck(this.element), T.as(this[_controller]));
+          t1 = __t$BuildContextAndTToNvoid().as(this.delegate.dispose);
+          t1 == null ? null : t1(dart.nullCheck(this.element), T.as(this[_controller]));
         }
       }
       debugFillProperties(properties) {
-        let t4, t4$;
+        let t1, t1$;
         super.debugFillProperties(properties);
         if (this.isLoaded) {
-          t4 = properties;
+          t1 = properties;
           (() => {
-            t4.add(new (__t$DiagnosticsPropertyOfT()).new("controller", this.controller));
-            t4.add(new (__t$DiagnosticsPropertyOfR()).new("value", this.value));
-            return t4;
+            t1.add(new (__t$DiagnosticsPropertyOfT()).new("controller", this.controller));
+            t1.add(new (__t$DiagnosticsPropertyOfR()).new("value", this.value));
+            return t1;
           })();
         } else {
-          t4$ = properties;
+          t1$ = properties;
           (() => {
-            t4$.add(new diagnostics.FlagProperty.new("controller", {value: true, showName: true, ifTrue: "<not yet loaded>"}));
-            t4$.add(new diagnostics.FlagProperty.new("value", {value: true, showName: true, ifTrue: "<not yet loaded>"}));
-            return t4$;
+            t1$.add(new diagnostics.FlagProperty.new("controller", {value: true, showName: true, ifTrue: "<not yet loaded>"}));
+            t1$.add(new diagnostics.FlagProperty.new("value", {value: true, showName: true, ifTrue: "<not yet loaded>"}));
+            return t1$;
           })();
         }
       }
@@ -3030,7 +2685,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getGetters(_CreateDeferredInheritedProviderElement.__proto__),
       controller: T
     }));
-    dart.setLibraryUri(_CreateDeferredInheritedProviderElement, I[7]);
+    dart.setLibraryUri(_CreateDeferredInheritedProviderElement, I[4]);
     dart.setFieldSignature(_CreateDeferredInheritedProviderElement, () => ({
       __proto__: dart.getFields(_CreateDeferredInheritedProviderElement.__proto__),
       [_didBuild]: dart.fieldType(core.bool),
@@ -3068,7 +2723,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getMethods(_ValueDeferredInheritedProvider.__proto__),
       createState: dart.fnType(provider$._ValueDeferredInheritedProviderState$(T, R), [])
     }));
-    dart.setLibraryUri(_ValueDeferredInheritedProvider, I[7]);
+    dart.setLibraryUri(_ValueDeferredInheritedProvider, I[4]);
     dart.setFieldSignature(_ValueDeferredInheritedProvider, () => ({
       __proto__: dart.getFields(_ValueDeferredInheritedProvider.__proto__),
       value: dart.finalFieldType(T)
@@ -3119,7 +2774,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getGetters(_ValueDeferredInheritedProviderState.__proto__),
       controller: T
     }));
-    dart.setLibraryUri(_ValueDeferredInheritedProviderState, I[7]);
+    dart.setLibraryUri(_ValueDeferredInheritedProviderState, I[4]);
     return _ValueDeferredInheritedProviderState;
   });
   provider$._ValueDeferredInheritedProviderState = provider$._ValueDeferredInheritedProviderState$();
@@ -3150,7 +2805,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   }).prototype = provider$.PostEventCall.prototype;
   dart.addTypeTests(provider$.PostEventCall);
   dart.addTypeCaches(provider$.PostEventCall);
-  dart.setLibraryUri(provider$.PostEventCall, I[7]);
+  dart.setLibraryUri(provider$.PostEventCall, I[4]);
   dart.setFieldSignature(provider$.PostEventCall, () => ({
     __proto__: dart.getFields(provider$.PostEventCall.__proto__),
     eventKind: dart.finalFieldType(core.String),
@@ -3169,7 +2824,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       return new provider$.PostEventSpy.__();
     }
     dispose() {
-      if (!dart.equals(provider$._debugPostEventOverride, dart.bind(this, _postEvent))) dart.assertFailed("disposed a spy different from the current spy", I[15], 43, 7, "_debugPostEventOverride == _postEvent");
+      if (!dart.equals(provider$._debugPostEventOverride, dart.bind(this, _postEvent))) dart.assertFailed("disposed a spy different from the current spy", I[12], 43, 7, "_debugPostEventOverride == _postEvent");
       provider$._debugPostEventOverride = null;
     }
     [_postEvent](eventKind, event) {
@@ -3187,7 +2842,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dispose: dart.fnType(dart.void, []),
     [_postEvent]: dart.fnType(dart.void, [core.String, core.Map$(dart.nullable(core.Object), dart.nullable(core.Object))])
   }));
-  dart.setLibraryUri(provider$.PostEventSpy, I[7]);
+  dart.setLibraryUri(provider$.PostEventSpy, I[4]);
   dart.setFieldSignature(provider$.PostEventSpy, () => ({
     __proto__: dart.getFields(provider$.PostEventSpy.__proto__),
     logs: dart.finalFieldType(core.List$(provider$.PostEventCall))
@@ -3251,7 +2906,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getGetters(provider$.ProviderNode.__proto__),
     value: dart.nullable(core.Object)
   }));
-  dart.setLibraryUri(provider$.ProviderNode, I[7]);
+  dart.setLibraryUri(provider$.ProviderNode, I[4]);
   dart.setFieldSignature(provider$.ProviderNode, () => ({
     __proto__: dart.getFields(provider$.ProviderNode.__proto__),
     id: dart.finalFieldType(core.String),
@@ -3293,7 +2948,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getSetters(provider$.ProviderBinding.__proto__),
     providerDetails: core.Map$(core.String, provider$.ProviderNode)
   }));
-  dart.setLibraryUri(provider$.ProviderBinding, I[7]);
+  dart.setLibraryUri(provider$.ProviderBinding, I[4]);
   dart.setFieldSignature(provider$.ProviderBinding, () => ({
     __proto__: dart.getFields(provider$.ProviderBinding.__proto__),
     [_providerDetails]: dart.fieldType(core.Map$(core.String, provider$.ProviderNode))
@@ -3340,7 +2995,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(nested.SingleChildWidgetElementMixin.__proto__),
     mount: dart.fnType(dart.void, [dart.nullable(framework.Element), dart.dynamic])
   }));
-  dart.setLibraryUri(nested.SingleChildWidgetElementMixin, I[6]);
+  dart.setLibraryUri(nested.SingleChildWidgetElementMixin, I[3]);
   dart.setFieldSignature(nested.SingleChildWidgetElementMixin, () => ({
     __proto__: dart.getFields(nested.SingleChildWidgetElementMixin.__proto__),
     [_parent]: dart.fieldType(dart.nullable(nested._NestedHookElement))
@@ -3375,7 +3030,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getGetters(nested.SingleChildStatelessElement.__proto__),
     widget: nested.SingleChildStatelessWidget
   }));
-  dart.setLibraryUri(nested.SingleChildStatelessElement, I[6]);
+  dart.setLibraryUri(nested.SingleChildStatelessElement, I[3]);
   const _is__InheritedProviderElement_default = Symbol('_is__InheritedProviderElement_default');
   provider$._InheritedProviderElement$ = dart.generic(T => {
     class _InheritedProviderElement extends nested.SingleChildStatelessElement {
@@ -3394,7 +3049,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(_InheritedProviderElement);
     _InheritedProviderElement.prototype[_is__InheritedProviderElement_default] = true;
     dart.addTypeCaches(_InheritedProviderElement);
-    dart.setLibraryUri(_InheritedProviderElement, I[7]);
+    dart.setLibraryUri(_InheritedProviderElement, I[4]);
     return _InheritedProviderElement;
   });
   provider$._InheritedProviderElement = provider$._InheritedProviderElement$();
@@ -3408,7 +3063,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(InheritedContext);
     InheritedContext.prototype[_is_InheritedContext_default] = true;
     dart.addTypeCaches(InheritedContext);
-    dart.setLibraryUri(InheritedContext, I[7]);
+    dart.setLibraryUri(InheritedContext, I[4]);
     return InheritedContext;
   });
   provider$.InheritedContext = provider$.InheritedContext$();
@@ -3439,7 +3094,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       let key = opts && 'key' in opts ? opts.key : null;
       this.owner = owner;
       this.debugType = debugType;
-      if (!T.is(null)) dart.assertFailed(null, I[5], 346, 16, "null is T");
+      if (!T.is(null)) dart.assertFailed(null, I[2], 346, 16, "null is T");
       _InheritedProviderScope.__proto__.new.call(this, {key: key, child: child});
       ;
     }).prototype = _InheritedProviderScope.prototype;
@@ -3451,7 +3106,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       updateShouldNotify: dart.fnType(core.bool, [dart.nullable(core.Object)]),
       createElement: dart.fnType(provider$._InheritedProviderScopeElement$(T), [])
     }));
-    dart.setLibraryUri(_InheritedProviderScope, I[7]);
+    dart.setLibraryUri(_InheritedProviderScope, I[4]);
     dart.setFieldSignature(_InheritedProviderScope, () => ({
       __proto__: dart.getFields(_InheritedProviderScope.__proto__),
       owner: dart.finalFieldType(provider$.InheritedProvider$(T)),
@@ -3479,7 +3134,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(_Dependency);
     _Dependency.prototype[_is__Dependency_default] = true;
     dart.addTypeCaches(_Dependency);
-    dart.setLibraryUri(_Dependency, I[7]);
+    dart.setLibraryUri(_Dependency, I[4]);
     dart.setFieldSignature(_Dependency, () => ({
       __proto__: dart.getFields(_Dependency.__proto__),
       shouldClearSelectors: dart.fieldType(core.bool),
@@ -3508,17 +3163,17 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         return new (provider$._InheritedProviderScopeElement$(T)).new(widget);
       }
       get [_delegateState]() {
-        let t5, t5$, t4;
-        t4 = this[___InheritedProviderScopeElement__delegateState];
-        return t4 == null ? (t5$ = (t5 = this.widget.owner[_delegate].createState(), (() => {
-          t5.element = this;
-          return t5;
-        })()), this[___InheritedProviderScopeElement__delegateState] == null ? this[___InheritedProviderScopeElement__delegateState] = t5$ : dart.throw(new _internal.LateError.fieldADI("_delegateState"))) : t4;
+        let t2, t2$, t1;
+        t1 = this[___InheritedProviderScopeElement__delegateState];
+        return t1 == null ? (t2$ = (t2 = this.widget.owner[_delegate].createState(), (() => {
+          t2.element = this;
+          return t2;
+        })()), this[___InheritedProviderScopeElement__delegateState] == null ? this[___InheritedProviderScopeElement__delegateState] = t2$ : dart.throw(new _internal.LateError.fieldADI("_delegateState"))) : t1;
       }
       get [_debugId]() {
-        let t4;
-        t4 = this[___InheritedProviderScopeElement__debugId];
-        return t4 == null ? dart.throw(new _internal.LateError.fieldNI("_debugId")) : t4;
+        let t1;
+        t1 = this[___InheritedProviderScopeElement__debugId];
+        return t1 == null ? dart.throw(new _internal.LateError.fieldNI("_debugId")) : t1;
       }
       set [_debugId](_debugId$35param) {
         this[___InheritedProviderScopeElement__debugId] = _debugId$35param;
@@ -3536,13 +3191,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         return inheritedElement;
       }
       mount(parent, newSlot) {
-        let t4;
+        let t1;
         {
-          this[_debugId] = dart.str((t4 = provider$._InheritedProviderScopeElement._nextProviderId, provider$._InheritedProviderScopeElement._nextProviderId = t4 + 1, t4));
+          this[_debugId] = dart.str((t1 = provider$._InheritedProviderScopeElement._nextProviderId, provider$._InheritedProviderScopeElement._nextProviderId = t1 + 1, t1));
           provider$.ProviderBinding.debugInstance.providerDetails = (() => {
-            let t4 = T$.LinkedHashMapOfString$ProviderNode().of(provider$.ProviderBinding.debugInstance.providerDetails);
-            t4[$_set](this[_debugId], new provider$.ProviderNode.new({id: this[_debugId], childrenNodeIds: C[48] || CT.C48, type: this.widget.debugType, element: this}));
-            return t4;
+            let t1 = T$.LinkedHashMapOfString$ProviderNode().of(provider$.ProviderBinding.debugInstance.providerDetails);
+            t1[$_set](this[_debugId], new provider$.ProviderNode.new({id: this[_debugId], childrenNodeIds: C[5] || CT.C5, type: this.widget.debugType, element: this}));
+            return t1;
           })();
         }
         super.mount(parent, newSlot);
@@ -3558,13 +3213,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         }
       }
       updateDependencies(dependent, aspect) {
-        let t5;
+        let t2;
         let dependencies = this.getDependencies(dependent);
         if (dependencies != null && !__t$_DependencyOfT().is(dependencies)) {
           return;
         }
         if (__t$TTobool().is(aspect)) {
-          let selectorDependency = __t$_DependencyOfT().as((t5 = dependencies, t5 == null ? new (__t$_DependencyOfT()).new() : t5));
+          let selectorDependency = __t$_DependencyOfT().as((t2 = dependencies, t2 == null ? new (__t$_DependencyOfT()).new() : t2));
           if (selectorDependency.shouldClearSelectors) {
             selectorDependency.shouldClearSelectors = false;
             __t$ListOfTTobool().as(selectorDependency.selectors)[$clear]();
@@ -3572,19 +3227,19 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
           if (selectorDependency.shouldClearMutationScheduled === false) {
             selectorDependency.shouldClearMutationScheduled = true;
             T$.FutureOfNull().microtask(dart.fn(() => {
-              let t5;
-              t5 = selectorDependency;
+              let t2;
+              t2 = selectorDependency;
               (() => {
-                t5.shouldClearMutationScheduled = false;
-                t5.shouldClearSelectors = true;
-                return t5;
+                t2.shouldClearMutationScheduled = false;
+                t2.shouldClearSelectors = true;
+                return t2;
               })();
             }, T$.VoidToNull()));
           }
           __t$ListOfTTobool().as(selectorDependency.selectors)[$add](aspect);
           this.setDependencies(dependent, selectorDependency);
         } else {
-          this.setDependencies(dependent, C[49] || CT.C49);
+          this.setDependencies(dependent, C[6] || CT.C6);
         }
       }
       notifyDependent(oldWidget, dependent) {
@@ -3604,13 +3259,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
                 if (!dart.fn(() => {
                   provider$._debugIsSelecting = true;
                   return true;
-                }, T$.VoidTobool())()) dart.assertFailed(null, I[5], 493, 20, "() {\n              _debugIsSelecting = true;\n              return true;\n            }()");
+                }, T$.VoidTobool())()) dart.assertFailed(null, I[2], 493, 20, "() {\n              _debugIsSelecting = true;\n              return true;\n            }()");
                 shouldNotify = updateShouldNotify(this.value);
               } finally {
                 if (!dart.fn(() => {
                   provider$._debugIsSelecting = false;
                   return true;
-                }, T$.VoidTobool())()) dart.assertFailed(null, I[5], 499, 20, "() {\n              _debugIsSelecting = false;\n              return true;\n            }()");
+                }, T$.VoidTobool())()) dart.assertFailed(null, I[2], 499, 20, "() {\n              _debugIsSelecting = false;\n              return true;\n            }()");
               }
               if (shouldNotify) {
                 break;
@@ -3631,7 +3286,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
             dart.throw(new core.StateError.new("Rebuilt " + dart.str(this.widget) + " using a different constructor.\n      \nThis is likely a mistake and is unsupported.\nIf you're in this situation, consider passing a `key` unique to each individual constructor.\n"));
           }
           return true;
-        }, T$.VoidTobool())()) dart.assertFailed(null, I[5], 520, 12, "() {\n      if (widget.owner._delegate.runtimeType !=\n          newWidget.owner._delegate.runtimeType) {\n        throw StateError('''\nRebuilt $widget using a different constructor.\n      \nThis is likely a mistake and is unsupported.\nIf you're in this situation, consider passing a `key` unique to each individual constructor.\n''');\n      }\n      return true;\n    }()");
+        }, T$.VoidTobool())()) dart.assertFailed(null, I[2], 520, 12, "() {\n      if (widget.owner._delegate.runtimeType !=\n          newWidget.owner._delegate.runtimeType) {\n        throw StateError('''\nRebuilt $widget using a different constructor.\n      \nThis is likely a mistake and is unsupported.\nIf you're in this situation, consider passing a `key` unique to each individual constructor.\n''');\n      }\n      return true;\n    }()");
         this[_isBuildFromExternalSources] = true;
         this[_updatedShouldNotify] = this[_delegateState].willUpdateDelegate(newWidget.owner[_delegate]);
         super.update(newWidget);
@@ -3661,15 +3316,15 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         return super.build();
       }
       unmount() {
-        let t6;
+        let t3;
         this[_delegateState].dispose();
         {
-          provider$.ProviderBinding.debugInstance.providerDetails = (t6 = (() => {
-            let t5 = T$.LinkedHashMapOfString$ProviderNode().of(provider$.ProviderBinding.debugInstance.providerDetails);
-            return t5;
+          provider$.ProviderBinding.debugInstance.providerDetails = (t3 = (() => {
+            let t2 = T$.LinkedHashMapOfString$ProviderNode().of(provider$.ProviderBinding.debugInstance.providerDetails);
+            return t2;
           })(), (() => {
-            t6[$remove](this[_debugId]);
-            return t6;
+            t3[$remove](this[_debugId]);
+            return t3;
           })());
         }
         super.unmount();
@@ -3688,7 +3343,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         if (!dart.fn(() => {
           this[_debugInheritLocked] = value;
           return true;
-        }, T$.VoidTobool())()) dart.assertFailed(null, I[5], 595, 12, "() {\n      _debugInheritLocked = value;\n      return true;\n    }()");
+        }, T$.VoidTobool())()) dart.assertFailed(null, I[2], 595, 12, "() {\n      _debugInheritLocked = value;\n      return true;\n    }()");
         return true;
       }
       get value() {
@@ -3701,7 +3356,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
             dart.throw(new assertions.FlutterError.fromParts(T$.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("Tried to listen to an InheritedWidget " + "in a life-cycle that will never be called again."), new assertions.ErrorDescription.new("This error typically happens when calling Provider.of with `listen` to `true`,\nin a situation where listening to the provider doesn't make sense, such as:\n- initState of a StatefulWidget\n- the \"create\" callback of a provider\n\nThis is undesired because these life-cycles are called only once in the\nlifetime of a widget. As such, while `listen` is `true`, the widget has\nno mean to handle the update scenario.\n\nTo fix, consider:\n- passing `listen: false` to `Provider.of`\n- use a life-cycle that handles updates (like didChangeDependencies)\n- use a provider that handles updates (like ProxyProvider).\n")])));
           }
           return true;
-        }, T$.VoidTobool())()) dart.assertFailed(null, I[5], 610, 12, "() {\n      if (_debugInheritLocked) {\n        throw FlutterError.fromParts(\n          <DiagnosticsNode>[\n            ErrorSummary(\n              'Tried to listen to an InheritedWidget '\n              'in a life-cycle that will never be called again.',\n            ),\n            ErrorDescription('''\nThis error typically happens when calling Provider.of with `listen` to `true`,\nin a situation where listening to the provider doesn't make sense, such as:\n- initState of a StatefulWidget\n- the \"create\" callback of a provider\n\nThis is undesired because these life-cycles are called only once in the\nlifetime of a widget. As such, while `listen` is `true`, the widget has\nno mean to handle the update scenario.\n\nTo fix, consider:\n- passing `listen: false` to `Provider.of`\n- use a life-cycle that handles updates (like didChangeDependencies)\n- use a provider that handles updates (like ProxyProvider).\n'''),\n          ],\n        );\n      }\n      return true;\n    }()");
+        }, T$.VoidTobool())()) dart.assertFailed(null, I[2], 610, 12, "() {\n      if (_debugInheritLocked) {\n        throw FlutterError.fromParts(\n          <DiagnosticsNode>[\n            ErrorSummary(\n              'Tried to listen to an InheritedWidget '\n              'in a life-cycle that will never be called again.',\n            ),\n            ErrorDescription('''\nThis error typically happens when calling Provider.of with `listen` to `true`,\nin a situation where listening to the provider doesn't make sense, such as:\n- initState of a StatefulWidget\n- the \"create\" callback of a provider\n\nThis is undesired because these life-cycles are called only once in the\nlifetime of a widget. As such, while `listen` is `true`, the widget has\nno mean to handle the update scenario.\n\nTo fix, consider:\n- passing `listen: false` to `Provider.of`\n- use a life-cycle that handles updates (like didChangeDependencies)\n- use a provider that handles updates (like ProxyProvider).\n'''),\n          ],\n        );\n      }\n      return true;\n    }()");
         return super.dependOnInheritedElement(ancestor, {aspect: aspect});
       }
       debugFillProperties(properties) {
@@ -3742,7 +3397,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getSetters(_InheritedProviderScopeElement.__proto__),
       [_debugId]: core.String
     }));
-    dart.setLibraryUri(_InheritedProviderScopeElement, I[7]);
+    dart.setLibraryUri(_InheritedProviderScopeElement, I[4]);
     dart.setFieldSignature(_InheritedProviderScopeElement, () => ({
       __proto__: dart.getFields(_InheritedProviderScopeElement.__proto__),
       [_shouldNotifyDependents]: dart.fieldType(core.bool),
@@ -3794,7 +3449,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       this.debugCheckInvalidValueType = debugCheckInvalidValueType;
       this.startListening = startListening;
       this.dispose = dispose;
-      if (!(create != null || update != null)) dart.assertFailed(null, I[5], 687, 16, "create != null || update != null");
+      if (!(create != null || update != null)) dart.assertFailed(null, I[2], 687, 16, "create != null || update != null");
       this[_updateShouldNotify] = updateShouldNotify;
       ;
     }).prototype = _CreateInheritedProvider.prototype;
@@ -3805,7 +3460,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getMethods(_CreateInheritedProvider.__proto__),
       createState: dart.fnType(provider$._CreateInheritedProviderState$(T), [])
     }));
-    dart.setLibraryUri(_CreateInheritedProvider, I[7]);
+    dart.setLibraryUri(_CreateInheritedProvider, I[4]);
     dart.setFieldSignature(_CreateInheritedProvider, () => ({
       __proto__: dart.getFields(_CreateInheritedProvider.__proto__),
       create: dart.finalFieldType(dart.nullable(dart.fnType(T, [framework.BuildContext]))),
@@ -3839,9 +3494,9 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     var __t$TAndTToNbool = () => (__t$TAndTToNbool = dart.constFn(dart.nullable(__t$TAndTTobool())))();
     class _CreateInheritedProviderState extends provider$._DelegateState$(T, provider$._CreateInheritedProvider$(T)) {
       get value() {
-        let t6, t7;
+        let t3, t4;
         if (this[_didInitValue] && this[_initError] != null) {
-          dart.throw(new core.StateError.new("Tried to read a provider that threw during the creation of its value.\n" + "The exception occurred during the creation of type " + dart.str(dart.wrapType(T)) + ".\n\n" + dart.str((t6 = this[_initError], t6 == null ? null : dart.toString(t6)))));
+          dart.throw(new core.StateError.new("Tried to read a provider that threw during the creation of its value.\n" + "The exception occurred during the creation of type " + dart.str(dart.wrapType(T)) + ".\n\n" + dart.str((t3 = this[_initError], t3 == null ? null : dart.toString(t3)))));
         }
         let _debugPreviousIsInInheritedProviderCreate = null;
         let _debugPreviousIsInInheritedProviderUpdate = null;
@@ -3849,17 +3504,17 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
           _debugPreviousIsInInheritedProviderCreate = provider$.debugIsInInheritedProviderCreate;
           _debugPreviousIsInInheritedProviderUpdate = provider$.debugIsInInheritedProviderUpdate;
           return true;
-        }, T$.VoidTobool())()) dart.assertFailed(null, I[5], 731, 12, "() {\n      _debugPreviousIsInInheritedProviderCreate =\n          debugIsInInheritedProviderCreate;\n      _debugPreviousIsInInheritedProviderUpdate =\n          debugIsInInheritedProviderUpdate;\n      return true;\n    }()");
+        }, T$.VoidTobool())()) dart.assertFailed(null, I[2], 731, 12, "() {\n      _debugPreviousIsInInheritedProviderCreate =\n          debugIsInInheritedProviderCreate;\n      _debugPreviousIsInInheritedProviderUpdate =\n          debugIsInInheritedProviderUpdate;\n      return true;\n    }()");
         if (!this[_didInitValue]) {
           this[_didInitValue] = true;
           if (this.delegate.create != null) {
-            if (!this.debugSetInheritedLock(true)) dart.assertFailed(null, I[5], 742, 16, "debugSetInheritedLock(true)");
+            if (!this.debugSetInheritedLock(true)) dart.assertFailed(null, I[2], 742, 16, "debugSetInheritedLock(true)");
             try {
               if (!dart.fn(() => {
                 provider$.debugIsInInheritedProviderCreate = true;
                 provider$.debugIsInInheritedProviderUpdate = false;
                 return true;
-              }, T$.VoidTobool())()) dart.assertFailed(null, I[5], 744, 18, "() {\n            debugIsInInheritedProviderCreate = true;\n            debugIsInInheritedProviderUpdate = false;\n            return true;\n          }()");
+              }, T$.VoidTobool())()) dart.assertFailed(null, I[2], 744, 18, "() {\n            debugIsInInheritedProviderCreate = true;\n            debugIsInInheritedProviderUpdate = false;\n            return true;\n          }()");
               this[_value] = dart.nullCheck(this.delegate.create)(dart.nullCheck(this.element));
             } catch (e$) {
               let e = dart.getThrown(e$);
@@ -3874,15 +3529,15 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
                 provider$.debugIsInInheritedProviderCreate = dart.nullCheck(_debugPreviousIsInInheritedProviderCreate);
                 provider$.debugIsInInheritedProviderUpdate = dart.nullCheck(_debugPreviousIsInInheritedProviderUpdate);
                 return true;
-              }, T$.VoidTobool())()) dart.assertFailed(null, I[5], 758, 18, "() {\n            debugIsInInheritedProviderCreate =\n                _debugPreviousIsInInheritedProviderCreate!;\n            debugIsInInheritedProviderUpdate =\n                _debugPreviousIsInInheritedProviderUpdate!;\n            return true;\n          }()");
+              }, T$.VoidTobool())()) dart.assertFailed(null, I[2], 758, 18, "() {\n            debugIsInInheritedProviderCreate =\n                _debugPreviousIsInInheritedProviderCreate!;\n            debugIsInInheritedProviderUpdate =\n                _debugPreviousIsInInheritedProviderUpdate!;\n            return true;\n          }()");
             }
-            if (!this.debugSetInheritedLock(false)) dart.assertFailed(null, I[5], 766, 16, "debugSetInheritedLock(false)");
+            if (!this.debugSetInheritedLock(false)) dart.assertFailed(null, I[2], 766, 16, "debugSetInheritedLock(false)");
             if (!dart.fn(() => {
-              let t7;
-              t7 = __t$TToNvoid().as(this.delegate.debugCheckInvalidValueType);
-              t7 == null ? null : t7(T.as(this[_value]));
+              let t4;
+              t4 = __t$TToNvoid().as(this.delegate.debugCheckInvalidValueType);
+              t4 == null ? null : t4(T.as(this[_value]));
               return true;
-            }, T$.VoidTobool())()) dart.assertFailed(null, I[5], 768, 16, "() {\n          delegate.debugCheckInvalidValueType?.call(_value as T);\n          return true;\n        }()");
+            }, T$.VoidTobool())()) dart.assertFailed(null, I[2], 768, 16, "() {\n          delegate.debugCheckInvalidValueType?.call(_value as T);\n          return true;\n        }()");
           }
           if (__t$BuildContextAndTNToNT().as(this.delegate.update) != null) {
             try {
@@ -3890,55 +3545,55 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
                 provider$.debugIsInInheritedProviderCreate = false;
                 provider$.debugIsInInheritedProviderUpdate = true;
                 return true;
-              }, T$.VoidTobool())()) dart.assertFailed(null, I[5], 775, 18, "() {\n            debugIsInInheritedProviderCreate = false;\n            debugIsInInheritedProviderUpdate = true;\n            return true;\n          }()");
+              }, T$.VoidTobool())()) dart.assertFailed(null, I[2], 775, 18, "() {\n            debugIsInInheritedProviderCreate = false;\n            debugIsInInheritedProviderUpdate = true;\n            return true;\n          }()");
               this[_value] = dart.nullCheck(__t$BuildContextAndTNToNT().as(this.delegate.update))(dart.nullCheck(this.element), this[_value]);
             } finally {
               if (!dart.fn(() => {
                 provider$.debugIsInInheritedProviderCreate = dart.nullCheck(_debugPreviousIsInInheritedProviderCreate);
                 provider$.debugIsInInheritedProviderUpdate = dart.nullCheck(_debugPreviousIsInInheritedProviderUpdate);
                 return true;
-              }, T$.VoidTobool())()) dart.assertFailed(null, I[5], 782, 18, "() {\n            debugIsInInheritedProviderCreate =\n                _debugPreviousIsInInheritedProviderCreate!;\n            debugIsInInheritedProviderUpdate =\n                _debugPreviousIsInInheritedProviderUpdate!;\n            return true;\n          }()");
+              }, T$.VoidTobool())()) dart.assertFailed(null, I[2], 782, 18, "() {\n            debugIsInInheritedProviderCreate =\n                _debugPreviousIsInInheritedProviderCreate!;\n            debugIsInInheritedProviderUpdate =\n                _debugPreviousIsInInheritedProviderUpdate!;\n            return true;\n          }()");
             }
             if (!dart.fn(() => {
-              let t7;
-              t7 = __t$TToNvoid().as(this.delegate.debugCheckInvalidValueType);
-              t7 == null ? null : t7(T.as(this[_value]));
+              let t4;
+              t4 = __t$TToNvoid().as(this.delegate.debugCheckInvalidValueType);
+              t4 == null ? null : t4(T.as(this[_value]));
               return true;
-            }, T$.VoidTobool())()) dart.assertFailed(null, I[5], 791, 16, "() {\n          delegate.debugCheckInvalidValueType?.call(_value as T);\n          return true;\n        }()");
+            }, T$.VoidTobool())()) dart.assertFailed(null, I[2], 791, 16, "() {\n          delegate.debugCheckInvalidValueType?.call(_value as T);\n          return true;\n        }()");
           }
         }
         dart.nullCheck(this.element)[_isNotifyDependentsEnabled] = false;
-        this[_removeListener] == null ? this[_removeListener] = (t7 = __t$InheritedContextOfTNAndTToNFn().as(this.delegate.startListening), t7 == null ? null : t7(dart.nullCheck(this.element), T.as(this[_value]))) : null;
+        this[_removeListener] == null ? this[_removeListener] = (t4 = __t$InheritedContextOfTNAndTToNFn().as(this.delegate.startListening), t4 == null ? null : t4(dart.nullCheck(this.element), T.as(this[_value]))) : null;
         dart.nullCheck(this.element)[_isNotifyDependentsEnabled] = true;
-        if (!(__t$InheritedContextOfTNAndTToNFn().as(this.delegate.startListening) == null || this[_removeListener] != null)) dart.assertFailed(null, I[5], 801, 12, "delegate.startListening == null || _removeListener != null");
+        if (!(__t$InheritedContextOfTNAndTToNFn().as(this.delegate.startListening) == null || this[_removeListener] != null)) dart.assertFailed(null, I[2], 801, 12, "delegate.startListening == null || _removeListener != null");
         return T.as(this[_value]);
       }
       dispose() {
-        let t7, t7$;
+        let t4, t4$;
         super.dispose();
-        t7 = this[_removeListener];
-        t7 == null ? null : t7();
+        t4 = this[_removeListener];
+        t4 == null ? null : t4();
         if (this[_didInitValue]) {
-          t7$ = __t$BuildContextAndTToNvoid().as(this.delegate.dispose);
-          t7$ == null ? null : t7$(dart.nullCheck(this.element), T.as(this[_value]));
+          t4$ = __t$BuildContextAndTToNvoid().as(this.delegate.dispose);
+          t4$ == null ? null : t4$(dart.nullCheck(this.element), T.as(this[_value]));
         }
       }
       debugFillProperties(properties) {
-        let t7;
+        let t4;
         super.debugFillProperties(properties);
         if (this[_didInitValue]) {
-          t7 = properties;
+          t4 = properties;
           (() => {
-            t7.add(new (__t$DiagnosticsPropertyOfT()).new("value", this.value));
-            t7.add(new diagnostics.FlagProperty.new("", {value: this[_removeListener] != null, defaultValue: false, ifTrue: "listening to value"}));
-            return t7;
+            t4.add(new (__t$DiagnosticsPropertyOfT()).new("value", this.value));
+            t4.add(new diagnostics.FlagProperty.new("", {value: this[_removeListener] != null, defaultValue: false, ifTrue: "listening to value"}));
+            return t4;
           })();
         } else {
           properties.add(new diagnostics.FlagProperty.new("value", {value: true, showName: true, ifTrue: "<not yet loaded>"}));
         }
       }
       build(opts) {
-        let t8, t7;
+        let t5, t4;
         let isBuildFromExternalSources = opts && 'isBuildFromExternalSources' in opts ? opts.isBuildFromExternalSources : null;
         let shouldNotify = false;
         if (isBuildFromExternalSources && this[_didInitValue] && __t$BuildContextAndTNToNT().as(this.delegate.update) != null) {
@@ -3949,20 +3604,20 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
             _debugPreviousIsInInheritedProviderCreate = provider$.debugIsInInheritedProviderCreate;
             _debugPreviousIsInInheritedProviderUpdate = provider$.debugIsInInheritedProviderUpdate;
             return true;
-          }, T$.VoidTobool())()) dart.assertFailed(null, I[5], 852, 14, "() {\n        _debugPreviousIsInInheritedProviderCreate =\n            debugIsInInheritedProviderCreate;\n        _debugPreviousIsInInheritedProviderUpdate =\n            debugIsInInheritedProviderUpdate;\n        return true;\n      }()");
+          }, T$.VoidTobool())()) dart.assertFailed(null, I[2], 852, 14, "() {\n        _debugPreviousIsInInheritedProviderCreate =\n            debugIsInInheritedProviderCreate;\n        _debugPreviousIsInInheritedProviderUpdate =\n            debugIsInInheritedProviderUpdate;\n        return true;\n      }()");
           try {
             if (!dart.fn(() => {
               provider$.debugIsInInheritedProviderCreate = false;
               provider$.debugIsInInheritedProviderUpdate = true;
               return true;
-            }, T$.VoidTobool())()) dart.assertFailed(null, I[5], 860, 16, "() {\n          debugIsInInheritedProviderCreate = false;\n          debugIsInInheritedProviderUpdate = true;\n          return true;\n        }()");
+            }, T$.VoidTobool())()) dart.assertFailed(null, I[2], 860, 16, "() {\n          debugIsInInheritedProviderCreate = false;\n          debugIsInInheritedProviderUpdate = true;\n          return true;\n        }()");
             this[_value] = dart.nullCheck(__t$BuildContextAndTNToNT().as(this.delegate.update))(dart.nullCheck(this.element), T.as(this[_value]));
           } finally {
             if (!dart.fn(() => {
               provider$.debugIsInInheritedProviderCreate = dart.nullCheck(_debugPreviousIsInInheritedProviderCreate);
               provider$.debugIsInInheritedProviderUpdate = dart.nullCheck(_debugPreviousIsInInheritedProviderUpdate);
               return true;
-            }, T$.VoidTobool())()) dart.assertFailed(null, I[5], 867, 16, "() {\n          debugIsInInheritedProviderCreate =\n              _debugPreviousIsInInheritedProviderCreate!;\n          debugIsInInheritedProviderUpdate =\n              _debugPreviousIsInInheritedProviderUpdate!;\n          return true;\n        }()");
+            }, T$.VoidTobool())()) dart.assertFailed(null, I[2], 867, 16, "() {\n          debugIsInInheritedProviderCreate =\n              _debugPreviousIsInInheritedProviderCreate!;\n          debugIsInInheritedProviderUpdate =\n              _debugPreviousIsInInheritedProviderUpdate!;\n          return true;\n        }()");
           }
           if (__t$TAndTToNbool().as(this.delegate[_updateShouldNotify]) != null) {
             shouldNotify = dart.nullCheck(__t$TAndTToNbool().as(this.delegate[_updateShouldNotify]))(T.as(previousValue), T.as(this[_value]));
@@ -3971,17 +3626,17 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
           }
           if (shouldNotify) {
             if (!dart.fn(() => {
-              let t7;
-              t7 = __t$TToNvoid().as(this.delegate.debugCheckInvalidValueType);
-              t7 == null ? null : t7(T.as(this[_value]));
+              let t4;
+              t4 = __t$TToNvoid().as(this.delegate.debugCheckInvalidValueType);
+              t4 == null ? null : t4(T.as(this[_value]));
               return true;
-            }, T$.VoidTobool())()) dart.assertFailed(null, I[5], 886, 16, "() {\n          delegate.debugCheckInvalidValueType?.call(_value as T);\n          return true;\n        }()");
+            }, T$.VoidTobool())()) dart.assertFailed(null, I[2], 886, 16, "() {\n          delegate.debugCheckInvalidValueType?.call(_value as T);\n          return true;\n        }()");
             if (this[_removeListener] != null) {
               dart.nullCheck(this[_removeListener])();
               this[_removeListener] = null;
             }
-            t7 = this[_previousWidget];
-            t7 == null ? null : (t8 = __t$BuildContextAndTToNvoid().as(t7.dispose), t8 == null ? null : t8(dart.nullCheck(this.element), T.as(previousValue)));
+            t4 = this[_previousWidget];
+            t4 == null ? null : (t5 = __t$BuildContextAndTToNvoid().as(t4.dispose), t5 == null ? null : t5(dart.nullCheck(this.element), T.as(previousValue)));
           }
         }
         if (shouldNotify) {
@@ -4014,7 +3669,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       value: T,
       hasValue: core.bool
     }));
-    dart.setLibraryUri(_CreateInheritedProviderState, I[7]);
+    dart.setLibraryUri(_CreateInheritedProviderState, I[4]);
     dart.setFieldSignature(_CreateInheritedProviderState, () => ({
       __proto__: dart.getFields(_CreateInheritedProviderState.__proto__),
       [_removeListener]: dart.fieldType(dart.nullable(dart.fnType(dart.void, []))),
@@ -4062,7 +3717,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getMethods(_ValueInheritedProvider.__proto__),
       createState: dart.fnType(provider$._ValueInheritedProviderState$(T), [])
     }));
-    dart.setLibraryUri(_ValueInheritedProvider, I[7]);
+    dart.setLibraryUri(_ValueInheritedProvider, I[4]);
     dart.setFieldSignature(_ValueInheritedProvider, () => ({
       __proto__: dart.getFields(_ValueInheritedProvider.__proto__),
       value: dart.finalFieldType(T),
@@ -4084,11 +3739,11 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     var __t$TAndTToNbool = () => (__t$TAndTToNbool = dart.constFn(dart.nullable(__t$TAndTTobool())))();
     class _ValueInheritedProviderState extends provider$._DelegateState$(T, provider$._ValueInheritedProvider$(T)) {
       get value() {
-        let t7;
+        let t4;
         dart.nullCheck(this.element)[_isNotifyDependentsEnabled] = false;
-        this[_removeListener] == null ? this[_removeListener] = (t7 = __t$InheritedContextOfTNAndTToNFn().as(this.delegate.startListening), t7 == null ? null : t7(dart.nullCheck(this.element), this.delegate.value)) : null;
+        this[_removeListener] == null ? this[_removeListener] = (t4 = __t$InheritedContextOfTNAndTToNFn().as(this.delegate.startListening), t4 == null ? null : t4(dart.nullCheck(this.element), this.delegate.value)) : null;
         dart.nullCheck(this.element)[_isNotifyDependentsEnabled] = true;
-        if (!(__t$InheritedContextOfTNAndTToNFn().as(this.delegate.startListening) == null || this[_removeListener] != null)) dart.assertFailed(null, I[5], 941, 12, "delegate.startListening == null || _removeListener != null");
+        if (!(__t$InheritedContextOfTNAndTToNFn().as(this.delegate.startListening) == null || this[_removeListener] != null)) dart.assertFailed(null, I[2], 941, 12, "delegate.startListening == null || _removeListener != null");
         return this.delegate.value;
       }
       willUpdateDelegate(newDelegate) {
@@ -4106,10 +3761,10 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         return shouldNotify;
       }
       dispose() {
-        let t7;
+        let t4;
         super.dispose();
-        t7 = this[_removeListener];
-        t7 == null ? null : t7();
+        t4 = this[_removeListener];
+        t4 == null ? null : t4();
       }
       debugFillProperties(properties) {
         super.debugFillProperties(properties);
@@ -4135,7 +3790,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       value: T,
       hasValue: core.bool
     }));
-    dart.setLibraryUri(_ValueInheritedProviderState, I[7]);
+    dart.setLibraryUri(_ValueInheritedProviderState, I[4]);
     dart.setFieldSignature(_ValueInheritedProviderState, () => ({
       __proto__: dart.getFields(_ValueInheritedProviderState.__proto__),
       [_removeListener]: dart.fieldType(dart.nullable(dart.fnType(dart.void, [])))
@@ -4146,7 +3801,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   dart.addTypeTests(provider$._ValueInheritedProviderState, _is__ValueInheritedProviderState_default);
   var DeepCollectionEquality__unordered = dart.privateName(equality, "DeepCollectionEquality._unordered");
   var DeepCollectionEquality__base = dart.privateName(equality, "DeepCollectionEquality._base");
-  provider$.debugPostEvent = function debugPostEvent(eventKind, event = C[50] || CT.C50) {
+  provider$.debugPostEvent = function debugPostEvent(eventKind, event = C[7] || CT.C7) {
     if (provider$._debugPostEventOverride != null) {
       dart.nullCheck(provider$._debugPostEventOverride)(eventKind, event);
     } else {
@@ -4154,32 +3809,32 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     }
   };
   provider$.spyPostEvent = function spyPostEvent() {
-    if (!(provider$._debugPostEventOverride == null)) dart.assertFailed("postEvent is already spied", I[15], 22, 10, "_debugPostEventOverride == null");
+    if (!(provider$._debugPostEventOverride == null)) dart.assertFailed("postEvent is already spied", I[12], 22, 10, "_debugPostEventOverride == null");
     let spy = new provider$.PostEventSpy.__();
     provider$._debugPostEventOverride = dart.bind(spy, _postEvent);
     return spy;
   };
   provider$['SelectContext|select'] = function SelectContext$124select(T, R, $this, selector) {
-    let t8;
-    if (!!sliver.SliverWithKeepAliveWidget.is($this.widget)) dart.assertFailed("    Tried to use context.select inside a SliverList/SliderGridView.\n\n    This is likely a mistake, as instead of rebuilding only the item that cares\n    about the selected value, this would rebuild the entire list/grid.\n\n    To fix, add a `Builder` or extract the content of `itemBuilder` in a separate widget:\n\n    ```dart\n    ListView.builder(\n      itemBuilder: (context, index) {\n        return Builder(builder: (context) {\n          final todo = context.select((TodoList list) => list[index]);\n          return Text(todo.name);\n        });\n      },\n    );\n    ```\n    ", I[5], 251, 12, "widget is! SliverWithKeepAliveWidget");
-    if (!(layout_builder.LayoutBuilder.is($this.widget) || $this.debugDoingBuild)) dart.assertFailed("Tried to use `context.select` outside of the `build` method of a widget.\n\nAny usage other than inside the `build` method of a widget are not supported.\n", I[5], 270, 12, "widget is LayoutBuilder || debugDoingBuild");
+    let t5;
+    if (!!sliver.SliverWithKeepAliveWidget.is($this.widget)) dart.assertFailed("    Tried to use context.select inside a SliverList/SliderGridView.\n\n    This is likely a mistake, as instead of rebuilding only the item that cares\n    about the selected value, this would rebuild the entire list/grid.\n\n    To fix, add a `Builder` or extract the content of `itemBuilder` in a separate widget:\n\n    ```dart\n    ListView.builder(\n      itemBuilder: (context, index) {\n        return Builder(builder: (context) {\n          final todo = context.select((TodoList list) => list[index]);\n          return Text(todo.name);\n        });\n      },\n    );\n    ```\n    ", I[2], 251, 12, "widget is! SliverWithKeepAliveWidget");
+    if (!(layout_builder.LayoutBuilder.is($this.widget) || $this.debugDoingBuild)) dart.assertFailed("Tried to use `context.select` outside of the `build` method of a widget.\n\nAny usage other than inside the `build` method of a widget are not supported.\n", I[2], 270, 12, "widget is LayoutBuilder || debugDoingBuild");
     let inheritedElement = provider$.Provider._inheritedElementOf(T, $this);
     try {
-      let value = (t8 = inheritedElement, t8 == null ? null : t8.value);
+      let value = (t5 = inheritedElement, t5 == null ? null : t5.value);
       if (!T.is(value)) {
         dart.throw(new provider$.ProviderNullException.new(dart.wrapType(T), $this.widget[$runtimeType]));
       }
       if (!dart.fn(() => {
         provider$._debugIsSelecting = true;
         return true;
-      }, T$.VoidTobool())()) dart.assertFailed(null, I[5], 283, 14, "() {\n        _debugIsSelecting = true;\n        return true;\n      }()");
+      }, T$.VoidTobool())()) dart.assertFailed(null, I[2], 283, 14, "() {\n        _debugIsSelecting = true;\n        return true;\n      }()");
       let selected = selector(value);
       if (inheritedElement != null) {
         $this.dependOnInheritedElement(inheritedElement, {aspect: dart.fn(newValue => {
             if (!T.is(newValue)) {
               dart.throw(new provider$.ProviderNullException.new(dart.wrapType(T), $this.widget[$runtimeType]));
             }
-            return !(C[51] || CT.C51).equals(selector(newValue), selected);
+            return !(C[8] || CT.C8).equals(selector(newValue), selected);
           }, dart.fnType(core.bool, [dart.nullable(T)]))});
       } else {
         $this.dependOnInheritedWidgetOfExactType(provider$._InheritedProviderScope$(dart.nullable(T)));
@@ -4189,7 +3844,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       if (!dart.fn(() => {
         provider$._debugIsSelecting = false;
         return true;
-      }, T$.VoidTobool())()) dart.assertFailed(null, I[5], 308, 14, "() {\n        _debugIsSelecting = false;\n        return true;\n      }()");
+      }, T$.VoidTobool())()) dart.assertFailed(null, I[2], 308, 14, "() {\n        _debugIsSelecting = false;\n        return true;\n      }()");
     }
   };
   provider$['SelectContext|get#select'] = function SelectContext$124get$35select($this) {
@@ -4254,16 +3909,16 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       let builder = opts && 'builder' in opts ? opts.builder : null;
       let child = opts && 'child' in opts ? opts.child : null;
       ProxyProvider0.__proto__.new.call(this, {key: key, lazy: lazy, builder: builder, create: create, update: update, dispose: dispose, updateShouldNotify: updateShouldNotify, debugCheckInvalidValueType: dart.fn(value => {
-          let t13;
-          t13 = provider$.Provider.debugCheckInvalidValueType;
-          return t13 == null ? null : t13(R, value);
+          let t10;
+          t10 = provider$.Provider.debugCheckInvalidValueType;
+          return t10 == null ? null : t10(R, value);
         }, __t$RTovoid()), child: child});
       ;
     }).prototype = ProxyProvider0.prototype;
     dart.addTypeTests(ProxyProvider0);
     ProxyProvider0.prototype[_is_ProxyProvider0_default] = true;
     dart.addTypeCaches(ProxyProvider0);
-    dart.setLibraryUri(ProxyProvider0, I[16]);
+    dart.setLibraryUri(ProxyProvider0, I[13]);
     return ProxyProvider0;
   });
   proxy_provider.ProxyProvider0 = proxy_provider.ProxyProvider0$();
@@ -4300,7 +3955,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(ProxyProvider);
     ProxyProvider.prototype[_is_ProxyProvider_default] = true;
     dart.addTypeCaches(ProxyProvider);
-    dart.setLibraryUri(ProxyProvider, I[16]);
+    dart.setLibraryUri(ProxyProvider, I[13]);
     return ProxyProvider;
   });
   proxy_provider.ProxyProvider = proxy_provider.ProxyProvider$();
@@ -4337,7 +3992,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(ProxyProvider2);
     ProxyProvider2.prototype[_is_ProxyProvider2_default] = true;
     dart.addTypeCaches(ProxyProvider2);
-    dart.setLibraryUri(ProxyProvider2, I[16]);
+    dart.setLibraryUri(ProxyProvider2, I[13]);
     return ProxyProvider2;
   });
   proxy_provider.ProxyProvider2 = proxy_provider.ProxyProvider2$();
@@ -4374,7 +4029,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(ProxyProvider3);
     ProxyProvider3.prototype[_is_ProxyProvider3_default] = true;
     dart.addTypeCaches(ProxyProvider3);
-    dart.setLibraryUri(ProxyProvider3, I[16]);
+    dart.setLibraryUri(ProxyProvider3, I[13]);
     return ProxyProvider3;
   });
   proxy_provider.ProxyProvider3 = proxy_provider.ProxyProvider3$();
@@ -4411,7 +4066,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(ProxyProvider4);
     ProxyProvider4.prototype[_is_ProxyProvider4_default] = true;
     dart.addTypeCaches(ProxyProvider4);
-    dart.setLibraryUri(ProxyProvider4, I[16]);
+    dart.setLibraryUri(ProxyProvider4, I[13]);
     return ProxyProvider4;
   });
   proxy_provider.ProxyProvider4 = proxy_provider.ProxyProvider4$();
@@ -4448,7 +4103,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(ProxyProvider5);
     ProxyProvider5.prototype[_is_ProxyProvider5_default] = true;
     dart.addTypeCaches(ProxyProvider5);
-    dart.setLibraryUri(ProxyProvider5, I[16]);
+    dart.setLibraryUri(ProxyProvider5, I[13]);
     return ProxyProvider5;
   });
   proxy_provider.ProxyProvider5 = proxy_provider.ProxyProvider5$();
@@ -4485,7 +4140,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(ProxyProvider6);
     ProxyProvider6.prototype[_is_ProxyProvider6_default] = true;
     dart.addTypeCaches(ProxyProvider6);
-    dart.setLibraryUri(ProxyProvider6, I[16]);
+    dart.setLibraryUri(ProxyProvider6, I[13]);
     return ProxyProvider6;
   });
   proxy_provider.ProxyProvider6 = proxy_provider.ProxyProvider6$();
@@ -4496,7 +4151,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   }).prototype = reassemble_handler.ReassembleHandler.prototype;
   dart.addTypeTests(reassemble_handler.ReassembleHandler);
   dart.addTypeCaches(reassemble_handler.ReassembleHandler);
-  dart.setLibraryUri(reassemble_handler.ReassembleHandler, I[17]);
+  dart.setLibraryUri(reassemble_handler.ReassembleHandler, I[14]);
   var builder$6 = dart.privateName(selector$, "Selector0.builder");
   var selector$0 = dart.privateName(selector$, "Selector0.selector");
   var _shouldRebuild = dart.privateName(selector$, "_shouldRebuild");
@@ -4526,7 +4181,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(nested.SingleChildStatefulWidget.__proto__),
     createElement: dart.fnType(nested.SingleChildStatefulElement, [])
   }));
-  dart.setLibraryUri(nested.SingleChildStatefulWidget, I[6]);
+  dart.setLibraryUri(nested.SingleChildStatefulWidget, I[3]);
   dart.setFieldSignature(nested.SingleChildStatefulWidget, () => ({
     __proto__: dart.getFields(nested.SingleChildStatefulWidget.__proto__),
     [_child$]: dart.finalFieldType(dart.nullable(framework.Widget))
@@ -4578,7 +4233,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getMethods(Selector0.__proto__),
       createState: dart.fnType(selector$._Selector0State$(T), [])
     }));
-    dart.setLibraryUri(Selector0, I[18]);
+    dart.setLibraryUri(Selector0, I[15]);
     dart.setFieldSignature(Selector0, () => ({
       __proto__: dart.getFields(Selector0.__proto__),
       builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, T, dart.nullable(framework.Widget)])),
@@ -4608,7 +4263,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getMethods(SingleChildState.__proto__),
       build: dart.fnType(framework.Widget, [framework.BuildContext])
     }));
-    dart.setLibraryUri(SingleChildState, I[6]);
+    dart.setLibraryUri(SingleChildState, I[3]);
     return SingleChildState;
   });
   nested.SingleChildState = nested.SingleChildState$();
@@ -4628,19 +4283,19 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         this[value$] = __t$TN().as(value);
       }
       buildWithChild(context, child) {
-        let t14, t13;
-        let selected = (t13 = this.widget, t14 = context, t13.selector(t14));
-        let shouldInvalidateCache = !dart.equals(this.oldWidget, this.widget) || __t$TAndTToNbool().as(this.widget[_shouldRebuild]) != null && dart.nullCheck(__t$TAndTToNbool().as(this.widget[_shouldRebuild]))(T.as(this.value), selected) || __t$TAndTToNbool().as(this.widget[_shouldRebuild]) == null && !(C[51] || CT.C51).equals(this.value, selected);
+        let t11, t10;
+        let selected = (t10 = this.widget, t11 = context, t10.selector(t11));
+        let shouldInvalidateCache = !dart.equals(this.oldWidget, this.widget) || __t$TAndTToNbool().as(this.widget[_shouldRebuild]) != null && dart.nullCheck(__t$TAndTToNbool().as(this.widget[_shouldRebuild]))(T.as(this.value), selected) || __t$TAndTToNbool().as(this.widget[_shouldRebuild]) == null && !(C[8] || CT.C8).equals(this.value, selected);
         if (shouldInvalidateCache) {
           this.value = selected;
           this.oldWidget = this.widget;
           this.cache = new basic.Builder.new({builder: dart.fn(context => {
-              let t16, t15, t14, t13;
-              t13 = this.widget;
-              t14 = context;
-              t15 = selected;
-              t16 = child;
-              return __t$BuildContextAndTAndWidgetNToWidget().as(t13.builder)(t14, t15, t16);
+              let t13, t12, t11, t10;
+              t10 = this.widget;
+              t11 = context;
+              t12 = selected;
+              t13 = child;
+              return __t$BuildContextAndTAndWidgetNToWidget().as(t10.builder)(t11, t12, t13);
             }, T$.BuildContextToWidget())});
         }
         return dart.nullCheck(this.cache);
@@ -4667,7 +4322,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getMethods(_Selector0State.__proto__),
       buildWithChild: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)])
     }));
-    dart.setLibraryUri(_Selector0State, I[18]);
+    dart.setLibraryUri(_Selector0State, I[15]);
     dart.setFieldSignature(_Selector0State, () => ({
       __proto__: dart.getFields(_Selector0State.__proto__),
       value: dart.fieldType(dart.nullable(T)),
@@ -4703,7 +4358,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(Selector);
     Selector.prototype[_is_Selector_default] = true;
     dart.addTypeCaches(Selector);
-    dart.setLibraryUri(Selector, I[18]);
+    dart.setLibraryUri(Selector, I[15]);
     return Selector;
   });
   selector$.Selector = selector$.Selector$();
@@ -4733,7 +4388,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(Selector2);
     Selector2.prototype[_is_Selector2_default] = true;
     dart.addTypeCaches(Selector2);
-    dart.setLibraryUri(Selector2, I[18]);
+    dart.setLibraryUri(Selector2, I[15]);
     return Selector2;
   });
   selector$.Selector2 = selector$.Selector2$();
@@ -4763,7 +4418,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(Selector3);
     Selector3.prototype[_is_Selector3_default] = true;
     dart.addTypeCaches(Selector3);
-    dart.setLibraryUri(Selector3, I[18]);
+    dart.setLibraryUri(Selector3, I[15]);
     return Selector3;
   });
   selector$.Selector3 = selector$.Selector3$();
@@ -4793,7 +4448,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(Selector4);
     Selector4.prototype[_is_Selector4_default] = true;
     dart.addTypeCaches(Selector4);
-    dart.setLibraryUri(Selector4, I[18]);
+    dart.setLibraryUri(Selector4, I[15]);
     return Selector4;
   });
   selector$.Selector4 = selector$.Selector4$();
@@ -4823,7 +4478,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(Selector5);
     Selector5.prototype[_is_Selector5_default] = true;
     dart.addTypeCaches(Selector5);
-    dart.setLibraryUri(Selector5, I[18]);
+    dart.setLibraryUri(Selector5, I[15]);
     return Selector5;
   });
   selector$.Selector5 = selector$.Selector5$();
@@ -4853,7 +4508,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     dart.addTypeTests(Selector6);
     Selector6.prototype[_is_Selector6_default] = true;
     dart.addTypeCaches(Selector6);
-    dart.setLibraryUri(Selector6, I[18]);
+    dart.setLibraryUri(Selector6, I[15]);
     return Selector6;
   });
   selector$.Selector6 = selector$.Selector6$();
@@ -4899,7 +4554,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getMethods(ValueListenableProvider.__proto__),
       buildWithChild: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)])
     }));
-    dart.setLibraryUri(ValueListenableProvider, I[19]);
+    dart.setLibraryUri(ValueListenableProvider, I[16]);
     dart.setFieldSignature(ValueListenableProvider, () => ({
       __proto__: dart.getFields(ValueListenableProvider.__proto__),
       [_valueListenable]: dart.finalFieldType(change_notifier.ValueListenable$(T)),
@@ -4909,6 +4564,99 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   });
   value_listenable_provider.ValueListenableProvider = value_listenable_provider.ValueListenableProvider$();
   dart.addTypeTests(value_listenable_provider.ValueListenableProvider, _is_ValueListenableProvider_default);
+  main_screen.MainScreen = class MainScreen extends framework.StatefulWidget {
+    static ['_#new#tearOff'](opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      return new main_screen.MainScreen.new({key: key});
+    }
+    createState() {
+      return new main_screen._MainScreenState.new();
+    }
+  };
+  (main_screen.MainScreen.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    main_screen.MainScreen.__proto__.new.call(this, {key: key});
+    ;
+  }).prototype = main_screen.MainScreen.prototype;
+  dart.addTypeTests(main_screen.MainScreen);
+  dart.addTypeCaches(main_screen.MainScreen);
+  dart.setMethodSignature(main_screen.MainScreen, () => ({
+    __proto__: dart.getMethods(main_screen.MainScreen.__proto__),
+    createState: dart.fnType(framework.State$(main_screen.MainScreen), [])
+  }));
+  dart.setLibraryUri(main_screen.MainScreen, I[17]);
+  var _selectedIndex = dart.privateName(main_screen, "_selectedIndex");
+  var _onItemTapped = dart.privateName(main_screen, "_onItemTapped");
+  var Text_selectionColor = dart.privateName(text, "Text.selectionColor");
+  var Text_textHeightBehavior = dart.privateName(text, "Text.textHeightBehavior");
+  var Text_textWidthBasis = dart.privateName(text, "Text.textWidthBasis");
+  var Text_semanticsLabel = dart.privateName(text, "Text.semanticsLabel");
+  var Text_maxLines = dart.privateName(text, "Text.maxLines");
+  var Text_textScaleFactor = dart.privateName(text, "Text.textScaleFactor");
+  var Text_overflow = dart.privateName(text, "Text.overflow");
+  var Text_softWrap = dart.privateName(text, "Text.softWrap");
+  var Text_locale = dart.privateName(text, "Text.locale");
+  var Text_textDirection = dart.privateName(text, "Text.textDirection");
+  var Text_textAlign = dart.privateName(text, "Text.textAlign");
+  var Text_strutStyle = dart.privateName(text, "Text.strutStyle");
+  var Text_style = dart.privateName(text, "Text.style");
+  var Text_textSpan = dart.privateName(text, "Text.textSpan");
+  var Text_data = dart.privateName(text, "Text.data");
+  var BottomNavigationBarItem_tooltip = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.tooltip");
+  var BottomNavigationBarItem_backgroundColor = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.backgroundColor");
+  var BottomNavigationBarItem_label = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.label");
+  var Icon_textDirection = dart.privateName(icon, "Icon.textDirection");
+  var Icon_semanticLabel = dart.privateName(icon, "Icon.semanticLabel");
+  var Icon_shadows = dart.privateName(icon, "Icon.shadows");
+  var Icon_color = dart.privateName(icon, "Icon.color");
+  var Icon_opticalSize = dart.privateName(icon, "Icon.opticalSize");
+  var Icon_grade = dart.privateName(icon, "Icon.grade");
+  var Icon_weight = dart.privateName(icon, "Icon.weight");
+  var Icon_fill = dart.privateName(icon, "Icon.fill");
+  var Icon_size = dart.privateName(icon, "Icon.size");
+  var IconData_matchTextDirection = dart.privateName(icon_data, "IconData.matchTextDirection");
+  var IconData_fontPackage = dart.privateName(icon_data, "IconData.fontPackage");
+  var IconData_fontFamily = dart.privateName(icon_data, "IconData.fontFamily");
+  var IconData_codePoint = dart.privateName(icon_data, "IconData.codePoint");
+  var Icon_icon = dart.privateName(icon, "Icon.icon");
+  var BottomNavigationBarItem_activeIcon = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.activeIcon");
+  var BottomNavigationBarItem_icon = dart.privateName(bottom_navigation_bar_item, "BottomNavigationBarItem.icon");
+  main_screen._MainScreenState = class _MainScreenState extends framework.State$(main_screen.MainScreen) {
+    [_onItemTapped](index) {
+      this.setState(dart.fn(() => {
+        this[_selectedIndex] = index;
+      }, T$.VoidTovoid()));
+    }
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: C[10] || CT.C10}), body: new basic.IndexedStack.new({index: this[_selectedIndex], children: main_screen._MainScreenState._pages}), bottomNavigationBar: new bottom_navigation_bar.BottomNavigationBar.new({items: C[11] || CT.C11, currentIndex: this[_selectedIndex], selectedItemColor: colors.Colors.brown._get(800), onTap: dart.bind(this, _onItemTapped)})});
+    }
+    static ['_#new#tearOff']() {
+      return new main_screen._MainScreenState.new();
+    }
+  };
+  (main_screen._MainScreenState.new = function() {
+    this[_selectedIndex] = 0;
+    main_screen._MainScreenState.__proto__.new.call(this);
+    ;
+  }).prototype = main_screen._MainScreenState.prototype;
+  dart.addTypeTests(main_screen._MainScreenState);
+  dart.addTypeCaches(main_screen._MainScreenState);
+  dart.setMethodSignature(main_screen._MainScreenState, () => ({
+    __proto__: dart.getMethods(main_screen._MainScreenState.__proto__),
+    [_onItemTapped]: dart.fnType(dart.void, [core.int]),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(main_screen._MainScreenState, I[17]);
+  dart.setFieldSignature(main_screen._MainScreenState, () => ({
+    __proto__: dart.getFields(main_screen._MainScreenState.__proto__),
+    [_selectedIndex]: dart.fieldType(core.int)
+  }));
+  dart.setStaticFieldSignature(main_screen._MainScreenState, () => ['_pages']);
+  dart.defineLazy(main_screen._MainScreenState, {
+    /*main_screen._MainScreenState._pages*/get _pages() {
+      return C[21] || CT.C21;
+    }
+  }, false);
   const StatelessElement_SingleChildWidgetElementMixin$36$ = class StatelessElement_SingleChildWidgetElementMixin extends framework.StatelessElement {};
   (StatelessElement_SingleChildWidgetElementMixin$36$.new = function(widget) {
     nested.SingleChildWidgetElementMixin[dart.mixinNew].call(this);
@@ -4923,19 +4671,19 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       return nested.Nested.as(super.widget);
     }
     build() {
-      let t13, t13$, t13$0;
+      let t10, t10$, t10$0;
       let nestedHook = null;
-      let nextNode = (t13$ = (t13 = this[_parent], t13 == null ? null : t13.injectedChild), t13$ == null ? this.widget[_child$] : t13$);
+      let nextNode = (t10$ = (t10 = this[_parent], t10 == null ? null : t10.injectedChild), t10$ == null ? this.widget[_child$] : t10$);
       for (let child of this.widget[_children][$reversed]) {
         nextNode = nestedHook = new nested._NestedHook.new({owner: this, wrappedWidget: child, injectedChild: nextNode});
       }
       if (nestedHook != null) {
         for (let node of this.nodes) {
-          t13$0 = node;
+          t10$0 = node;
           (() => {
-            t13$0.wrappedChild = dart.nullCheck(nestedHook).wrappedWidget;
-            t13$0.injectedChild = nestedHook.injectedChild;
-            return t13$0;
+            t10$0.wrappedChild = dart.nullCheck(nestedHook).wrappedWidget;
+            t10$0.injectedChild = nestedHook.injectedChild;
+            return t10$0;
           })();
           let next = nestedHook.injectedChild;
           if (nested._NestedHook.is(next)) {
@@ -4959,7 +4707,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getGetters(nested._NestedElement.__proto__),
     widget: nested.Nested
   }));
-  dart.setLibraryUri(nested._NestedElement, I[6]);
+  dart.setLibraryUri(nested._NestedElement, I[3]);
   dart.setFieldSignature(nested._NestedElement, () => ({
     __proto__: dart.getFields(nested._NestedElement.__proto__),
     nodes: dart.finalFieldType(core.Set$(nested._NestedHookElement))
@@ -4995,7 +4743,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     createElement: dart.fnType(nested._NestedHookElement, []),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(nested._NestedHook, I[6]);
+  dart.setLibraryUri(nested._NestedHook, I[3]);
   dart.setFieldSignature(nested._NestedHook, () => ({
     __proto__: dart.getFields(nested._NestedHook.__proto__),
     wrappedWidget: dart.finalFieldType(nested.SingleChildWidget),
@@ -5070,7 +4818,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     injectedChild: dart.nullable(framework.Widget),
     wrappedChild: dart.nullable(nested.SingleChildWidget)
   }));
-  dart.setLibraryUri(nested._NestedHookElement, I[6]);
+  dart.setLibraryUri(nested._NestedHookElement, I[3]);
   dart.setFieldSignature(nested._NestedHookElement, () => ({
     __proto__: dart.getFields(nested._NestedHookElement.__proto__),
     [_injectedChild]: dart.fieldType(dart.nullable(framework.Widget)),
@@ -5083,7 +4831,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   dart.addTypeTests(nested.SingleChildWidget);
   dart.addTypeCaches(nested.SingleChildWidget);
   nested.SingleChildWidget[dart.implements] = () => [framework.Widget];
-  dart.setLibraryUri(nested.SingleChildWidget, I[6]);
+  dart.setLibraryUri(nested.SingleChildWidget, I[3]);
   const StatefulElement_SingleChildWidgetElementMixin$36 = class StatefulElement_SingleChildWidgetElementMixin extends framework.StatefulElement {};
   (StatefulElement_SingleChildWidgetElementMixin$36.new = function(widget) {
     nested.SingleChildWidgetElementMixin[dart.mixinNew].call(this);
@@ -5118,7 +4866,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     widget: nested.SingleChildStatefulWidget,
     state: nested.SingleChildState$(nested.SingleChildStatefulWidget)
   }));
-  dart.setLibraryUri(nested.SingleChildStatefulElement, I[6]);
+  dart.setLibraryUri(nested.SingleChildStatefulElement, I[3]);
   var builder$7 = dart.privateName(nested, "SingleChildBuilder.builder");
   nested.SingleChildBuilder = class SingleChildBuilder extends nested.SingleChildStatelessWidget {
     get builder() {
@@ -5134,10 +4882,10 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       return new nested.SingleChildBuilder.new({key: key, builder: builder, child: child});
     }
     buildWithChild(context, child) {
-      let t14, t13;
-      t13 = context;
-      t14 = child;
-      return this.builder(t13, t14);
+      let t11, t10;
+      t10 = context;
+      t11 = child;
+      return this.builder(t10, t11);
     }
   };
   (nested.SingleChildBuilder.new = function(opts) {
@@ -5154,7 +4902,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(nested.SingleChildBuilder.__proto__),
     buildWithChild: dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)])
   }));
-  dart.setLibraryUri(nested.SingleChildBuilder, I[6]);
+  dart.setLibraryUri(nested.SingleChildBuilder, I[3]);
   dart.setFieldSignature(nested.SingleChildBuilder, () => ({
     __proto__: dart.getFields(nested.SingleChildBuilder.__proto__),
     builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, dart.nullable(framework.Widget)]))
@@ -5185,7 +4933,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getGetters(nested.SingleChildStatelessWidgetMixin.__proto__),
     [_child$]: dart.nullable(framework.Widget)
   }));
-  dart.setLibraryUri(nested.SingleChildStatelessWidgetMixin, I[6]);
+  dart.setLibraryUri(nested.SingleChildStatelessWidgetMixin, I[3]);
   nested.SingleChildStatefulWidgetMixin = class SingleChildStatefulWidgetMixin extends framework.StatefulWidget {};
   nested.SingleChildStatefulWidgetMixin[dart.mixinOn] = StatefulWidget => class SingleChildStatefulWidgetMixin extends StatefulWidget {
     createElement() {
@@ -5199,7 +4947,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(nested.SingleChildStatefulWidgetMixin.__proto__),
     createElement: dart.fnType(nested._SingleChildStatefulMixinElement, [])
   }));
-  dart.setLibraryUri(nested.SingleChildStatefulWidgetMixin, I[6]);
+  dart.setLibraryUri(nested.SingleChildStatefulWidgetMixin, I[3]);
   const _is_SingleChildStateMixin_default = Symbol('_is_SingleChildStateMixin_default');
   nested.SingleChildStateMixin$ = dart.generic(T => {
     class SingleChildStateMixin extends framework.State$(T) {}
@@ -5216,7 +4964,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       __proto__: dart.getMethods(SingleChildStateMixin.__proto__),
       build: dart.fnType(framework.Widget, [framework.BuildContext])
     }));
-    dart.setLibraryUri(SingleChildStateMixin, I[6]);
+    dart.setLibraryUri(SingleChildStateMixin, I[3]);
     return SingleChildStateMixin;
   });
   nested.SingleChildStateMixin = nested.SingleChildStateMixin$();
@@ -5255,7 +5003,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     widget: nested.SingleChildStatefulWidgetMixin,
     state: nested.SingleChildStateMixin$(framework.StatefulWidget)
   }));
-  dart.setLibraryUri(nested._SingleChildStatefulMixinElement, I[6]);
+  dart.setLibraryUri(nested._SingleChildStatefulMixinElement, I[3]);
   nested.SingleChildInheritedElementMixin = class SingleChildInheritedElementMixin extends core.Object {};
   nested.SingleChildInheritedElementMixin[dart.mixinOn] = _SingleChildInheritedElementMixin$36InheritedElement$36SingleChildWidgetElementMixin => class SingleChildInheritedElementMixin extends _SingleChildInheritedElementMixin$36InheritedElement$36SingleChildWidgetElementMixin {
     build() {
@@ -5272,16 +5020,187 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(nested.SingleChildInheritedElementMixin.__proto__),
     build: dart.fnType(framework.Widget, [])
   }));
-  dart.setLibraryUri(nested.SingleChildInheritedElementMixin, I[6]);
+  dart.setLibraryUri(nested.SingleChildInheritedElementMixin, I[3]);
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  var TextStyle_overflow = dart.privateName(text_style, "TextStyle.overflow");
+  var TextStyle_fontVariations = dart.privateName(text_style, "TextStyle.fontVariations");
+  var TextStyle_fontFeatures = dart.privateName(text_style, "TextStyle.fontFeatures");
+  var TextStyle_shadows = dart.privateName(text_style, "TextStyle.shadows");
+  var TextStyle_debugLabel = dart.privateName(text_style, "TextStyle.debugLabel");
+  var TextStyle_decorationThickness = dart.privateName(text_style, "TextStyle.decorationThickness");
+  var TextStyle_decorationStyle = dart.privateName(text_style, "TextStyle.decorationStyle");
+  var TextStyle_decorationColor = dart.privateName(text_style, "TextStyle.decorationColor");
+  var TextStyle_decoration = dart.privateName(text_style, "TextStyle.decoration");
+  var TextStyle_background = dart.privateName(text_style, "TextStyle.background");
+  var TextStyle_foreground = dart.privateName(text_style, "TextStyle.foreground");
+  var TextStyle_locale = dart.privateName(text_style, "TextStyle.locale");
+  var TextStyle_leadingDistribution = dart.privateName(text_style, "TextStyle.leadingDistribution");
+  var TextStyle_height = dart.privateName(text_style, "TextStyle.height");
+  var TextStyle_textBaseline = dart.privateName(text_style, "TextStyle.textBaseline");
+  var TextStyle_wordSpacing = dart.privateName(text_style, "TextStyle.wordSpacing");
+  var TextStyle_letterSpacing = dart.privateName(text_style, "TextStyle.letterSpacing");
+  var TextStyle_fontStyle = dart.privateName(text_style, "TextStyle.fontStyle");
+  var FontWeight_value = dart.privateName(ui, "FontWeight.value");
+  var FontWeight_index = dart.privateName(ui, "FontWeight.index");
+  var TextStyle_fontWeight = dart.privateName(text_style, "TextStyle.fontWeight");
+  var TextStyle_fontSize = dart.privateName(text_style, "TextStyle.fontSize");
+  var TextStyle__package = dart.privateName(text_style, "TextStyle._package");
+  var TextStyle__fontFamilyFallback = dart.privateName(text_style, "TextStyle._fontFamilyFallback");
+  var TextStyle_fontFamily = dart.privateName(text_style, "TextStyle.fontFamily");
+  var TextStyle_backgroundColor = dart.privateName(text_style, "TextStyle.backgroundColor");
+  var TextStyle_color = dart.privateName(text_style, "TextStyle.color");
+  var TextStyle_inherit = dart.privateName(text_style, "TextStyle.inherit");
+  var SingleChildRenderObjectWidget_child = dart.privateName(framework, "SingleChildRenderObjectWidget.child");
+  var SizedBox_height = dart.privateName(basic, "SizedBox.height");
+  var SizedBox_width = dart.privateName(basic, "SizedBox.width");
+  home_page.HomePage = class HomePage extends framework.StatelessWidget {
+    static ['_#new#tearOff'](opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      return new home_page.HomePage.new({key: key});
+    }
+    build(context) {
+      return new (T$.ConsumerOfCoffeeMachineState()).new({builder: dart.fn((context, coffeeState, child) => new safe_area.SafeArea.new({child: new basic.Padding.new({padding: C[25] || CT.C25, child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.stretch, children: T$.JSArrayOfWidget().of([new basic.Expanded.new({flex: 2, child: new container.Container.new({padding: C[25] || CT.C25, decoration: new box_decoration.BoxDecoration.new({color: colors.Colors.blueGrey._get(50), borderRadius: new border_radius.BorderRadius.circular(12)}), child: new basic.Column.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: T$.JSArrayOfWidget().of([C[26] || CT.C26, C[29] || CT.C29, new text.Text.new("Уровень воды: " + dart.str(coffeeState.waterLevel) + "%"), C[30] || CT.C30, new text.Text.new("Кофейные зерна: " + dart.str(coffeeState.coffeeBeans) + "%"), C[30] || CT.C30, new text.Text.new("Молоко: " + dart.str(coffeeState.milkLevel) + "%"), C[30] || CT.C30, new text.Text.new("Контейнер для отходов: " + (coffeeState.wasteContainerFull ? "Полный" : "Неполный"))])})})})])})})}), T$.BuildContextAndCoffeeMachineStateAndWidgetNToSafeArea())});
+    }
+  };
+  (home_page.HomePage.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    home_page.HomePage.__proto__.new.call(this, {key: key});
+    ;
+  }).prototype = home_page.HomePage.prototype;
+  dart.addTypeTests(home_page.HomePage);
+  dart.addTypeCaches(home_page.HomePage);
+  dart.setMethodSignature(home_page.HomePage, () => ({
+    __proto__: dart.getMethods(home_page.HomePage.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(home_page.HomePage, I[18]);
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  var _showFeedback = dart.privateName(control_page, "_showFeedback");
+  control_page.ControlPage = class ControlPage extends framework.StatelessWidget {
+    static ['_#new#tearOff'](opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      return new control_page.ControlPage.new({key: key});
+    }
+    [_showFeedback](context, message) {
+      scaffold.ScaffoldMessenger.of(context).hideCurrentSnackBar();
+      scaffold.ScaffoldMessenger.of(context).showSnackBar(new snack_bar.SnackBar.new({content: new text.Text.new(message), duration: C[31] || CT.C31}));
+    }
+    build(context) {
+      let coffeeState = provider$.Provider.of(coffee_machine_state.CoffeeMachineState, context);
+      return new safe_area.SafeArea.new({child: new basic.Padding.new({padding: C[25] || CT.C25, child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.stretch, children: T$.JSArrayOfWidget().of([new basic.Expanded.new({child: new container.Container.new({padding: C[25] || CT.C25, decoration: new box_decoration.BoxDecoration.new({color: colors.Colors.blueGrey._get(50), borderRadius: new border_radius.BorderRadius.circular(12)}), child: new basic.Column.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: T$.JSArrayOfWidget().of([C[32] || CT.C32, C[29] || CT.C29, new text.Text.new("Вода: " + dart.str(coffeeState.waterLevel) + "%"), C[30] || CT.C30, new text.Text.new("Зерна: " + dart.str(coffeeState.coffeeBeans) + "%"), C[30] || CT.C30, new text.Text.new("Молоко: " + dart.str(coffeeState.milkLevel) + "%"), C[30] || CT.C30, new text.Text.new("Отходы: " + (coffeeState.wasteContainerFull ? "Полный" : "Неполный"))])})})}), C[33] || CT.C33, new basic.Expanded.new({child: new single_child_scroll_view.SingleChildScrollView.new({child: new basic.Column.new({children: T$.JSArrayOfWidget().of([new elevated_button.ElevatedButton.new({onPressed: dart.fn(() => {
+                          try {
+                            coffeeState.makeCoffee("Эспрессо");
+                            this[_showFeedback](context, "Эспрессо готовится...");
+                            T$.FutureOfNull().delayed(C[34] || CT.C34, dart.fn(() => {
+                              this[_showFeedback](context, "Эспрессо готов!");
+                            }, T$.VoidToNull()));
+                          } catch (e$) {
+                            let e = dart.getThrown(e$);
+                            if (core.Object.is(e)) {
+                              this[_showFeedback](context, "Ошибка: " + e[$toString]());
+                            } else
+                              throw e$;
+                          }
+                        }, T$.VoidTovoid()), child: C[35] || CT.C35}), C[30] || CT.C30, new elevated_button.ElevatedButton.new({onPressed: dart.fn(() => {
+                          try {
+                            coffeeState.makeCoffee("Капучино");
+                            this[_showFeedback](context, "Капучино готовится...");
+                            T$.FutureOfNull().delayed(C[34] || CT.C34, dart.fn(() => {
+                              this[_showFeedback](context, "Капучино готов!");
+                            }, T$.VoidToNull()));
+                          } catch (e$) {
+                            let e = dart.getThrown(e$);
+                            if (core.Object.is(e)) {
+                              this[_showFeedback](context, "Ошибка: " + e[$toString]());
+                            } else
+                              throw e$;
+                          }
+                        }, T$.VoidTovoid()), child: C[36] || CT.C36}), C[30] || CT.C30, new elevated_button.ElevatedButton.new({onPressed: dart.fn(() => {
+                          try {
+                            coffeeState.makeCoffee("Латте");
+                            this[_showFeedback](context, "Латте готовится...");
+                            T$.FutureOfNull().delayed(C[34] || CT.C34, dart.fn(() => {
+                              this[_showFeedback](context, "Латте готов!");
+                            }, T$.VoidToNull()));
+                          } catch (e$) {
+                            let e = dart.getThrown(e$);
+                            if (core.Object.is(e)) {
+                              this[_showFeedback](context, "Ошибка: " + e[$toString]());
+                            } else
+                              throw e$;
+                          }
+                        }, T$.VoidTovoid()), child: C[37] || CT.C37})])})})})])})})});
+    }
+  };
+  (control_page.ControlPage.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    control_page.ControlPage.__proto__.new.call(this, {key: key});
+    ;
+  }).prototype = control_page.ControlPage.prototype;
+  dart.addTypeTests(control_page.ControlPage);
+  dart.addTypeCaches(control_page.ControlPage);
+  dart.setMethodSignature(control_page.ControlPage, () => ({
+    __proto__: dart.getMethods(control_page.ControlPage.__proto__),
+    [_showFeedback]: dart.fnType(dart.void, [framework.BuildContext, core.String]),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(control_page.ControlPage, I[19]);
+  var _Enum__name = dart.privateName(core, "_Enum._name");
+  var _Enum_index = dart.privateName(core, "_Enum.index");
+  var SnackBar_clipBehavior = dart.privateName(snack_bar, "SnackBar.clipBehavior");
+  var SnackBar_dismissDirection = dart.privateName(snack_bar, "SnackBar.dismissDirection");
+  var SnackBar_onVisible = dart.privateName(snack_bar, "SnackBar.onVisible");
+  var SnackBar_animation = dart.privateName(snack_bar, "SnackBar.animation");
+  var SnackBar_duration = dart.privateName(snack_bar, "SnackBar.duration");
+  var SnackBar_closeIconColor = dart.privateName(snack_bar, "SnackBar.closeIconColor");
+  var SnackBar_showCloseIcon = dart.privateName(snack_bar, "SnackBar.showCloseIcon");
+  var SnackBar_action = dart.privateName(snack_bar, "SnackBar.action");
+  var SnackBar_behavior = dart.privateName(snack_bar, "SnackBar.behavior");
+  var SnackBar_shape = dart.privateName(snack_bar, "SnackBar.shape");
+  var SnackBar_width = dart.privateName(snack_bar, "SnackBar.width");
+  var SnackBar_padding = dart.privateName(snack_bar, "SnackBar.padding");
+  var SnackBar_margin = dart.privateName(snack_bar, "SnackBar.margin");
+  var SnackBar_elevation = dart.privateName(snack_bar, "SnackBar.elevation");
+  var SnackBar_backgroundColor = dart.privateName(snack_bar, "SnackBar.backgroundColor");
+  var SnackBar_content = dart.privateName(snack_bar, "SnackBar.content");
+  settings_page.SettingsPage = class SettingsPage extends framework.StatelessWidget {
+    static ['_#new#tearOff'](opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      return new settings_page.SettingsPage.new({key: key});
+    }
+    build(context) {
+      let coffeeState = provider$.Provider.of(coffee_machine_state.CoffeeMachineState, context);
+      return new safe_area.SafeArea.new({child: new basic.Padding.new({padding: C[25] || CT.C25, child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.stretch, children: T$.JSArrayOfWidget().of([new basic.Expanded.new({child: new container.Container.new({padding: C[25] || CT.C25, decoration: new box_decoration.BoxDecoration.new({color: colors.Colors.blueGrey._get(50), borderRadius: new border_radius.BorderRadius.circular(12)}), child: new basic.Column.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: T$.JSArrayOfWidget().of([C[38] || CT.C38, C[30] || CT.C30, new text.Text.new("Контейнер: " + (coffeeState.wasteContainerFull ? "Полный" : "Неполный"))])})})}), C[33] || CT.C33, new elevated_button.ElevatedButton.new({onPressed: dart.fn(() => {
+                  coffeeState.cleanWasteContainer();
+                  scaffold.ScaffoldMessenger.of(context).showSnackBar(C[39] || CT.C39);
+                }, T$.VoidTovoid()), child: C[44] || CT.C44}), C[30] || CT.C30, new elevated_button.ElevatedButton.new({onPressed: dart.fn(() => {
+                  coffeeState.resetResources();
+                  scaffold.ScaffoldMessenger.of(context).showSnackBar(C[45] || CT.C45);
+                }, T$.VoidTovoid()), child: C[47] || CT.C47})])})})});
+    }
+  };
+  (settings_page.SettingsPage.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    settings_page.SettingsPage.__proto__.new.call(this, {key: key});
+    ;
+  }).prototype = settings_page.SettingsPage.prototype;
+  dart.addTypeTests(settings_page.SettingsPage);
+  dart.addTypeCaches(settings_page.SettingsPage);
+  dart.setMethodSignature(settings_page.SettingsPage, () => ({
+    __proto__: dart.getMethods(settings_page.SettingsPage.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(settings_page.SettingsPage, I[20]);
   dart.trackLibraries("zapp_user_main", {
     "file:///zapp/project/.zapp_entry.dart": $46zapp_entry,
     "file:///zapp/project/lib/main.dart": main,
     "file:///zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart": web_plugin_registrant,
     "package:provider/provider.dart": provider,
     "file:///zapp/project/lib/coffee_machine_state.dart": coffee_machine_state,
-    "file:///zapp/project/lib/pages/home_page.dart": home_page,
-    "file:///zapp/project/lib/pages/control_page.dart": control_page,
-    "file:///zapp/project/lib/pages/settings_page.dart": settings_page,
+    "file:///zapp/project/lib/coffee_machine_app.dart": coffee_machine_app,
     "package:provider/src/async_provider.dart": async_provider,
     "package:provider/src/change_notifier_provider.dart": change_notifier_provider,
     "package:provider/src/consumer.dart": consumer,
@@ -5291,10 +5210,14 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     "package:provider/src/reassemble_handler.dart": reassemble_handler,
     "package:provider/src/selector.dart": selector$,
     "package:provider/src/value_listenable_provider.dart": value_listenable_provider,
-    "package:nested/nested.dart": nested
+    "file:///zapp/project/lib/main_screen.dart": main_screen,
+    "package:nested/nested.dart": nested,
+    "file:///zapp/project/lib/pages/home_page.dart": home_page,
+    "file:///zapp/project/lib/pages/control_page.dart": control_page,
+    "file:///zapp/project/lib/pages/settings_page.dart": settings_page
   }, {
     "package:provider/src/provider.dart": ["deferred_inherited_provider.dart", "devtool.dart", "inherited_provider.dart"]
-  }, '{"version":3,"sourceRoot":"","sources":["/zapp/project/.zapp_entry.dart","/zapp/project/lib/main.dart","/zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart","/zapp/project/lib/coffee_machine_state.dart","/zapp/project/lib/pages/home_page.dart","/zapp/project/lib/pages/control_page.dart","/zapp/project/lib/pages/settings_page.dart","/zapp/pub/.pub_cache/hosted/pub.dev/nested-1.0.0/lib/nested.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/inherited_provider.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/deferred_inherited_provider.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/async_provider.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/listenable_provider.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/change_notifier_provider.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/consumer.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/provider.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/devtool.dart","/workspace/build/dart-sdk/packages/flutter/lib/src/widgets/framework.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/proxy_provider.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/reassemble_handler.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/selector.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/value_listenable_provider.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA2CI,IA1BF,iCAAgB;AACd,UAAoB,8BAGD;AAF8B,QAA9B,AAAkB,8BAElB,eAF2B;;AAEL,QAAF,CAApB;;AAEnB,UAAO,AAAQ,uBAAY;AAKvB,QAJK,AAAqC,qBAA7B,qCAAuB,uBAAW,QAAC;AAG9C,UAFC,AAAQ,sBAAW,2BAA2B,CAC/C;;;yBAIL,SAAC,GAAG;AACL,UAAO,AAAQ,uBAAY;AAIvB,QAHC,AAAQ,sBAAW,wBAAwB,CAC5C,AAAE,CAAD,eACD,AAAW,UAAD;;4DAGM,yCACb,SAAC,MAAM,QAAQ,MAAM;AAC1B,cAAO,AAAQ,uBAAY;AAC4B,YAAlD,AAAQ,sBAAW,wBAAwB,CAAC,IAAI;;;EAI3D;;AAEiB;AAQd,MAPD,MAAS,gCACC;AACS,UAAf;8CAEe;AACmB,UAAjB;;IAGvB;;;;;;;;UCrC4B;AACxB,YAAO,iCAEE,sBACA,yCACiB,oCACO;IAanC;;;QAtB8B;AAAxB,yDAAwB,GAAG;;EAAE;;;;;;;;;;;;;;AA6BA;IAAkB;;;QAH7B;AAAlB,mDAAkB,GAAG;;EAAE;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;oBAeN;AAGnB,MAFF,cAAS;AACe,QAAtB,uBAAiB,KAAK;;IAE1B;UAG0B;AACxB,YAAO,oCACG,sDAIF,mCACG,gCACG,qDAES,uFAgBL,yCACY,AAAK,yBAAC,uBACzB;IAGb;;;;;;IA9CI,uBAAiB;;;EA+CvB;;;;;;;;;;;;;;;MA7C4B,4BAAM;;;;;AAvC3B,IAHL,eAAO,mEACK,QAAC,WAAY;EAG3B;;ECLwB;;;;;;;ICAlB;;;;;;;AAGkB;IAAW;;AACV;IAAY;;AACd;IAAU;;AACA;IAAmB;eAG3B;AACrB,UAAI,AAAY,oBAAE,MAAM,AAAa,qBAAE,MAAO,UAAU,KAAI,cAAc,AAAW,mBAAE;AAC7C,QAAxC,WAAM,mBAAU;;AAEjB,UAAI,AAAe,wBAAG;AACgB,QAArC,WAAM,mBAAU;;AAGD,MAAjB,oBAAA,AAAY,oBAAG;AACG,MAAlB,qBAAA,AAAa,qBAAG;AACI,MAApB,sBAAA,AAAe,sBAAG;AAElB,UAAI,AAAW,UAAD,KAAI,cAAc,AAAW,UAAD,KAAI;AAC5B,QAAhB,mBAAA,AAAW,mBAAG;;AAIhB,UAAI,AAAe,wBAAG;AACM,QAA1B,4BAAsB;;AAGP,MAAjB;IACF;;AAIoB,MAAlB,sBAAiB;AACU,MAA3B,4BAAsB;AACL,MAAjB;IACF;;AAIkB,MAAhB,oBAAc;AACG,MAAjB,qBAAe;AACA,MAAf,mBAAa;AACc,MAA3B,4BAAsB;AACJ,MAAlB,sBAAiB;AACA,MAAjB;IACF;;;;;;IApDI,oBAAc;IACd,qBAAe;IACf,mBAAa;IACZ,4BAAsB;IACvB,uBAAiB;;;EAiDvB;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UChD4B;AAExB,YAAO,uDACI,SAAC,SAAS,aAAa,UACvB,mCACE,wDAEE,0CACkC,2CACrB,yBAChB,8BACQ,UACC,mEAEO,6CACI,AAAQ,4BAAC,mBACI,wCAAS,cAE/B,yCACgC,yCACnB,2DAMhB,kBAAK,AAA0C,4BAAzB,AAAY,WAAD,eAAY,uBAE7C,kBAAK,AAA6C,8BAA1B,AAAY,WAAD,gBAAa,uBAEhD,kBAAK,AAAmC,sBAAxB,AAAY,WAAD,cAAW,uBAEtC,kBAAK,AAAkF,6BAAxD,AAAY,WAAD,sBAAsB,WAAW,uCAMnF,8BACQ,UACC,mEAEO,6CACI,AAAI,wBAAC,oBACQ,wCAAS;IAgBxD;;;QA/DsB;AAAhB,sDAAgB,GAAG;;EAAE;;;;;;;;;;;;;;;oBCCG,SAAgB;AACO,MAAjC,AAAY,8BAAT,OAAO;AAM3B,MALiB,AAAY,8BAAT,OAAO,eAC1B,qCACW,kBAAK,OAAO;IAI3B;UAG0B;AAClB,wBAAuB,+DAAuB,OAAO;AAE3D,YAAO,oCACE,wDAEE,0CACkC,2CAC7B,yBAER,+BACS,mEAEO,6CACI,AAAQ,4BAAC,mBACI,wCAAS,cAE/B,yCACgC,yCAC3B,2DAMR,kBAAK,AAAkC,oBAAzB,AAAY,WAAD,eAAY,uBAErC,kBAAK,AAAoC,qBAA1B,AAAY,WAAD,gBAAa,uBAEvC,kBAAK,AAAmC,sBAAxB,AAAY,WAAD,cAAW,uBAEtC,kBAAK,AAAmE,cAAxD,AAAY,WAAD,sBAAsB,WAAW,uCAOpE,+BACS,+DACE,gCACK,yBACR,mDACa;AACT;AACoC,4BAAlC,AAAY,WAAD,YAAY;AACwB,4BAA/C,oBAAc,OAAO,EAAE;AAGrB,4BAFK,2CAAoC;AACA,8BAAzC,oBAAc,OAAO,EAAE;;;gCAElB;AAAP;AACiD,8BAAjD,oBAAc,OAAO,EAAE,AAAyB,aAAd,AAAE,CAAD;;;;wFAMzC,mDACa;AACT;AACoC,4BAAlC,AAAY,WAAD,YAAY;AACwB,4BAA/C,oBAAc,OAAO,EAAE;AAGrB,4BAFK,2CAAoC;AACA,8BAAzC,oBAAc,OAAO,EAAE;;;gCAElB;AAAP;AACiD,8BAAjD,oBAAc,OAAO,EAAE,AAAyB,aAAd,AAAE,CAAD;;;;wFAMzC,mDACa;AACT;AACiC,4BAA/B,AAAY,WAAD,YAAY;AACqB,4BAA5C,oBAAc,OAAO,EAAE;AAGrB,4BAFK,2CAAoC;AACH,8BAAtC,oBAAc,OAAO,EAAE;;;gCAElB;AAAP;AACiD,8BAAjD,oBAAc,OAAO,EAAE,AAAyB,aAAd,AAAE,CAAD;;;;;IAa3D;;;QA1GyB;AAAnB,4DAAmB,GAAG;;EAAE;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UCGJ;AAClB,wBAAuB,+DAAuB,OAAO;AAE3D,YAAO,oCACE,wDAEE,0CACkC,2CAC7B,yBAER,+BACS,mEAEO,6CACI,AAAQ,4BAAC,mBACI,wCAAS,cAE/B,yCACgC,yCAC3B,2DAMR,kBAAK,AAAsE,iBAAxD,AAAY,WAAD,sBAAsB,WAAW,uCAOvE,mDACa;AACwB,kBAAjC,AAAY,WAAD;AAGV,kBAFiB,AAAY,8BAAT,OAAO;gFAO/B,mDACY;AACmB,kBAA5B,AAAY,WAAD;AAGV,kBAFiB,AAAY,8BAAT,OAAO;;IAU1C;;;QA1D0B;AAApB,8DAAoB,GAAG;;EAAE;;;;;;;;;;;;;;;ICkPjB;;;;;;UAWY;AAAY,iCAAe,OAAO,EAAE;IAAO;;AAInE,YAAO,4CAA4B;IACrC;;;QApBuC;QAAa;IACvC,eAAE,KAAK;AACd,qEAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;MCxGI;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;0BAG4B;AACd,QAA/B,0BAAoB,UAAU;AACK,QAAzC,AAAU,oCAAoB,UAAU;MAC1C;;AAIE,cAAO,8CAA6B;MACtC;qBAGmC,SAAiB;AAChD,qCAAgB,KAAK;MAAC;wBAEK;YAAa;AAC1C,cACE,AAAgB,wBAAG,KAAK,6BACyC,SAA/D,sBAAW;AAEf,cAAO,qDACE,WACF,GAAG,aAE+B,SAAb,4BACnB,AAAQ,uBACT,gCACW,QAAC,WAAmB,AAAC,eAAR,cAAS,OAAO,EAAE,KAAK,kCAE1C,eAAL,KAAK;MAEf;;;UAnHO;UACM;UACiC;UACrB;UACC;UACL;UACP;UACP;UACC;UACE;MAFH;MAGK,cAAE,IAAI;MACF,kBAAE,qDACF,MAAM,UACN,MAAM,sBACM,kBAAkB,8BACV,0BAA0B,kBACtC,cAAc,WACrB,OAAO;AAElB,uDAAW,GAAG,SAAS,KAAK;;IAAC;;UAI5B;UACM;UACY;UACJ;UACb;UACD;UACG;MADH;MAEK,cAAE,IAAI;MACF,kBAAE,mDACH,KAAK,sBACQ,kBAAkB,kBACtB,cAAc;AAEhC,uDAAW,GAAG,SAAS,KAAK;;IAAC;;UAG5B;UACiB;UAChB;UACD;UACG;MADH;MAEK,cAAE,IAAI;MACF,kBAAE,QAAQ;AACpB,uDAAW,GAAG,SAAS,KAAK;;IAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UCtE5B;UACc;UACP;UAC0B;UACf;UACjB;UACa;UACX;AACC,wEACE,GAAG,SACD,KAAK,QACN,IAAI,WACD,OAAO,YACN,+DACA,MAAM,WACL,OAAO,sBACI,kBAAkB,kBACtB,cAAc;;IAEjC;;UAIA;UACM;UAC2B;UACf;UACjB;UACa;UACX;AACC,wEACE,GAAG,QACF,IAAI,WACD,OAAO,YACN,qDACR,KAAK,EACL,kBAAkB,EAClB,cAAc,UAET,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UCIA;UACuB;UACjB;UACM;UACM;UACjB;UACa;UACX;AACL,oDACQ,GAAG,QACF,IAAI,WACD,OAAO,UACR,MAAM,sBACM,kBAAkB,kBACtB,qDACF,UAAU,eACT,WAAW,WAEnB,KAAK;;IACb;;UAIA;UACe;UACT;UACM;UACM;UACjB;UACa;UACX;AACC,sDACE,GAAG,QACF,IAAI,WACD,OAAO,SACT,KAAK,sBACQ,kBAAkB,kBACtB,qDACF,UAAU,eACT,WAAW,WAEnB,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UA+DA;UACuB;UACjB;UACM;UACM;UACjB;UACa;UACX;AACL,oDACQ,GAAG,QACF,IAAI,WACD,OAAO,UACR,MAAM,sBACM,kBAAkB,kBACtB,qDACF,UAAU,eACT,WAAW,WAEnB,KAAK;;IACb;;UAIA;UACe;UACT;UACM;UACM;UACJ;UACX;AACC,sDACE,GAAG,WACC,OAAO,QACV,cACC,KAAK,sBACQ,kBAAkB,kBACtB,qDACF,UAAU,eACT,WAAW,WAEnB,KAAK;;IACb;;;;;;;;;;QAlNI;QACM;AAEjB,UAAO,UAAC,GAAG,UAAU,YAAY;AAC/B,WAAK,AAAE,CAAD;AACiB,QAArB,AAAQ,QAAA,CAAC,WAAW;;AAEtB,UAAI,AAAW,UAAD;AACZ,cAAO;;;AAEH,gBAAM,AAAW,UAAD,QACpB,QAAQ,YACC,QAAS;AAChB,cAAI,UAAU;AACkB,YAA9B,AAAQ,QAAA,CAAC,AAAU,UAAA,CAAC,CAAC,EAAE,KAAK;;AAa3B,YAXY,oCACX,iDACW,uBACE,4BAAa,AAMnC,wCALoC,iBAAX,UAAU,KAAa,2CACnC,oBAAC,kEAGhB,KAAK;;;AAQF,YAAW,WAAJ,GAAG;;EAEd;;QA4Ea;QACM;AAGjB,UAAO,UAAC,GAAG,UAAU,YAAY;;AAC/B,WAAK,AAAE,CAAD;AACiB,QAArB,AAAQ,QAAA,CAAC,WAAW;;AAGlB,qBAAW;AA6Bd,WA5BD,UAAU;mBAAV,OAAY,mBACV,QAAC;AACC,YAAI,QAAQ;AACV;;AAEa,QAAf,AAAQ,QAAA,CAAC,KAAK;iDAEP,QAAS;AAChB,cAAI,QAAQ;AACV;;AAEF,cAAI,UAAU;AACkB,YAA9B,AAAQ,QAAA,CAAC,AAAU,UAAA,CAAC,CAAC,EAAE,KAAK;;AAa3B,YAXY,oCACX,iDACW,uBACE,4BAAa,AAMnC,wCALoC,iBAAX,UAAU,KAAa,2CACnC,oBAAC,kEAGhB,KAAK;;;AAQF,YAAO,eAAM,WAAW;;EAE5B;;;;;;;;;;;;;;;;;;;;;6BC9GkC,GAClB;;AAEmC,aAA/C,KAAK;qBAAL,OAAO,eAAc,UAAF,CAAC;AACpB,cAAO;;AAAM,oBAAK;8BAAL,OAAO,kBAAiB,UAAF,CAAC;;MACtC;;;UAtCO;UACc;UACP;UACN;UACa;UACX;AACL,wDACQ,GAAG,2CAEA,MAAM,WACL,OAAO,QACV,IAAI,WACD,OAAO,SACT,KAAK;;IACb;;UAIA;UACM;UACY;UACJ;UACX;AACC,0DACE,GAAG,WACC,OAAO,SACT,KAAK,sBACQ,kBAAkB,0CAE/B,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;;;;;;sBC6E2B,SAAyB;;AACtC,aAAnB,QAAQ;qBAAR,OAAU;MACZ;;;UA7BO;UACc;UACb;UACa;UACX;AACL,4DACQ,GAAG,UACA,MAAM,kCAER,IAAI,WACD,OAAO,SACT,KAAK;;IACb;;UAIA;UACM;UACQ;UACX;AACC,8DACE,GAAG,WACC,OAAO,SACT,KAAK,SACL,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;;;;UD3DA;UACM;UACoC;UACnC;UACW;UACjB;UACa;UACX;AACL,8DACQ,GAAG,UACA,MAAM,UACN,MAAM,QACR,IAAI,WACD,OAAO,WACP,OAAO,sBACI,kBAAkB,0CAE/B,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;;;;UAqBA;UACM;UACyB;UACxB;UACN;UACa;UACX;AACL,6DACQ,GAAG,UACA,MAAM,QACR,IAAI,WACD,OAAO,UACR,SAAC,SAAS,aAAa,AAAM,MAAA,CACnC,OAAO,EACE,yBAAG,OAAO,GACnB,QAAQ,yCAED,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;UCsFA;UACc;UACiB;UAC9B;UACa;UACX;AACL,iEACQ,GAAG,UACA,MAAM,UACN,MAAM,kCAER,IAAI,WACD,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;UAQA;UACc;UACyB;UACtC;UACa;UACX;AACL,kEACQ,GAAG,UACA,MAAM,UACN,MAAM,kCAER,IAAI,WACD,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;;;;UDlHA;UACM;UAC8B;UAC7B;UACN;UACa;UACX;AACL,8DACQ,GAAG,UACA,MAAM,QACR,IAAI,WACD,OAAO,UACR,SAAC,SAAS,aAAa,AAAM,MAAA,CACnC,OAAO,EACE,yBAAG,OAAO,GACV,0BAAG,OAAO,GACnB,QAAQ,yCAED,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;UCsGA;UACc;UACsB;UACnC;UACa;UACX;AACL,kEACQ,GAAG,UACA,MAAM,UACN,MAAM,kCAER,IAAI,WACD,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;;;;UD5GA;UACM;UACkC;UACjC;UACN;UACa;UACX;AACL,8DACQ,GAAG,UACA,MAAM,QACR,IAAI,WACD,OAAO,UACR,SAAC,SAAS,aAAa,AAAM,MAAA,CACnC,OAAO,EACE,yBAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACnB,QAAQ,yCAED,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;UC+FA;UACc;UAC0B;UACvC;UACa;UACX;AACL,kEACQ,GAAG,UACA,MAAM,UACN,MAAM,kCAER,IAAI,WACD,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;;;;UDrGA;UACM;UACsC;UACrC;UACN;UACa;UACX;AACL,8DACQ,GAAG,UACA,MAAM,QACR,IAAI,WACD,OAAO,UACR,SAAC,SAAS,aAAa,AAAM,MAAA,CACnC,OAAO,EACE,yBAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACnB,QAAQ,yCAED,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;UCuFA;UACc;UAC8B;UAC3C;UACa;UACX;AACL,kEACQ,GAAG,UACA,MAAM,UACN,MAAM,kCAER,IAAI,WACD,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;;;;UD7FA;UACM;UAC0C;UACzC;UACN;UACa;UACX;AACL,8DACQ,GAAG,UACA,MAAM,QACR,IAAI,WACD,OAAO,UACR,SAAC,SAAS,aAAa,AAAM,MAAA,CACnC,OAAO,EACE,yBAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACnB,QAAQ,yCAED,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;UC8EA;UACc;UACkC;UAC/C;UACa;UACX;AACL,kEACQ,GAAG,UACA,MAAM,UACN,MAAM,kCAER,IAAI,WACD,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;;;;UDpFA;UACM;UAC8C;UAC7C;UACN;UACa;UACX;AACL,8DACQ,GAAG,UACA,MAAM,QACR,IAAI,WACD,OAAO,UACR,SAAC,SAAS,aAAa,AAAM,MAAA,CACnC,OAAO,EACE,yBAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACnB,QAAQ,yCAED,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;UCqEA;UACc;UACsC;UACnD;UACa;UACX;AACL,kEACQ,GAAG,UACA,MAAM,UACN,MAAM,kCAER,IAAI,WACD,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;MC3LL;;;;;;;;;;;;qBAGiC,SAAiB;;AAClD,aACE,OAAO;aACE,yBAAM,OAAO;aACtB,KAAK;cAHA,AAAO;MAKhB;;;UAvBO;UACS;UACN;MADM;AAEX,8CAAW,GAAG,SAAS,KAAK;;IAAC;;;;;;;;;;;;;;;;;;;;;MAsChC;;;;;;;;;;;;qBAGiC,SAAiB;;AAClD,aACE,OAAO;aACE,yBAAM,OAAO;aACb,yBAAM,OAAO;aACtB,KAAK;cAJA,AAAO;MAMhB;;;UArBO;UACS;UACN;MADM;AAEX,+CAAW,GAAG,SAAS,KAAK;;IAAC;;;;;;;;;;;;;;;;;;;;;MAqChC;;;;;;;;;;;;qBAGiC,SAAiB;;AAClD,aACE,OAAO;aACE,yBAAM,OAAO;aACb,yBAAM,OAAO;aACb,yBAAM,OAAO;aACtB,KAAK;cALA,AAAO;MAOhB;;;UAvBO;UACS;UACN;MADM;AAEX,+CAAW,GAAG,SAAS,KAAK;;IAAC;;;;;;;;;;;;;;;;;;;;;MAwChC;;;;;;;;;;;;qBAGiC,SAAiB;;AAClD,aACE,OAAO;aACE,yBAAM,OAAO;aACb,yBAAM,OAAO;aACb,yBAAM,OAAO;aACb,yBAAM,OAAO;aACtB,KAAK;cANA,AAAO;MAQhB;;;UAzBO;UACS;UACN;MADM;AAEX,+CAAW,GAAG,SAAS,KAAK;;IAAC;;;;;;;;;;;;;;;;;;;;;MA2ChC;;;;;;;;;;;;qBAGiC,SAAiB;;AAClD,aACE,OAAO;aACE,yBAAM,OAAO;aACb,yBAAM,OAAO;aACb,yBAAM,OAAO;aACb,yBAAM,OAAO;aACb,yBAAM,OAAO;aACtB,KAAK;cAPA,AAAO;MAShB;;;UA3BO;UACS;UACN;MADM;AAEX,+CAAW,GAAG,SAAS,KAAK;;IAAC;;;;;;;;;;;;;;;;;;;;;MA8ChC;;;;;;;;;;;;qBAGiC,SAAiB;;AAClD,aACE,OAAO;aACE,yBAAM,OAAO;aACb,yBAAM,OAAO;aACb,yBAAM,OAAO;aACb,yBAAM,OAAO;aACb,yBAAM,OAAO;aACb,yBAAM,OAAO;cACtB,KAAK;cARA,AAAO;MAUhB;;;UA7BO;UACS;UACN;MADM;AAEX,+CAAW,GAAG,SAAS,KAAK;;IAAC;;;;;;;;;;;;;;;;;;;;;;;;;UN9OR;AACkB,MAA1C,WAAM,wBAAW;IACnB;;AAGkC,2CAAe;IAAK;;;QAjB/C;QAC4B;QACzB;SACG,AAAS,QAAD;IACL,kBAAE,QAAQ;IACb,gBAAE,KAAK;AACd,iDAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;8BOmEK;AAGQ;AAE5B,cAAI;AACR,aAAO,AAAE,CAAD,GAAG,AAAU,SAAD,WAAS,IAAA,AAAC,CAAA;AACtB,uBAAW,AAAS,SAAA,QAAC,CAAC;AAC5B,YAAa,+BAAT,QAAQ;AACJ,kBAAI,QAAQ;AAEZ,wBAAU,AAAE,CAAD,WACX,QAAS,SACP,AAAS,QAAD,kBAAiB,KAAK,QAAO,AAAS,QAAD,gCAC/C,QAAS,SACA,AAAC,CAAA,CAAC,AAAS,QAAD,kBAAiB,KAAK,QAAO,AAAS,QAAD;AAG5C,UAAlB,WAAW,OAAO;;AAElB;;;AAIJ,YAAO;;AACL,YAAI,QAAQ,UACV,oDACW,SAAC,SAAS,UAAkB,AAAC,eAAT,QAAQ,EAAE,KAAK;AAEhD,YAAI,AAAE,CAAD,GAAG,AAAU,SAAD,WAAsB,YAAV,SAAS,WAAS,CAAC;;;IAEpD;;;QA9CO;QAC4B;QACzB;QACW;AAChB,2DACQ,GAAG,YACE,2CAAmB,SAAS,UAC/B,AAAQ,OAAD,WACR,gCACW,QAAC,WAAY,AAAO,OAAA,CAAC,OAAO,EAAE,KAAK,kCAE9C,KAAK;;EACZ;;;;;;;;;;;;;;;;;;;;;;;;;;mBAwKqB;;YAAe;AACzC,cACe,AAAE,AACK,eADpB,AAAQ,OAAD,yBACH,AAAO,MAAD,KAAI,SACV,+DACJ,AAaH,mQANU,oBAAC,uNAKS,OAAO;AAIpB,+BAAmB,0CAAuB,OAAO;AAEvD,YAAI,MAAM;AAKiE,UAAzE,AAAQ,OAAD;;AAGH,0BAAQ,gBAAgB,eAAhB,OAAkB;AAEhC,YAAI;AACF,eAAU,KAAN,KAAK;AACmD,YAA1D,WAAM,wCAAsB,kBAAG,AAAQ,AAAO,OAAR;;AAExC,gBAAO,MAAK;;AAGd,cAAa,MAAN,KAAK;MACd;oCAGe;AAGb,cAAO,AAAQ,OAAD,8BAAU;AAMxB,cACE,AAAkB,gCAAG,0BACrB;AAEF,aACI,CAAF,yEACA;AAQI,+BAC6B,8EADV,AAAQ,OAAD;AAGhC,YAAI,AAAiB,gBAAD,aAAiB,KAAL;AACgC,UAA9D,WAAM,4CAA0B,kBAAG,AAAQ,AAAO,OAAR;;AAG5C,cAAO,iBAAgB;MACzB;;;UA1IO;UACc;UACP;UACN;UACa;UACX;AACL,8CACQ,GAAG,QACF,IAAI,WACD,OAAO,UACR,MAAM,WACL,OAAO,8BAGV,QAAG;;AACD,eAAS;qCAA4B,MAAQ,KAAK;kCACnD,KAAK;;IACb;;UAYA;UACM;UACY;UACJ;UACX;WACG,AAGN;;AAFoD,aAA1C;4BAA4B,MAAQ,KAAK;AAClD,cAAO;;AAEH,gDACC,GAAG,WACC,OAAO,SACT,KAAK,sBACQ,kBAAkB,SAC/B,KAAK;;IACb;;;;;;;;;;;MAmI2B,6CAA0B;YAAM,aAAG;AACnE,aAAO,AA6BN;AA5BC,cAAU,8BAAN,KAAK,KAAwB,gBAAN,KAAK;AAyBlC,YAxBI,WAAM,4BAAa,AAwBxB,yEAvByD,oBAAC,yGAGvD,oBAAC;;AAsBD,gBAAO;;;;;;;;;;IAYA;;;;;;IAGA;;;;;;;;;;AAGT;AAGA,YAAO,AAKR,iCAJgB,mBAAU,sCAAyB,kBAAS,0GAGjB,kBAAS,4BAAe,kBAAS;IAE7E;;kDAlB2B,WAAgB;IAAhB;IAAgB;;EAAW;;;;;;;;;;;;;;IA+B3C;;;;;;IAGA;;;;;;;;;;AAIT;AAGA,YAAO,AAiDR,0DAhDyC,kBAAS,2BAAc,mBAAU,0kBAe3D,mBAAU,oDAAuC,kBAAS;IAkC1E;;sDAjEO,WACA;IADA;IACA;;EACN;;;;;;;;;;;;;;0BN0KoD;MAAa;;;;IACpE;;;;;;;;;;;;;;;;sCC/jByB,oBAAyB;MAAzB;MAAyB;;IAAe;;;;;;;;;;;;;;;;;;;;;;;;;;MDkkB3B;;;;;;;AAIlB,cAAgC,MAAzB,AAAE,AAAO,AAAM,eAAtB;MAAoC;4BAItB;AAC9B,cAAc,AAAE,gBAAT,sCAAgC,KAAK;MAC9C;yBAE0B;;AAAgB;MAAK;;MAE/B;0BAEqC;MAAa;;YAExC;MAA8B;;;MAlBpB;;IAmBtC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AChkB+C,QAApC,AAAE,eAAT,4CAAsC;AAMrC,QALe,gCAAhB,8BAAoB,oBACX,eAAP,8BACA,wBACA,sBACA,cAJyC,6CAAd,sCAAb;AAM0B,QAAnC,AAAE,eAAT,4CAAsC;AACtC,aAAc,AAAE,eAAT,0CAAmB,AAkBvB,wGAjBkF,oBAAC,gBAAG,oBAAC;AAkB1F,cAAO,AAAgB;AACvB,cAAc,MAAP;MACT;;;AAIiB,QAAT;AACiB,aAAvB;4BAAiB;MACnB;;AAEqB,cAAA,AAAgB;MAAO;;AAKvB;MAAS;eAEd;;AACd,YAAI;AACI,6BAA2C,sBAA5B,AAAS,4CACG,AAAC,qCAA5B,AAAS,mCAA2B,KAAP,eAAa,KAAK,IACxC,aAAP,cAAU,KAAK;AACrB,cAAI,YAAY;AACsB,YAA7B,AAAE,eAAT;;;AAGY,QAAhB,kBAAY;AACE,QAAd,eAAS,KAAK;MAChB;;;MAjEc;MAIX;MA6CE,kBAAY;;;IAiBnB;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAeI,cAAO;MACT;;;UAZgB;UACT;UACkB;UACe;MAHxB;MACT;AAGF,gEAAM,kBAAkB,EAAE,cAAc;;IAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAoB5C,aAAK;AACH,eAAO,2BAAsB;AACvB;AACA;AAEN,eAAO,AAMN;AAJqC,YADpC,4CACI;AAEgC,YADpC,4CACI;AACJ,kBAAO;;AAGT;AACE,iBAAO,AAIN;AAHwC,cAAvC,6CAAmC;AACK,cAAxC,6CAAmC;AACnC,oBAAO;;AAE8B,YAAvC,0BAAc,oBAAuB,eAAP,eAAD;;AAE7B,iBAAO,AAMN;AAJ+C,cAD9C,6CAC6C,eAAzC,yCAAyC;AAEC,cAD9C,6CAC6C,eAAzC,yCAAyC;AAC7C,oBAAO;;;AAGK,UAAhB,kBAAY;;AAEd,cAAmB,MAAZ;MACT;;;AAIiB,QAAT;AACN,YAAI;AACgD,gDAAlD,AAAS;uBAAA,OAAS,GAAY,eAAP,eAAsB,KAAZ;;MAErC;0BAGqD;;AACd,QAA/B,0BAAoB,UAAU;AACpC,YAAI;AAG0C,eAF5C,UAAU;UAAV;AACI,mBAAI,uCAAoB,cAAc;AACtC,mBAAI,uCAAoB,SAAS;;;;AAkBlC,gBAhBH,UAAU;UAAV;AACI,oBACA,iCACE,sBACO,gBACG,cACF;AAGV,oBACA,iCACE,iBACO,gBACG,cACF;;;;MAIlB;;;;;;MA1EK,kBAAY;MAEd;;;IAyEL;;;;;;;;;;;;;;;;;;;;;;;;;;;AAaI,cAAO;MACT;0BAGqD;AACd,QAA/B,0BAAoB,UAAU;AACoB,QAAxD,AAAW,UAAD,KAAK,uCAAoB,cAAc;MACnD;;oDAhBO,OACkB,oBACM;MAFxB;AAGH,+DAAM,kBAAkB,EAAE,cAAc;;IAAC;;;;;;;;;;;;;;;;;;;;;;yBAmBiB;;AAC5D,yBAAI,AAAS,qBAAS,AAAY,WAAD;AAC/B,cAAI;AACgB,YAAH,AAAC,eAAhB;AACsB,YAAtB,wBAAkB;;AAEpB,gBAAO;;AAET,cAAO;MACT;;AAGoB,cAAA,AAAS;MAAK;0BAGmB;AACd,QAA/B,0BAAoB,UAAU;AACpC,YAAI;AACiD,UAAnD,AAAW,UAAD,KAAK,uCAAoB,SAAS;;AAS3C,UAPD,AAAW,UAAD,KACR,iCACE,iBACO,gBACG,cACF;;MAIhB;;;;;;;;IACF;;;;;;;;;;;;;;;;IMtRe;;;;;;IACe;;;;;;;;;;yCAFP,WAAgB;IAAhB;IAAgB;;EAAM;;;;;;;;;;;;IAQrC;;;;;;;;;;AAGJ,WAC0B,YAAxB,6CAA2B,sCAC3B;AAE4B,MAA9B,oCAA0B;IAC5B;iBAGS,WACe;AAEqB,MAA3C,AAAK,gBAAkB,+BAAE,SAAS,EAAE,KAAK;IAC3C;;;IAfM,aAAsB;;EADZ;;;;;;;;;;;;;;;;;;;;IA4BH;;;;;;IACA;;;;;;IACM;;;;;;IAC2B;;;;;;;;;;;;;;AAEzB,YAAA,AAAS,AAAe;IAAK;;;QAXlC;QACA;QACA;QACmC;IAHnC;IACA;IACA;IAEF,iBAAE,OAAO;;;;;;;;;;;;;;;;;;;;;;;AAmB0B;IAAgB;wBACnB;AAC0B,MAAtE,yBAAe,kCAAoD;AAC3C,MAAxB,yBAAmB,KAAK;IAC1B;sBAE8B;AAI3B,MAHD,yBACE,6BACkB,+BAAC,MAAM,UAAU;IAEvC;;;IAZ0B,yBAAmB;;EAN1B;;;;;;;;;;;;;;;;;;;;;;MAEN,uCAAa;YACJ;;;;;;;IRwIF;;;;;;UAGA,QAAgB;AAClC,UAAW,4BAAP,MAAM;AACQ,QAAhB,gBAAU,MAAM;;AAEU,MAAtB,YAAM,MAAM,EAAE,OAAO;IAC7B;;AAIkB,MAAV;AAMJ,MALF,2BAAsB,QAAC;AACrB,YAAW,6BAAP,MAAM;AACQ,UAAhB,gBAAU,MAAM;;AAElB,cAAO;;IAEX;;;IAnBoB;;;;;;;;;;;;;;;oESotJmB;;;;;;;;;;ATvpJrC,UAAI;AACF,cAAO,AAAO,4BAAe,MAAa,AAAE,eAAT;;AAErC,YAAa;IACf;;AAII,YAAa,sCAAP;IAAoC;;qDAbS;AACjD,gEAAM,MAAM;;EAAC;;;;;;;;;;;;;;0BC1FkC;AACd,QAA/B,0BAAoB,UAAU;AACmB,QAAvD,mBAAc,QAAC,KAAM,AAAE,CAAD,qBAAqB,UAAU;MACvD;;8CAN+C;AAAU,yDAAM,MAAM;;IAAC;;;;;;;;;;;;;;IA+JxE;;;;;;;;;;;;;;;;;;;;yBAkB0C;;AACtC,cAAO;MACT;;AAIE,cAAO,mDAAkC;MAC3C;;;UArBgB;UACA;UACE;UACX;MAHS;MACA;WAGE,KAAL;AACP,6DACO,GAAG,SACD,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MAiBF,4BAAuB;MACvB,oCAA+B;MAC9B,iBAAgC;;IACxC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAc6C;yCACvC,AAAO,AAAM,AAAU,4CAAA;AAAe,uBAAU;;yLADT;MACa;;;AAC5C;;MAAQ;qBAAR;;MAAQ;;AAKA;AAYhB,QARF,2BAAsB,QAAC;AACrB,cAAkB,uBAAd,AAAO,MAAD;AACqC,YAA7C,mBAA0B,8BAAP,MAAM;AACzB,kBAAO;;AAGgE,UADzE,mBACI,AAAO,MAAD;AACV,gBAAO;;AAGT,cAAO,iBAAgB;MACzB;YAGoB,QAAgB;;AAClC;AACmC,UAAjC,iBAAiC,UAAJ,KAAf,0HAAe;AAU5B,UATe,AAAc,0DAAkB;gEAC3B,AAAc;AACzB,sBAAR,gBAAU,oCACJ,wDAGE,AAAO,gCACJ;;;;AAKa,QAAtB,YAAM,MAAM,EAAE,OAAO;MAC7B;;AAII,cAAa,qCAAP;MAAoC;;AAI1B,QAAZ;AAEA,oBAAQ,AAAe,gCAAW,AAAe,6BAAQ;AAC/D,YAAU,wCAAN,KAAK;AACW,UAAlB,AAAM,KAAD;;MAET;yBAGgC,WAAmB;;AAC3C,2BAAe,qBAAgB,SAAS;AAE9C,YAAI,YAAY,aAAyB,wBAAb,YAAY;AACtC;;AAGF,YAAW,iBAAP,MAAM;AACF,mCACiC,yBAArB,KAAb,YAAY,EAAZ,aAAgB;AAErB,cAAI,AAAmB,kBAAD;AAC2B,YAA/C,AAAmB,kBAAD,wBAAwB;AACN,YAAP,uBAA7B,AAAmB,kBAAD;;AAEpB,cAAI,AAAmB,AAA6B,kBAA9B,kCAAiC;AACC,YAAtD,AAAmB,kBAAD,gCAAgC;AAKhD,YAJK,4BAAU;;AAGgB,mBAF/B,kBAAkB;cAAlB;AACI,kDAA+B;AAC/B,0CAAuB;;;;;AAGS,UAAX,uBAA7B,AAAmB,kBAAD,kBAAe,MAAM;AACO,UAA9C,qBAAgB,SAAS,EAAE,kBAAkB;;AAGH,UAA1C,qBAAgB,SAAS;;MAE7B;sBAGqC,WAAmB;;AAChD,2BAAe,qBAAgB,SAAS;AAE9C;AAC2D,UAAzC,AAAc,0DAAkB;;AAG9C,2BAAe;AACnB,YAAI,YAAY;AACd,cAAiB,wBAAb,YAAY;AAId,gBAAI,AAAU,SAAD;AACX;;AAGF,qBAAW,6CAAsB,AAAa,YAAD;AAC3C;AACE,qBAAO,AAGN;AAFyB,kBAAxB,8BAAoB;AACpB,wBAAO;;AAE+B,gBAAxC,eAAe,AAAkB,kBAAA,CAAC;;AAElC,qBAAO,AAGN;AAF0B,kBAAzB,8BAAoB;AACpB,wBAAO;;;AAGX,kBAAI,YAAY;AACd;;;;AAIe,YAAnB,eAAe;;;AAInB,YAAI,YAAY;AACmB,UAAjC,AAAU,SAAD;;MAEb;aAGuC;;AACrC,aAAO,AAWN;AAVC,eAAI,AAAO,AAAM,AAAU,mDACvB,AAAU,AAAM,AAAU,SAAjB;AAMf,YALI,WAAM,wBAAW,AAKtB,sBAJM,eAAM;;AAMT,gBAAO;;AAGyB,QAAlC,oCAA8B;AAEkC,QADhE,6BACI,AAAe,wCAAmB,AAAU,AAAM,SAAP;AACxB,QAAjB,aAAO,SAAS;AACM,QAA5B,6BAAuB;MACzB;cAG6B;;AACH,QAAlB,cAAQ,SAAS;AACvB,YAAI;AACsB,UAAxB,mBAAc,SAAS;;MAE3B;;AAIoC,QAAlC,oCAA8B;AACD,QAAvB;MACR;;AAIE,YAAI,AAAO,AAAM,AAAM,6BAAG;AACnB,UAAL;;AAID,QAFD,AAAe,wDACe;AAEK,QAAnC,oCAA8B;AAC9B,YAAI;AAC6B,UAA/B,gCAA0B;AACL,UAArB,mBAAc;;AAEhB,cAAa;MACf;;;AAI0B,QAAxB,AAAe;AACf;AAGqB,UAFH,AAAc,gEAAkB;gEAC3B,AAAc;;gBADa;AAE7C,wBAAO;;;;AAEG,QAAT;MACR;;AAGqB,cAAA,AAAe;MAAQ;;AAI1C,aAAK;AACH;;AAGc,QAAhB;AAC8B,QAA9B,gCAA0B;MAC5B;+BAEiC;AAC/B,aAAO,AAGN;AAF4B,UAA3B,4BAAsB,KAAK;AAC3B,gBAAO;;AAET,cAAO;MACT;;AAGe,cAAA,AAAe;MAAK;+BAIhB;YACT;AAER,aAAO,AA2BN;AA1BC,cAAI;AAuBD,YAtBD,WAAmB,sCACA,kCACf,gCAAY,AACV,2CACA,qDAEF,oCAAiB;;AAkBvB,gBAAO;;AAET,cAAa,gCAAyB,QAAQ,WAAU,MAAM;MAChE;0BAGqD;AACd,QAA/B,0BAAoB,UAAU;AACU,QAA9C,AAAe,yCAAoB,UAAU;MAC/C;;mDA/Q0D;MAKrD,gCAA0B;MAC1B,4BAAsB;MACtB,mCAA6B;MAC7B,6BAAuB;MACvB,oCAA8B;8DACQ;wDAE/B;AAXN,8DAAM,MAAM;;IAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MAER,wDAAe;YAAG;;;;;;;;;;;;;;;;;;;;AAkUzB;MAA+B;;;UAlB5B;UACA;UACkB;UAClB;UACA;UACA;MALA;MACA;MAEA;MACA;MACA;YACM,AAAe,MAAT,YAAY,MAAM;MACX,4BAAE,kBAAkB;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAgC5C,YAAI,uBAAiB;AAMlB,UAJD,WAAM,wBAAU,AACd,4EACA,iEAAqD,oBAAC,wDACnD,OAAY;;AAGb;AACA;AAEN,aAAO,AAMN;AAJqC,UADpC,4CACI;AAEgC,UADpC,4CACI;AACJ,gBAAO;;AAGT,aAAK;AACiB,UAApB,sBAAgB;AAChB,cAAI,AAAS;AACX,iBAAO,2BAAsB;AAC7B;AACE,mBAAO,AAIN;AAHwC,gBAAvC,6CAAmC;AACK,gBAAxC,6CAAmC;AACnC,sBAAO;;AAE0B,cAAnC,eAAwB,AAAC,eAAhB,AAAS,sBAAe,eAAP;;kBACnB;kBAAG;AAAV;AAKC,gBAJD,mBAAa,iDACF,uBACE,CAAC,SACL,UAAU;AAEZ,gBAAP;;;;AAEA,mBAAO,AAMN;AAJ+C,gBAD9C,6CAC6C,eAAzC,yCAAyC;AAEC,gBAD9C,6CAC6C,eAAzC,yCAAyC;AAC7C,sBAAO;;;AAGX,iBAAO,2BAAsB;AAE7B,iBAAO,AAGN;;AAFuD,qCAAtD,AAAS;2BAAA,OAA4B,GAAY,KAAP;AAC1C,oBAAO;;;AAGX,6CAAI,AAAS;AACX;AACE,mBAAO,AAIN;AAHyC,gBAAxC,6CAAmC;AACI,gBAAvC,6CAAmC;AACnC,sBAAO;;AAEkC,cAA3C,eAAwB,AAAC,8CAAhB,AAAS,uBAAe,eAAP,eAAU;;AAEpC,mBAAO,AAMN;AAJ+C,gBAD9C,6CAC6C,eAAzC,yCAAyC;AAEC,gBAD9C,6CAC6C,eAAzC,yCAAyC;AAC7C,sBAAO;;;AAIX,iBAAO,AAGN;;AAFuD,qCAAtD,AAAS;2BAAA,OAA4B,GAAY,KAAP;AAC1C,oBAAO;;;;AAK8B,QAApC,AAAE,eAAT,4CAAsC;AACkC,QAAxD,gCAAhB,qEAAoB,AAAS,4CAAA,OAAgB,GAAY,eAAP,eAAiB,KAAP,kBAA5C;AAC0B,QAAnC,AAAE,eAAT,4CAAsC;AACtC,cAA+B,AAAQ,uCAAhC,AAAS,yCAA0B;AAC1C,cAAc,MAAP;MACT;;;AAIiB,QAAT;AACiB,aAAvB;4BAAiB;AACjB,YAAI;AAC2C,iDAA7C,AAAS;wBAAA,OAAS,IAAY,eAAP,eAAiB,KAAP;;MAErC;0BAGqD;;AACd,QAA/B,0BAAoB,UAAU;AACpC,YAAI;AAUC,eATH,UAAU;UAAV;AACI,mBAAI,uCAAoB,SAAS;AACjC,mBACA,iCACE,YACO,AAAgB,6CACT,eACN;;;;AAWb,UAPD,AAAW,UAAD,KACR,iCACE,iBACO,gBACG,cACF;;MAIhB;;;YAG0B;AACpB,2BAAe;AAGnB,YAAI,0BAA0B,IAC1B,sDACA,AAAS;AACL,8BAAgB;AAEhB;AACA;AACN,eAAO,AAMN;AAJqC,YADpC,4CACI;AAEgC,YADpC,4CACI;AACJ,kBAAO;;AAET;AACE,iBAAO,AAIN;AAHyC,cAAxC,6CAAmC;AACI,cAAvC,6CAAmC;AACnC,oBAAO;;AAEuC,YAAhD,eAAwB,AAAC,8CAAhB,AAAS,uBAAe,eAAP,eAAiB,KAAP;;AAEpC,iBAAO,AAMN;AAJ+C,cAD9C,6CAC6C,eAAzC,yCAAyC;AAEC,cAD9C,6CAC6C,eAAzC,yCAAyC;AAC7C,oBAAO;;;AAIX,oCAAI,AAAS;AAIV,YAHD,eAA2C,AAAC,qCAA7B,AAAS,qCACR,KAAd,aAAa,GACN,KAAP;;AAGoC,YAAtC,eAAsB,aAAP,cAAU,aAAa;;AAGxC,cAAI,YAAY;AACd,iBAAO,AAGN;;AAFuD,qCAAtD,AAAS;2BAAA,OAA4B,GAAY,KAAP;AAC1C,oBAAO;;AAET,gBAAI;AACgB,cAAH,AAAC,eAAhB;AACsB,cAAtB,wBAAkB;;AAEwC,iBAA5D;uEAAiB,0BAAjB,OAA0B,GAAY,eAAP,eAAwB,KAAd,aAAa;;;AAI1D,YAAI,YAAY;AACyB,UAAhC,AAAE,eAAT,yCAAmC;;AAEX,QAA1B,wBAAkB;AAClB,cAAa,0CAAkC,0BAA0B;MAC3E;;AAGqB;MAAa;;;;;;MAlMpB;MACT,sBAAgB;MAClB;MAC0B;MACR;;;IA+LvB;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;0BAcuD;AACd,QAA/B,0BAAoB,UAAU;AACe,QAAnD,AAAW,UAAD,KAAK,uCAAoB,SAAS;MAC9C;;AAIE,cAAO;MACT;;;UAlBgB;UACS;UAClB;MAFS;MAET;MACkB,4BAAE,kBAAkB;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAwBA,QAApC,AAAE,eAAT,4CAAsC;AACqC,QAA3D,gCAAhB,qEAAoB,AAAS,4CAAA,OAAgB,GAAY,eAAP,eAAU,AAAS,wBAArD;AAC0B,QAAnC,AAAE,eAAT,4CAAsC;AACtC,cAA+B,AAAQ,uCAAhC,AAAS,yCAA0B;AAC1C,cAAO,AAAS;MAClB;yBAGmD;;AAC5C;AACL,kCAAI,AAAS;AAIV,UAHD,eAA2C,AAAC,qCAA7B,AAAS,qCACtB,AAAS,qBACT,AAAY,WAAD;;AAGqC,UAAlD,eAAiC,aAAlB,AAAY,WAAD,QAAU,AAAS;;AAG/C,YAAI,YAAY,IAAI;AACA,UAAH,AAAC,eAAhB;AACsB,UAAtB,wBAAkB;;AAEpB,cAAO,aAAY;MACrB;;;AAIiB,QAAT;AACiB,aAAvB;4BAAiB;MACnB;0BAGqD;AACd,QAA/B,0BAAoB,UAAU;AAQnC,QAPD,AAAW,UAAD,KACR,iCACE,YACO,AAAgB,6CACT,eACN;MAGd;;AAGqB;MAAI;;;;;;MAlDX;;;IAmDhB;;;;;;;;;;;;;;;;;;;;qDO98BS,WACe;AAEtB,QAAI;AACwC,MAAnB,AAAC,eAAxB,mCAAyB,SAAS,EAAE,KAAK;;AAEJ,MAA3B,oBAAU,SAAS,EAAE,KAAK;;EAExC;;AAGE,UAAO,AAAwB,8DAAS;AAElC,cAAmB;AACe,IAAxC,oCAA8B,UAAJ,GAAG;AAC7B,UAAO,IAAG;EACZ;oFP+NqC;;AACjC,UAAc,oCAAP,iCAAsC;AAmB7C,UAAc,AAAiB,gCAAxB,iBAA2B,0CAAiB;AAM7C,2BAA4B;AAClC;AACQ,wBAAQ,gBAAgB,eAAhB,OAAkB;AAChC,WAAU,KAAN,KAAK;AAC2C,QAAlD,WAAM,wCAAsB,kBAAG,AAAO;;AAGxC,WAAO,AAGN;AAFyB,QAAxB,8BAAoB;AACpB,cAAO;;AAEH,qBAAW,AAAQ,QAAA,CAAC,KAAK;AAE/B,UAAI,gBAAgB;AAWjB,QAVD,+BACE,gBAAgB,WACR,QAAI;AACV,iBAAa,KAAT,QAAQ;AACwC,cAAlD,WAAM,wCAAsB,kBAAG,AAAO;;AAGxC,oBACK,yBAAO,AAAQ,QAAA,CAAC,QAAQ,GAAG,QAAQ;;;AAMqB,QAAjE;;AAEF,YAAO,SAAQ;;AAEf,WAAO,AAGN;AAF0B,QAAzB,8BAAoB;AACpB,cAAO;;;EAGb;;AA/DE,0BAAiC,4DAAjC,QAAQ;EA+DV;;AMkXE,UAAgB,0CAAoB;EACtC;;AAFE;EAEF;;AA2CE,UAAgB;EAClB;;AAFE;EAEF;;MA9rBS,sBAAY;cAAY,kBAAH;;MClB7B,iCAAuB;;;;MPoLrB,2BAAiB;YAAG;;;MAogBpB,0CAAgC;YAAG;;;MAInC,0CAAgC;YAAG;;;;;;;;;;;;;;;;;;;;;US1nB/B;UACM;UACyC;UAC7B;UACX;UACN;UACa;UACX;AACL,oDACQ,GAAG,QACF,IAAI,WACD,OAAO,UACR,MAAM,UACN,MAAM,WACL,OAAO,sBACI,kBAAkB,8BAGhC,QAAG;;AACD,gBAAS;sCAA4B,OAAQ,KAAK;kCACnD,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;;;;;UAoDA;UACM;UACyB;UACb;UACX;UACN;UACa;UACX;AACL,mDACQ,GAAG,QACF,IAAI,WACD,OAAO,UACR,MAAM,UACN,SAAC,SAAS,UAAU,AAAM,MAAA,CAChC,OAAO,EACE,yBAAG,OAAO,GACnB,KAAK,oDAEa,kBAAkB,WAC7B,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;;;;;UAOA;UACM;UAC8B;UAClB;UACX;UACN;UACa;UACX;AACL,oDACQ,GAAG,QACF,IAAI,WACD,OAAO,UACR,MAAM,UACN,SAAC,SAAS,UAAU,AAAM,MAAA,CAChC,OAAO,EACE,yBAAG,OAAO,GACV,0BAAG,OAAO,GACnB,KAAK,oDAEa,kBAAkB,WAC7B,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;;;;;UAOA;UACM;UACkC;UACtB;UACX;UACN;UACa;UACX;AACL,oDACQ,GAAG,QACF,IAAI,WACD,OAAO,UACR,MAAM,UACN,SAAC,SAAS,UAAU,AAAM,MAAA,CAChC,OAAO,EACE,yBAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACnB,KAAK,oDAEa,kBAAkB,WAC7B,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;;;;;UAOA;UACM;UACsC;UAC1B;UACX;UACN;UACa;UACX;AACL,oDACQ,GAAG,QACF,IAAI,WACD,OAAO,UACR,MAAM,UACN,SAAC,SAAS,UAAU,AAAM,MAAA,CAChC,OAAO,EACE,yBAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACnB,KAAK,oDAEa,kBAAkB,WAC7B,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;;;;;UAOA;UACM;UAC0C;UAC9B;UACX;UACN;UACa;UACX;AACL,oDACQ,GAAG,QACF,IAAI,WACD,OAAO,UACR,MAAM,UACN,SAAC,SAAS,UAAU,AAAM,MAAA,CAChC,OAAO,EACE,yBAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACnB,KAAK,oDAEa,kBAAkB,WAC7B,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;;;;;UAOA;UACM;UAC8C;UAClC;UACX;UACN;UACa;UACX;AACL,oDACQ,GAAG,QACF,IAAI,WACD,OAAO,UACR,MAAM,UACN,SAAC,SAAS,UAAU,AAAM,MAAA,CAChC,OAAO,EACE,yBAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACV,0BAAG,OAAO,GACnB,KAAK,oDAEa,kBAAkB,WAC7B,OAAO,SACT,KAAK;;IACb;;;;;;;;;;;;EChTT;;;;;;;;;IXoRgB;;;;;;;AAIZ,YAAO,2CAA2B;IACpC;;;QATsC;QAAa;IACtC,iBAAE,KAAK;AACd,oEAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;MYjPO;;;;;;MAQG;;;;;;;;;;;;;;;AAKK;MAAoB;;;UA7BjD;UACS;UACA;UACI;UACV;MAHM;MACA;MAGK,uBAAE,aAAa;AAC9B,+CAAW,GAAG,SAAS,KAAK;;IAAC;;;;;;;;;;;;;;;;;;;;;;;YZmRT;AAAY,mCAAe,OAAO,EAAE,AAAO;MAAO;;;;;IAC9E;;;;;;;;;;;;;;;;;;;;;MYzPK;;;;;;qBAKgC,SAAiB;;AAC5C,8BAAW,mBAAgB,OAAO,EAAR;AAE1B,oCAEgD,aAFxB,gBAAa,sCACtC,AAAO,wCACiB,AAAC,qCAAtB,AAAO,8BAAsB,KAAN,aAAY,QAAQ,KACxB,sBAAtB,AAAO,yCAC4B,yBAAO,YAAO,QAAQ;AAC9D,YAAI,qBAAqB;AACP,UAAhB,aAAQ,QAAQ;AACE,UAAlB,iBAAY;AAOX,UAND,aAAQ,gCACG,QAAC;;AAAY;oBACpB,OAAO;oBACP,QAAQ;oBACR,KAAK;oBAH6B,6CAAP;;;AAOjC,cAAY,gBAAL;MACT;0BAGqD;AACd,QAA/B,0BAAoB,UAAU;AACkB,QAAtD,AAAW,UAAD,KAAK,uCAAuB,SAAS;MACjD;;;;;;MA/BG;MACK;MACA;;;IA8BV;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UA4DS;UAC0B;UACM;UACnB;UACV;AACL,8CACQ,GAAG,iBACO,aAAa,WACnB,OAAO,YACN,QAAC,WAAY,AAAQ,QAAA,CAAC,OAAO,EAAW,yBAAG,OAAO,mCACrD,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;UAOA;UAC0B;UACS;UACtB;UACV;AACL,+CACQ,GAAG,iBACO,aAAa,WACnB,OAAO,YACN,QAAC,WAAY,AAAQ,QAAA,CAC7B,OAAO,EACE,yBAAG,OAAO,GACV,yBAAG,OAAO,mCAEd,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;UAOA;UAC0B;UACY;UACzB;UACV;AACL,+CACQ,GAAG,iBACO,aAAa,WACnB,OAAO,YACN,QAAC,WAAY,AAAQ,QAAA,CAC7B,OAAO,EACE,yBAAG,OAAO,GACV,yBAAG,OAAO,GACV,yBAAG,OAAO,mCAEd,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;UAOA;UAC0B;UACe;UAC5B;UACV;AACL,+CACQ,GAAG,iBACO,aAAa,WACnB,OAAO,YACN,QAAC,WAAY,AAAQ,QAAA,CAC7B,OAAO,EACE,yBAAG,OAAO,GACV,yBAAG,OAAO,GACV,yBAAG,OAAO,GACV,yBAAG,OAAO,mCAEd,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;UAOA;UAC0B;UACkB;UAC/B;UACV;AACL,+CACQ,GAAG,iBACO,aAAa,WACnB,OAAO,YACN,QAAC,WAAY,AAAQ,QAAA,CAC7B,OAAO,EACE,yBAAG,OAAO,GACV,yBAAG,OAAO,GACV,yBAAG,OAAO,GACV,yBAAG,OAAO,GACV,yBAAG,OAAO,mCAEd,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;UAOA;UAC0B;UACqB;UAClC;UACV;AACL,+CACQ,GAAG,iBACO,aAAa,WACnB,OAAO,YACN,QAAC,WAAY,AAAQ,QAAA,CAC7B,OAAO,EACE,yBAAG,OAAO,GACV,yBAAG,OAAO,GACV,yBAAG,OAAO,GACV,yBAAG,OAAO,GACV,yBAAG,OAAO,GACV,yBAAG,OAAO,mCAEd,KAAK;;IACb;;;;;;;;;;;;;;;;;;;;;;;;;qBCrP4B,SAAiB;AAClD,cAAO,6DACY,iCACR,SAAC,SAAS,OAAO,MACjB,sCACE,KAAK,sBACQ,mCACb,KAAK;MAIpB;0BAGqD;AACd,QAA/B,0BAAoB,UAAU;AACgC,QAApE,AAAW,UAAD,KAAK,uCAAoB,SAAS,AAAiB;MAC/D;;;UA7BO;UACuB;UACL;UACf;MACa,yBAAE,KAAK;MACJ,6BAAE,kBAAkB;AACxC,6DAAW,GAAG,SAAS,KAAK;;IAAC;;;;;;;;;;;;;;;;;;;qEJk4JI;;;;;;;;;;AT90JlB,YAAa,kBAAP;IAAgB;;;AAM5B;AACT,sBAAkC,2CAAvB,OAAS,oBAAT,eAA0B,AAAO;AAEhD,eAAW,QAAS,AAAO,AAAU;AAKlC,QAJD,WAAW,aAAa,mCACf,qBACQ,KAAK,iBACL,QAAQ;;AAI3B,UAAI,UAAU;AAIZ,iBAAW,OAAQ;AAG2B,kBAF5C,IAAI;UAAJ;AACI,iCAAyB,AAAE,eAAZ,UAAU;AACzB,kCAAgB,AAAW,UAAD;;;AAExB,qBAAO,AAAW,UAAD;AACvB,cAAS,sBAAL,IAAI;AACW,YAAjB,aAAa,IAAI;;AAEjB;;;;AAKN,YAAe,gBAAR,QAAQ;IACjB;;wCAvCsB;IAKhB,aAA4B;AALF,mDAAM,MAAM;;EAAC;;;;;;;;;;;;;;;;;;;;AAsDP,+CAAmB;IAAK;UAGpC;AAAY,wBAAM,wBAAW;IAAqB;;;QAbrE;QACS;QACA;IAFT;IACS;IACA;AAHhB;;EAIE;;;;;;;;;;;;;;;;;;;;;;AAiBwB,YAAa,uBAAP;IAAqB;;AAGxB;IAAc;sBACjB;AAClB,qBAAW;AACjB,UAAU,sBAAN,KAAK,KACI,sBAAT,QAAQ,KACD,2BAAU,AAAM,KAAD,gBAAgB,AAAS,QAAD;AAGhD;;AAEF,uBAAI,QAAQ,EAAI,KAAK;AACG,QAAtB,uBAAiB,KAAK;AACkB,QAAxC,mBAAc,QAAC,KAAM,AAAE,CAAD;;IAE1B;;AAGuC;IAAa;qBAChB;AAClC,uBAAI,qBAAiB,KAAK;AACH,QAArB,sBAAgB,KAAK;AACL,QAAhB;;IAEJ;UAGoB,QAAgB;AACN,MAA5B,AAAO,AAAM,AAAM,4BAAI;AACa,MAApC,sBAAgB,AAAO;AACc,MAArC,uBAAiB,AAAO;AACI,MAAtB,YAAM,MAAM,EAAE,OAAO;IAC7B;;AAIiC,MAA/B,AAAO,AAAM,AAAM,+BAAO;AACX,MAAT;IACR;;AAIE,YAAmB,gBAAZ;IACT;;4CAhD+B;IAKvB;IAiBW;AAtBsB,uDAAM,MAAM;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;EA6DxD;;;;;;mESuuJiC;;;;;;;;;;ATnnJ3B,YAAa,qCAAP;IAAmC;;AAIzC,YAAY,qDAAN;IAAoD;;AAI5D,UAAI;AACF,cAAO,AAAM,2BAAe,MAA4B,eAAf,AAAE,eAAT;;AAEpC,YAAa;IACf;;oDAhBqD;AAAU,+DAAM,MAAM;;EAAC;;;;;;;;;;;IAiCjB;;;;;;;;;;;;mBAGxB,SAAiB;;AAClD,YAAe,OAAO;YAAE,KAAK;YAAtB,AAAO;IAChB;;;QAZ+B;QAAmB;QAAiB;IAAjB;AAC5C,6DAAW,GAAG,SAAS,KAAK;;EAAC;;;;;;;;;;;;;;;AAmBb;IAAK;;AAIzB,YAAO,4CAA4B;IACrC;UAG0B;AACxB,YAAO,qBAAe,OAAO,EAAE;IACjC;;;;;;;;;;;;;;;;;;;;AASI,6DAAiC;IAAK;;;;;;;;;;;;;;YAOhB;AACxB,cAAO,qBACL,OAAO,EACyC,eAAxC,AAAmC,yCAA1C;MAEL;;;;;;;;;;;;;;;;oES0iJ+B;;;;;;;;;;AThiJ3B,YAAa,0CAAP;IAAwC;;AAI9C,YAAY,+CAAN;IAA8C;;AAItD,UAAI;AACF,cAAO,AAAM,2BAAe,MAA4B,eAAf,AAAE,eAAT;;AAEpC,YAAa;IACf;;0DAjBgE;AAC1D,qEAAM,MAAM;;EAAC;;;;;;;;;;;;AAuBjB,UAAI;AACF,cAA6B,gBAAf,AAAE,eAAT;;AAET,YAAa;IACf","file":"main.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["/zapp/project/.zapp_entry.dart","/zapp/project/lib/main.dart","/zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart","/zapp/project/lib/coffee_machine_state.dart","/zapp/project/lib/coffee_machine_app.dart","/zapp/pub/.pub_cache/hosted/pub.dev/nested-1.0.0/lib/nested.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/inherited_provider.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/deferred_inherited_provider.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/async_provider.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/listenable_provider.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/change_notifier_provider.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/consumer.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/provider.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/devtool.dart","/workspace/build/dart-sdk/packages/flutter/lib/src/widgets/framework.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/proxy_provider.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/reassemble_handler.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/selector.dart","/zapp/pub/.pub_cache/hosted/pub.dev/provider-6.1.4/lib/src/value_listenable_provider.dart","/zapp/project/lib/main_screen.dart","/zapp/project/lib/pages/home_page.dart","/zapp/project/lib/pages/control_page.dart","/zapp/project/lib/pages/settings_page.dart"],"names":[],"mappings":"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","file":"main.js"}');
   // Exports:
   return {
     zapp__project__$46zapp_entry: $46zapp_entry,
@@ -5302,9 +5225,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     zapp__project__$46dart_tool__dartpad__web_plugin_registrant: web_plugin_registrant,
     provider: provider,
     zapp__project__lib__coffee_machine_state: coffee_machine_state,
-    zapp__project__lib__pages__home_page: home_page,
-    zapp__project__lib__pages__control_page: control_page,
-    zapp__project__lib__pages__settings_page: settings_page,
+    zapp__project__lib__coffee_machine_app: coffee_machine_app,
     src__async_provider: async_provider,
     src__change_notifier_provider: change_notifier_provider,
     src__consumer: consumer,
@@ -5314,7 +5235,11 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     src__reassemble_handler: reassemble_handler,
     src__selector: selector$,
     src__value_listenable_provider: value_listenable_provider,
-    nested: nested
+    zapp__project__lib__main_screen: main_screen,
+    nested: nested,
+    zapp__project__lib__pages__home_page: home_page,
+    zapp__project__lib__pages__control_page: control_page,
+    zapp__project__lib__pages__settings_page: settings_page
   };
 }));
 

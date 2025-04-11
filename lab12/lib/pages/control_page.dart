@@ -23,6 +23,8 @@ void _showFeedback(BuildContext context, String message) {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // Дисплей ресурсов
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(16.0),
@@ -50,6 +52,7 @@ void _showFeedback(BuildContext context, String message) {
               ),
             ),
             const SizedBox(height: 16),
+            // Кнопки управления
             Expanded(
               child: SingleChildScrollView(
                 child: Column(

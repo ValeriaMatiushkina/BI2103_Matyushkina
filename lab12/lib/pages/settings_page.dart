@@ -15,6 +15,7 @@ class SettingsPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            // Статус
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(16.0),
@@ -36,6 +37,7 @@ class SettingsPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
+            // Кнопка очистки
             ElevatedButton(
               onPressed: () {
                 coffeeState.cleanWasteContainer();
